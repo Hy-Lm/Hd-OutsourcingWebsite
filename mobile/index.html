@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>辉达教育-北京辉达永盛教育科技有限公司</title>
+		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>
+		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。"/>
+		<link rel="icon" href="./images/logos.svg" sizes="50x50">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./css/public.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<script src="./js/setRem.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js" type="text/javascript" charset="utf-8">
+		</script>
+	</head>
+	<body>
+		<!-- 首页 -->
+		<div id="box">
+			<!-- 背景图 -->
+			<div class="index_banner">
+				<img class="index_banner_img" src="./images/banner01.png" alt="" srcset="">
+				<div class="idnex_banner-bg">
+					<!-- <div class="idnex_banner-bg-l"> -->
+					<img class="idnex_banner-bg-l-img" src="./images/辉达LOGOpng.png">
+					<!-- </div> -->
+					<img class="idnex_banner-bg-r" @click='bannerBg' src="./images/san.png">
+				</div>
+				<!-- 隐藏的列表 -->
+				<div class="index_banner_list" v-if="banner_list==true">
+					<div class="img">
+						<img class="index_banner_list-img" @click='bannerBg' src="./images/×.png">
+					</div>
+					<div class="index_banner_list-item">
+						<div class="index_banner_list-items" v-for="(item,index) in banner_list_items" :key="index">
+							{{item}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 相关信息 -->
+			<div class="index_crotchety">
+				<div class="index_crotchety_item" v-for="(item,index) in crotchety_item" :key="index">
+					<!-- <div class="index_crotchety_icon"> -->
+					<img :src="item.img">
+					<!-- </div> -->
+					<div class="index_crotchety_con">{{item.con}}</div>
+				</div>
+			</div>
+			<!-- 课程中心 -->
+			<div class="index_course">
+				<div class="index_course_title">
+					课程中心<span class="yuan"></span>
+				</div>
+				<div class="index_course_con">
+					完善的课程研发体系紧跟技术发展及企业需求
+				</div>
+				<div class="index_course_lun-c">
+					<div class="index_course_lun">
+						<div class="index_course_lun-i" v-for="(item,index) in course_item" :key="index">
+							<div class="course_item_title">{{item.con}}</div>
+							<!-- <div class="course_item_img"> -->
+								<img class="course_item_img" :src="item.img" alt="image">
+							<!-- </div> -->
+							<div class="course_item_btns">
+								<div class="course_item_btn">
+									<img src="./images/课程大纲icon.png" alt="image">
+									<span>课程大纲</span>
+								</div>
+								<div class="course_item_btn">
+									<img src="./images/免费试听icon.png" alt="image">
+									<span>免费试听</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="index_course_button" @click="robotBtn">立即咨询</div>
+			</div>
+			<!-- 课题大纲 -->
+			<div class="index_course index_outline">
+				<div class="index_course_title index_outline_title">
+					课程大纲<span class="yuan"></span>
+				</div>
+				<div class="index_course_con index_outline_con">
+					高标准研发培训课程及项目教学质量有保障
+				</div>
+				<!-- 导航整套 -->
+				<div class="outline">
+					<!-- 课程大纲导航栏 -->
+					<div class="index_outline_navs">
+						<div class="outline_nav" @click="outlineNavs(index)" :key="index"
+							v-for="(item,index) in outline">
+							<img :src="item.isActive==true?outline_img[index].iconB:outline_img[index].iconA">
+							<div class="outline_nav_con" :style="{'color': (item.isActive ===true ? '#3258E5':'#333333')}">{{item.title}}</div>
+							<!-- <div :class="[isActive?outline_nav_xian:'outline_nav_xians']"></div> -->
+							<div v-if="item.isActive==true" class="outline_nav_xian"></div>
+						</div>
+					</div>
+					<!-- 课程 大纲导航标题 -->
+					<div class="outline_nav_title">{{outline_nav_title}}</div>
+					<!-- 课程大纲导航内容 -->
+					<div class="outline_nav_cons">
+						<div class="outline_nav_cons_s" :key="index" v-for="(item,index) in outline_nav_cons_s">
+							<div class="outline_nav_con_index">{{index+1}}</div>
+							<div class="outline_nav_con_con">{{item}}</div>
+						</div>
+					</div>
+				</div>
+				<!-- 项目特色 -->
+				<div class="outline_nav_title outline_feature">项目特色</div>
+				<!-- 项目特色内容 -->
+				<div class="outline_feature_items">
+					<div class="outline_feature_item" :key="index" v-for="(item,index) in outline_feature_item">
+						<!-- <div class="feature_item-img"> -->
+						<img class="feature_item-img" :src="item.img">
+						<!-- </div> -->
+						<div class="feature_item-title">{{item.con}}</div>
+						<div class="feature_item-con">
+							<div>{{item.content1}}</div>
+							<div>{{item.content2}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="index_outline_button" @click="robotBtn">咨询哪个学科更适合你</div>
+			</div>
+			<!-- 教研团队 -->
+			<div class="index_course index_research">
+				<div class="index_course_title index_research_title">
+					教研团队<span class="yuan"></span>
+				</div>
+				<div class="index_course_con index_research_con">
+					<span class="research_con_s">技术大牛+硬核讲师</span>为教学质量保驾护航<br>保障课程与企业需求实时接轨<br>
+					<span class="research_con_s">10余年经验</span>的教学老师更懂“教”与“学”！
+				</div>
+				<!-- 教研信息 -->
+				<div class="index_research_con-info">
+					<div class="research_con-info-item" :key="index" v-for="(item,index) in research_con_info_item">
+						<div class="research_con-info-item-1">{{item.con1}} <span
+								class="research_con-info-item-1-s">{{item.con_1}}</span> </div>
+						<div class="research_con-info-item-2">{{item.con2}}</div>
+						<div class="research_con-info-item-3">{{item.con3}}</div>
+					</div>
+				</div>
+				<!-- 老师信息 -->
+			<div class="index_research-teacher">
+				<div class="index_research_lun">
+					<div class="index_research_i" v-for="(item,index) in research_lun" :key="index">
+						<div class="research_i-img">
+							<img :src="urlImg+item.img" >
+						</div>
+						<div class="research_i-info">
+							<div class="research_i-info-top">
+								<div>{{item.user}}</div>
+								<div>教学负责人</div>
+							</div>
+							<div class="research_i-info-center">
+								<div :key="index" v-for="(item,index) in research_lun_class[index]">{{item}}</div>
+							</div>
+							<div class="research_i-info-bottom">
+								{{item.intro}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+				<div class="index_research_button" @click="robotBtn">了解更多老师信息</div>
+			</div>
+			<!-- 学员 -->
+			<div class="index_course index_student">
+				<div class="index_course_title index_student_title">
+					用心为每一位学员<span class="yuan"></span>
+				</div>
+				<div class="index_course_con index_student_con">
+					为毕业学员提供高质量人脉、职场资源、技术研习等 众多学习交流机会
+				</div>
+				<div class="index_student_imgs">
+					<div class="index_student_imgs-i">
+						<div class="student_imgs_item" :key="index" v-for="(item,index) in student_imgs_item">
+							<div class="student_imgs_item-img">
+								<img :src="item.img">
+							</div>
+							<div class="student_imgs_item-con">{{item.con}}</div>
+						</div>
+					</div>
+					<div class="index_student_button" @click="robotBtn">咨询课程信息</div>
+				</div>
+			</div>
+			<!-- 辉达动态 -->
+			<div class="index_course index_dynamic">
+				<div class="index_course_title index_dynamic_title">
+					辉达动态<span class="yuan"></span>
+				</div>
+				<div class="index_course_con index_dynamic_con">
+					顺应市场需求，不断改革、创新，构建前沿的课程体系 拓宽学员的知识深度与广度，为学员发展保驾护航
+				</div>
+				<div class="index_dynamic_info">
+					<div class="index_dynamic_info-top">
+						<div class="dynamic_info-top-title">学院资讯</div>
+						<div class="dynamic_info-top-con">
+							<img class="dynamic_info-top-con-img" :src="urlImg+dynamic_info_img">
+							<div class="dynamic_info-top-con-items">
+								<div class="dynamic_info-top-con-item" :key="index"
+									v-for="(item,index) in dynamic_info_top_con_item">
+									<div class="dynamic_info-top-con-item-l">New</div>
+									<div class="dynamic_info-top-con-item-r">
+										<div class="dynamic_info-top-con-item-r-title">
+											{{item.mesTitle}}
+										</div>
+										<div class="dynamic_info-top-con-item-r-con">{{item.mesCon}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="index_dynamic_info-bottom">
+						<div class="index_dynamic_info-bottom-title">
+							新闻动态
+						</div>
+						<div class="dynamic_info-bottom-items">
+							<div class="dynamic_info-bottom-item" @click="dynamicBtn(index)" :key='index'
+								v-for="(item,index) in dynamic_info_bottom_item">
+								<div class="dynamic_info-bottom-item-l">
+									{{index+1}}
+								</div>
+								<div class="dynamic_info-bottom-item-r">
+									{{item.message}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 校园环境 -->
+			<div class="index_course index_campus">
+				<div class="index_course_title index_campus_title">
+					校园环境<span class="yuan"></span>
+				</div>
+				<div class="index_course_con index_campus_con">
+					高配置学习环境让你安心学习
+				</div>
+				<div class="index_campus-imgs">
+					<div class="index_campus-imgs-items" v-for="(item,index) in campus_imgs_items" :key="index">
+						<div class="campus-imgs-items-imgs">
+							<img :src="urlImg+item" v-for="(item,index) in item.img" :key="index">
+						</div>
+						<div class="campus-imgs-items-imgs-con">{{item.name}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 简介 -->
+			<div class="index_synopsis">
+				<div>北京辉达IT科技有限公司版权所有</div>
+				<div>Copyright 2006-2021, All Rights Reserved</div>
+				<div>苏ICP备16007882号-1 营业执照 增值电信业务经营许可证</div>
+			</div>
+			<!-- 固定的底部 -->
+			<div class="footer">
+				<div class="footer-l" @click="robotBtn">
+					<img src="./images/xiaoren.png">
+					<div class="footer-con">我要报名</div>
+				</div>
+				<div class="footer-r" @click="robotBtn">
+					<img src="./images/xiaoxi.png">
+					<div class="footer-con">立即咨询</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>
