@@ -1,0 +1,2 @@
+banner.php  首页轮播   不传值  返回 背景图片，多个小标题（app开发）
+industry.php 行业      不传值  返回所有参数
