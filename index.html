@@ -9,16 +9,338 @@
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 		<script src="./js/axios.min.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+		<script src="./js/swiper.min.js"></script>
+		<link rel="stylesheet" href="./css/public.css">
 		<link rel="stylesheet" href="./css/swiper.min.css">
 		<link rel="stylesheet" href="./css/Swiper.css">
+		<link rel="stylesheet" href="./css/index.css">
 	<body>
-		
 		<div id="app">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide" v-for="item in 3">
-						{{item}}
-						<!-- <img :src="item" alt="" style="width: 100%;"> -->
+			<div class="wb-box">
+				<!-- 头部 -->
+				<header>
+					<img src="image/辉达外包LOGO.png" >
+					<ul>
+						<li>首页</li>
+						<li>服务项目</li>
+						<li>成功案例</li>
+						<li>联系我们</li>
+					</ul>
+				</header>
+				<!-- 轮播 -->
+				<div class="banner">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="./image/外包官网banner.png" alt=""></div>
+							<div class="swiper-slide"><img src="./image/外包官网Banner2.1.png" alt=""></div>
+							<div class="swiper-slide"><img src="./image/外包官网Banner3.png" alt=""></div>
+						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- 网站建设我们更专业 -->
+				<div class="website">
+					<div class="general">
+						<p>网站建设我们更专业</p>
+						<div></div>
+						<p>我们的服务理念：尽一切力量做到最好！</p>
+					</div>
+					<ul>
+						<li>
+							<img src="./image/定制-icon.png" alt="">
+							<div class="title">定制级高端网站建设</div>
+							<div class="xian"></div>
+							<p>结合多年开发经验及市场深度调研，需求整合 制定开发方案开发项目包括 微网后台。</p>
+						</li>
+						<li>
+							<img src="./image/APP开发-icon.png" alt="">
+							<div class="title">APP开发解决方案</div>
+							<div class="xian"></div>
+							<p>品牌产品定位，到卓越的应用策划、创意，最终制定技术解决方案及终端制作全方位的移动应用解决方案，满足客户对产品各方面业务需求。</p>
+						</li>
+						<li>
+							<img src="./image/小程序解决-icon.png" alt="">
+							<div class="title">小程序解决方案</div>
+							<div class="xian"></div>
+							<p>基于微信架构原生发轻松拥有在线城几十种促销工具支持深耕会员精准营销，满足客户对各产品各方面的业务需求。</p>
+						</li>
+						<li>
+							<img src="./image/区块链接-icon.png" alt="">
+							<div class="title">区块链解决方案</div>
+							<div class="xian"></div>
+							<p>基于区块链Web3.js技术搭建，提供快捷区块链应用服务的平台，致力于抹平区块链应用和现实场景之间的技术鸿沟，使得传统行业可以很低成本的享受区块链带来的便利。</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 深耕细分行业 -->
+				<div class="solution">
+					<div class="solution_box">
+						<div class="title">深耕细分行业，提供更加垂直的行业解决方案</div>
+						<p class="solution_p">电商，餐饮，酒店，任务系统，区块链都有完整解决方案</p>
+					</div>
+					<div class="solution_list">
+						<ul class="list_ul">
+							<li class="active">电商</li>
+							<li>直播短视频</li>
+							<li>知识与共享</li>
+							<li>任务系统</li>
+							<li>区块链</li>
+						</ul>
+						<div class="list_div">
+							<div>全行业全场景的电商解决方案</div>
+							<p>微商城解决方案致力于为零售业提供多渠道电商解决方案，通过自建商城，以及营销系统、分销系统、会员系统帮助企业搭建新一代微商城销售体系，快速实现去中心化流量聚合，客户粉丝沉淀，助力企业快速步入移动电商时代。</p>
+							<ul>
+								<li>
+									<img src="./image/shopping-icon.png" alt="">
+									<div>社交电商</div>
+									<ol>
+										<li>多用户商城 盈利模式丰富</li>
+										<li>O2O系统 线上线下新零售</li>
+										<li>多营销机制 抢占电商市场</li>
+									</ol>
+								</li>
+								<li>
+									<img src="./image/dinghuo-icon.png" alt="">
+									<div>订货系统</div>
+									<ol>
+										<li>互联网化转型 对接官网与微信</li>
+										<li>O2O系统 线上线下新零售</li>
+										<li>多营销机制 抢占电商市场</li>
+									</ol>
+								</li>
+								<li>
+									<img src="./image/gongying-icon.png" alt="">
+									<div>供应链系统</div>
+									<ol>
+										<li>SRM供应商管理 采购管理一体化</li>
+										<li>O2O系统 线上线下新零售</li>
+										<li>多营销机制 抢占电商市场</li>
+									</ol>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 为什么要选择我们 ？ -->
+				<div class="why">
+					<div class="general">
+						<p>为什么要选择我们 ？</p>
+						<div></div>
+						<p>我们的服务理念：尽一切力量做到最好！</p>
+					</div>
+					<div class="why_list">
+						<div class="why_tu">
+							<div>
+								<!-- <img src="./image/liubianxing-icon.png" alt=""> -->
+								<span>解决 需求</span>
+							</div>
+							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+						</div>
+						<!-- <img src="./image/jiahao-icon.png" alt=""> -->
+						<div class="why_tu">
+							<div>
+								<!-- <img src="./image/liubianxing-icon.png" alt=""> -->
+								<span>专业 设计</span>
+							</div>
+							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+						</div>
+						<div class="why_tu">
+							<div>
+								<!-- <img src="./image/liubianxing-icon.png" alt=""> -->
+								<span class="liang">研发</span>
+							</div>
+							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+						</div>
+						<div class="why_tu">
+							<div>
+								<!-- <img src="./image/liubianxing-icon.png" alt=""> -->
+								<span class="liang">保障</span>
+							</div>
+							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+						</div>
+						<div class="why_tu">
+							<div>
+								<!-- <img src="./image/liubianxing-icon.png" alt=""> -->
+								<span class="liang">服务</span>
+							</div>
+							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+						</div>
+					</div>
+				</div>
+				<!-- 一站式服务 -->
+				<div class="serve">
+					<div class="general">
+						<p>一站式服务</p>
+						<div></div>
+						<p>您还在为建设网站过程中繁琐的事情而烦恼么？我们为您提供一站式网站建设解决方案让您顾虑全无！</p>
+					</div>
+					<ul>
+						<li>
+							<img src="./image/jianzhan-icon.png" alt="">
+							<p>建站</p>
+						</li>
+						<li>
+							<img src="./image/kongjian-icon.png" alt="">
+							<p>空间</p>
+						</li>
+						<li>
+							<img src="./image/yuming-icon.png" alt="">
+							<p>域名</p>
+						</li>
+						<li>
+							<img src="./image/beian-icon.png" alt="">
+							<p>备案</p>
+						</li>
+						<li>
+							<img src="./image/shouhou-icon.png" alt="">
+							<p>售后</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 服务保障 -->
+				<div class="safeguard">
+					<div class="general">
+						<p>服务保障</p>
+						<div></div>
+						<p>我们的服务理念：尽一切力量做到最好！</p>
+					</div>
+					<ul>
+						<li>
+							<img src="./image/wending-icon.png" alt="">
+							<p>稳定</p>
+							<p>网站可用性高达99%</p>
+						</li>
+						<li>
+							<img src="./image/wending-icon.png" alt="">
+							<p>安全</p>
+							<p>病毒杀除率高达99%</p>
+						</li>
+						<li>
+							<img src="./image/wending-icon.png" alt="">
+							<p>急速</p>
+							<p>5倍陪护终端服务时间</p>
+						</li>
+						<li>
+							<img src="./image/wending-icon.png" alt="">
+							<p>周到</p>
+							<p>覆盖70多个城市的服务网站</p>
+						</li>
+						<li>
+							<img src="./image/wending-icon.png" alt="">
+							<p>贴心</p>
+							<p>24小时客服热线</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 用心对待每一个项目！ -->
+				<div class="diligently">
+					<div class="diligently_box">
+						<div class="general">
+							<p>用心对待每一个项目！</p>
+							<div></div>
+							<p>我们的服务理念：尽一切力量做到最好！</p>
+						</div>
+						<ul>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+							<li>
+								<img src="./image/益园养车展示.png" alt="">
+								<div>
+									益园养车APP
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 辉达时代动态 -->
+				<div class="dynamic">
+					<div class="title">辉达时代动态</div>
+					<ul>
+						<li>
+							<img src="./image/辉达动态1.png" alt="">
+						</li>
+						<li>
+							<img src="./image/辉达动态2.png" alt="">
+						</li>
+						<li>
+							<img src="./image/辉达动态3.png" alt="">
+						</li>
+					</ul>
+					<ol>
+						<li>
+							<span>05/17 </span> <span>辉达时代成立了!</span>
+						</li>
+						<li>
+							<span>05/17 </span> <span>辉达时代成立了!</span>
+						</li>
+						<li>
+							<span>05/17 </span> <span>辉达时代成立了!</span>
+						</li>
+					</ol>
+				</div>
+				<!-- 底部 -->
+				<div class="footer">
+					<div class="footer_box">
+						<ul>
+							<li>产品服务</li>
+							<li>APP开发</li>
+							<li>小程序开发</li>
+							<li>商城开发</li>
+							<li>平台开发</li>
+						</ul>
+						<ul>
+							<li>推荐系统</li>
+							<li>社交电商</li>
+							<li>租赁系统</li>
+							<li>淘客系统</li>
+							<li>数字货币</li>
+						</ul>
+						<ul>
+							<li>辉耀简介</li>
+							<li>关于辉耀</li>
+							<li>客户案例</li>
+							<li>新闻资讯</li>
+							<li>联系我们</li>
+						</ul>
+						<ul>
+							<li>联系我们</li>
+							<li>地址:</li>
+							<li>电话:15011556811</li>
+							<li>邮箱:</li>
+						</ul>
+						<div>
+							<p>免费报价</p>
+							<img src="./image/外包二维码.jpg" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,14 +364,15 @@
 			})
 		</script>
 		<script>
-			var swiper = new Swiper('.swiper-container', {
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev',
-				paginationClickable: true,
-				centeredSlides: true,
-				autoplay: 3000,
-				autoplayDisableOnInteraction: false
-			});
+			var mySwiper = new Swiper('.swiper-container', {
+				// 是否无缝滚动
+				loop: true,
+				// 如果需要分页器
+				pagination: '.swiper-pagination',
+				autoplay: 2000,
+				// 滑动到下一页触发条
+				longSwipesRatio: 0.33,
+			})
 		</script>
 	</body>
 </html>

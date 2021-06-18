@@ -1,0 +1,459 @@
+#app{
+    box-sizing: border-box;
+}
+.wb-box{
+    // 头部
+    header{
+        width: 1400px;
+        height: 110px;
+        padding: 32px 0;
+        // background-color: red;
+        img{
+            float: left;
+            width: 215px;
+            height: 49px;
+        }
+        ul{
+            float: right;
+            li{
+                float: left;
+                margin-left: 50px;
+                text-align: right;
+                width: auto;
+                height: 45px;
+                font-size: 32px;
+                color: #333333;
+            }
+        }
+    }
+    // 轮播
+    .banner{
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    // 网站建设我们更专业
+    .website{
+        width: 1400px;
+        height: 820px;
+        // margin-top: 90px;
+        // background-color: pink;
+        ul{
+            display: flex;
+            li{
+                flex:1;
+                text-align: center;
+                padding-right: 60px;
+                &:last-child{
+                    padding: 0;
+                }
+                img{
+                    width: 133px;
+                    height: 133px;
+                    
+                }
+                .title{
+                    padding: 18px 0;
+                    width: 100%;
+                    height: 65px;
+                    font-size: 32px;
+                    color: #333333;
+                }
+                .xian{
+                    width: 70px;
+                    height: 5px;
+                    background: #0686d8;
+                }
+                p{
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 210px;
+                    font-size: 24px;
+                    color: #666666;
+                    line-height: 34px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    // 深耕细分行业
+    .solution{
+        width: 100%;
+        height: 950px;
+        background: #0686d8;
+        .solution_box{
+            width: 1400px;
+            overflow: hidden;
+            // background-color: pink;
+            text-align: center;
+            .title{
+                padding-top: 100px;
+                width: 100%;
+                height: 167px;
+                opacity: 1;
+                font-size: 48px;
+                color: #ffffff;
+                line-height: 67px;
+            }
+            .solution_p{
+                width: 100%;
+                height: 33px;
+                font-size: 24px;
+                color: #ffffff;
+                line-height: 33px;
+            }
+        }
+        .solution_list{
+            margin-top: 80px;
+            width: 1400px;
+            overflow: hidden;
+            .list_ul{
+                float: left;
+                width: 150px;
+                height: 100%;
+                text-align: center;
+                box-sizing: border-box;
+                margin-right: 20px;
+                // background-color: pink;
+                li{
+                    width: 100%;
+                    margin:20px 0;
+                    // padding: 0 20px;
+                    height: 38px;
+                    font-size: 24px;
+                    color: #ffffff;
+                    line-height: 38px;
+                    &:nth-child(1){
+                        margin: 0;
+                    }
+                }
+                .active{
+                    background: #fa965a;
+                }
+            }
+            .list_div{
+                float: left;
+                padding-left: 55px;
+                height: 100%;
+                // background-color: red;
+                width: calc(100% - 171px);
+                border-left: 1px solid #ffffff;
+                div{
+                    width: 100%;
+                    height: 48px;
+                    font-size: 34px;
+                    text-align: left;
+                    color: #ffffff;
+                }
+                p{
+                    width: 100%;
+                    font-size: 24px;
+                    text-align: left;
+                    color: #ffffff;
+                    line-height: 37px;
+                    padding: 25px 0;
+                }
+                ul{
+                    display: flex;
+                    // background: pink;
+                    li{
+                        flex:3;
+                        text-align: center;
+                        border: 1px solid #ffffff;
+                        padding: 25px 0;
+                        margin-right: 64px;
+                        &:last-child{
+                            margin: 0;
+                        }
+                        div{
+                            width: 100%;
+                            height: 33px;
+                            font-size: 24px;
+                            text-align: center;
+                            color: #ffffff;
+                            line-height: 37px;
+                        }
+                        ol{
+                            padding-left: 30px;
+                            li{
+                                list-style:disc;
+                                border: none;
+                                margin: 0;
+                                width: 100%;
+                                height: 25px;
+                                opacity: 1;
+                                font-size: 18px;
+                                text-align: left;
+                                color: #ffffff;
+                                line-height: 37px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //为什么要选择我们 ？
+    .why{
+        width: 1400px;
+        height: 700px;
+        padding-bottom: 100px;
+        border-bottom: 1px solid #7070706b;
+        // background-color: pink;
+        .why_list{
+            display: flex;
+            .why_tu{
+                flex:5;
+                padding-right: 80px;
+                overflow: hidden;
+                &:last-child{
+                    padding: 0;
+                }
+                div{
+                    width: 100%;
+                    height: 200px;
+                    background: url(../image/liubianxing-icon.png) no-repeat;
+                    position: relative;
+                    span{
+                        display: block;
+                        text-align: center;
+                        // width: 72px;
+                        margin-left: 45px;
+                        width: 50%;
+                        height: 200px;
+                        padding: 35px 0;
+                        font-size: 36px;
+                        color: #ffffff;
+                    }
+                    .liang{
+                        padding-top: 55px;
+                    }
+                    &::after{
+                        content: url(../image/jiahao-icon.png);
+                        position: absolute;
+                        right: -60px;
+                        top:55px;
+                    }
+                }
+                p{
+                    height: 106px;
+                    font-size: 18px;
+                    text-align: left;
+                    color: #666666;
+                    line-height: 27px;
+                }
+                
+            }
+        }
+    }
+    // 一站式服务
+    .serve{
+        width: 1400px;
+        height: 590px;
+        border-bottom: 1px solid #7070706b;
+        // background-color: pink;
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            li{
+                margin: 0;
+                text-align: center;
+                p{
+                    width: 100%;
+                    height: 45px;
+                    font-size: 32px;
+                    color: #333333;
+                    padding: 15px 0;
+                    line-height: 33px;
+                }
+            }
+        }
+    }
+    // 服务保障
+    .safeguard{
+        width: 1400px;
+        height: 590px;
+        border-bottom: 1px solid #7070706b;
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            li{
+                margin: 0;
+                text-align: center;
+                p{
+                    width: 100%;
+                    height: 45px;
+                    font-size: 32px;
+                    color: #333333;
+                    padding: 15px 0;
+                    line-height: 33px;
+                    &:nth-child(3){
+                        height: 25px;
+                        opacity: 1;
+                        font-size: 18px;
+                        color: #666666;
+                    }
+                }
+            }
+        }
+    }
+    // 用心对待每一个项目！
+    .diligently{
+        width: 100%;
+        height: 1100px;
+        // background: #0686d8;
+        .diligently_box{
+            border-bottom: 1px solid #7070706b;
+            width: 1400px;
+            height: 100%;
+            ul{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                li{
+                    text-align: center;
+                    position: relative;
+                    margin-bottom: 40px;
+                    div{
+                        position: absolute;
+                        bottom: 6px;
+                        width: 100%;
+                        height: 60px;
+                        line-height: 60px;
+                        font-size: 24px;
+                        color: #ffffff;
+                        background: #fa965a;
+                        border-radius: 0px 0px 10px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .dynamic{
+        width: 1400px;
+        height: 900px;
+        padding: 90px 0;
+        .title{
+            width: 100%;
+            height: 67px;
+            opacity: 1;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: #000000;
+        }
+        ul{
+            padding: 70px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        ol{
+            li{
+                width: 100%;
+                height: 66px;
+                opacity: 1;
+                font-size: 24px;
+                text-align: left;
+                color: #666666;
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        height: 468px;
+        background: #16167d;
+        border: 1px solid #707070;
+        .footer_box{
+            padding-top: 100px;
+            width: 1400px;
+            height: 100%;
+            ul{
+                float: left;
+                margin-right: 145px;
+                li{
+                    margin: 12px 0;
+                    width: auto;
+                    height: 33px;
+                    font-size: 24px;
+                    text-align: left;
+                    color: #ffffff;
+                    line-height: 33px;
+                }
+                li:nth-child(1){
+                    height: 45px;
+                    line-height: 45px;
+                    font-size: 32px;
+                }
+            }
+            div{
+                float: left;
+                p{
+                    margin: 12px 0;
+                    width: 174px;
+                    height: 56px;
+                    line-height: 56px;
+                    border: 1px solid #ffffff;
+                    border-radius: 8px;
+                    text-align: center;
+                    font-size: 24px;
+                    color: #ffffff;
+                }
+                img{
+                    width: 174px;
+                    height: 174px;
+                }
+            }
+        }
+    }
+}
+.general{
+    text-align: center;
+    padding: 90px 0;
+    p:nth-child(1){
+        width: 100%;
+        height: 67px;
+        opacity: 1;
+        font-size: 48px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+    div:nth-child(2){
+        width: 87px;
+        height: 1px;
+        background-color: #0686d8;
+        border: 2px solid #0686d8;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            left:80px;
+            top:0;
+            width: 250px;
+            height: 1px;
+            border-bottom: 1px solid #0686d8;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            right:80px;
+            top:0;
+            width: 250px;
+            height: 1px;
+            border-bottom: 1px solid #0686d8;
+        }
+    }
+    p:nth-child(3){
+        margin-top: 10px;
+        width: 100%;
+        height: 33px;
+        font-size: 24px;
+        color: #666666;
+    }
+}

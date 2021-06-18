@@ -1,0 +1,433 @@
+#app {
+  box-sizing: border-box;
+}
+.wb-box header {
+  width: 1400px;
+  height: 110px;
+  padding: 32px 0;
+}
+.wb-box header img {
+  float: left;
+  width: 215px;
+  height: 49px;
+}
+.wb-box header ul {
+  float: right;
+}
+.wb-box header ul li {
+  float: left;
+  margin-left: 50px;
+  text-align: right;
+  width: auto;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+}
+.wb-box .banner {
+  width: 100%;
+}
+.wb-box .banner img {
+  width: 100%;
+  height: 100%;
+}
+.wb-box .website {
+  width: 1400px;
+  height: 820px;
+}
+.wb-box .website ul {
+  display: flex;
+}
+.wb-box .website ul li {
+  flex: 1;
+  text-align: center;
+  padding-right: 60px;
+}
+.wb-box .website ul li:last-child {
+  padding: 0;
+}
+.wb-box .website ul li img {
+  width: 133px;
+  height: 133px;
+}
+.wb-box .website ul li .title {
+  padding: 18px 0;
+  width: 100%;
+  height: 65px;
+  font-size: 32px;
+  color: #333333;
+}
+.wb-box .website ul li .xian {
+  width: 70px;
+  height: 5px;
+  background: #0686d8;
+}
+.wb-box .website ul li p {
+  margin-top: 20px;
+  width: 100%;
+  height: 210px;
+  font-size: 24px;
+  color: #666666;
+  line-height: 34px;
+  text-align: left;
+}
+.wb-box .solution {
+  width: 100%;
+  height: 950px;
+  background: #0686d8;
+}
+.wb-box .solution .solution_box {
+  width: 1400px;
+  overflow: hidden;
+  text-align: center;
+}
+.wb-box .solution .solution_box .title {
+  padding-top: 100px;
+  width: 100%;
+  height: 167px;
+  opacity: 1;
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 67px;
+}
+.wb-box .solution .solution_box .solution_p {
+  width: 100%;
+  height: 33px;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 33px;
+}
+.wb-box .solution .solution_list {
+  margin-top: 80px;
+  width: 1400px;
+  overflow: hidden;
+}
+.wb-box .solution .solution_list .list_ul {
+  float: left;
+  width: 150px;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+.wb-box .solution .solution_list .list_ul li {
+  width: 100%;
+  margin: 20px 0;
+  height: 38px;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 38px;
+}
+.wb-box .solution .solution_list .list_ul li:nth-child(1) {
+  margin: 0;
+}
+.wb-box .solution .solution_list .list_ul .active {
+  background: #fa965a;
+}
+.wb-box .solution .solution_list .list_div {
+  float: left;
+  padding-left: 55px;
+  height: 100%;
+  width: calc(100% - 171px);
+  border-left: 1px solid #ffffff;
+}
+.wb-box .solution .solution_list .list_div div {
+  width: 100%;
+  height: 48px;
+  font-size: 34px;
+  text-align: left;
+  color: #ffffff;
+}
+.wb-box .solution .solution_list .list_div p {
+  width: 100%;
+  font-size: 24px;
+  text-align: left;
+  color: #ffffff;
+  line-height: 37px;
+  padding: 25px 0;
+}
+.wb-box .solution .solution_list .list_div ul {
+  display: flex;
+}
+.wb-box .solution .solution_list .list_div ul li {
+  flex: 3;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 25px 0;
+  margin-right: 64px;
+}
+.wb-box .solution .solution_list .list_div ul li:last-child {
+  margin: 0;
+}
+.wb-box .solution .solution_list .list_div ul li div {
+  width: 100%;
+  height: 33px;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+  line-height: 37px;
+}
+.wb-box .solution .solution_list .list_div ul li ol {
+  padding-left: 30px;
+}
+.wb-box .solution .solution_list .list_div ul li ol li {
+  list-style: disc;
+  border: none;
+  margin: 0;
+  width: 100%;
+  height: 25px;
+  opacity: 1;
+  font-size: 18px;
+  text-align: left;
+  color: #ffffff;
+  line-height: 37px;
+}
+.wb-box .why {
+  width: 1400px;
+  height: 700px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #7070706b;
+}
+.wb-box .why .why_list {
+  display: flex;
+}
+.wb-box .why .why_list .why_tu {
+  flex: 5;
+  padding-right: 80px;
+  overflow: hidden;
+}
+.wb-box .why .why_list .why_tu:last-child {
+  padding: 0;
+}
+.wb-box .why .why_list .why_tu div {
+  width: 100%;
+  height: 200px;
+  background: url(../image/liubianxing-icon.png) no-repeat;
+  position: relative;
+}
+.wb-box .why .why_list .why_tu div span {
+  display: block;
+  text-align: center;
+  margin-left: 45px;
+  width: 50%;
+  height: 200px;
+  padding: 35px 0;
+  font-size: 36px;
+  color: #ffffff;
+}
+.wb-box .why .why_list .why_tu div .liang {
+  padding-top: 55px;
+}
+.wb-box .why .why_list .why_tu div::after {
+  content: url(../image/jiahao-icon.png);
+  position: absolute;
+  right: -60px;
+  top: 55px;
+}
+.wb-box .why .why_list .why_tu p {
+  height: 106px;
+  font-size: 18px;
+  text-align: left;
+  color: #666666;
+  line-height: 27px;
+}
+.wb-box .serve {
+  width: 1400px;
+  height: 590px;
+  border-bottom: 1px solid #7070706b;
+}
+.wb-box .serve ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.wb-box .serve ul li {
+  margin: 0;
+  text-align: center;
+}
+.wb-box .serve ul li p {
+  width: 100%;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+  padding: 15px 0;
+  line-height: 33px;
+}
+.wb-box .safeguard {
+  width: 1400px;
+  height: 590px;
+  border-bottom: 1px solid #7070706b;
+}
+.wb-box .safeguard ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.wb-box .safeguard ul li {
+  margin: 0;
+  text-align: center;
+}
+.wb-box .safeguard ul li p {
+  width: 100%;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+  padding: 15px 0;
+  line-height: 33px;
+}
+.wb-box .safeguard ul li p:nth-child(3) {
+  height: 25px;
+  opacity: 1;
+  font-size: 18px;
+  color: #666666;
+}
+.wb-box .diligently {
+  width: 100%;
+  height: 1100px;
+}
+.wb-box .diligently .diligently_box {
+  border-bottom: 1px solid #7070706b;
+  width: 1400px;
+  height: 100%;
+}
+.wb-box .diligently .diligently_box ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wb-box .diligently .diligently_box ul li {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+.wb-box .diligently .diligently_box ul li div {
+  position: absolute;
+  bottom: 6px;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #ffffff;
+  background: #fa965a;
+  border-radius: 0px 0px 10px 10px;
+}
+.wb-box .dynamic {
+  width: 1400px;
+  height: 900px;
+  padding: 90px 0;
+}
+.wb-box .dynamic .title {
+  width: 100%;
+  height: 67px;
+  opacity: 1;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+.wb-box .dynamic ul {
+  padding: 70px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wb-box .dynamic ol li {
+  width: 100%;
+  height: 66px;
+  opacity: 1;
+  font-size: 24px;
+  text-align: left;
+  color: #666666;
+}
+.wb-box .footer {
+  width: 100%;
+  height: 468px;
+  background: #16167d;
+  border: 1px solid #707070;
+}
+.wb-box .footer .footer_box {
+  padding-top: 100px;
+  width: 1400px;
+  height: 100%;
+}
+.wb-box .footer .footer_box ul {
+  float: left;
+  margin-right: 145px;
+}
+.wb-box .footer .footer_box ul li {
+  margin: 12px 0;
+  width: auto;
+  height: 33px;
+  font-size: 24px;
+  text-align: left;
+  color: #ffffff;
+  line-height: 33px;
+}
+.wb-box .footer .footer_box ul li:nth-child(1) {
+  height: 45px;
+  line-height: 45px;
+  font-size: 32px;
+}
+.wb-box .footer .footer_box div {
+  float: left;
+}
+.wb-box .footer .footer_box div p {
+  margin: 12px 0;
+  width: 174px;
+  height: 56px;
+  line-height: 56px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+}
+.wb-box .footer .footer_box div img {
+  width: 174px;
+  height: 174px;
+}
+.general {
+  text-align: center;
+  padding: 90px 0;
+}
+.general p:nth-child(1) {
+  width: 100%;
+  height: 67px;
+  opacity: 1;
+  font-size: 48px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.general div:nth-child(2) {
+  width: 87px;
+  height: 1px;
+  background-color: #0686d8;
+  border: 2px solid #0686d8;
+  position: relative;
+}
+.general div:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 0;
+  width: 250px;
+  height: 1px;
+  border-bottom: 1px solid #0686d8;
+}
+.general div:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  right: 80px;
+  top: 0;
+  width: 250px;
+  height: 1px;
+  border-bottom: 1px solid #0686d8;
+}
+.general p:nth-child(3) {
+  margin-top: 10px;
+  width: 100%;
+  height: 33px;
+  font-size: 24px;
+  color: #666666;
+}
