@@ -1,0 +1,22 @@
+header {
+  width: 1400px;
+  height: 110px;
+  padding: 32px 0;
+}
+header img {
+  float: left;
+  width: 215px;
+  height: 49px;
+}
+header ul {
+  float: right;
+}
+header ul li {
+  float: left;
+  margin-left: 50px;
+  text-align: right;
+  width: auto;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+}
