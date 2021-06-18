@@ -3,16 +3,52 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
-		<link rel="stylesheet" type="text/css" href=""/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
+		<script src="../js/vue.js"></script>
 	</head>
 	<body>
 		<div id="app">
-					<!-- 头部 -->
-					<iframe class="iframe1" src="top.html" width="" height=""></iframe>
-					<!-- 底部 -->
-					<iframe class="iframe2" src="bottom.html" width="" height=""></iframe>
+			<!-- 头部 -->
+			<!-- <iframe class="iframe1" src="top.html" width="" height=""></iframe> -->
+			<header>
+				<img src="../image/辉达外包LOGO.png" >
+				<ul>
+					<li>首页</li>
+					<li>服务项目</li>
+					<li>成功案例</li>
+					<li>联系我们</li>
+				</ul>
+			</header>
+			<!-- 背景图 -->
+			<div class="bg">
+				<img src="../image/外包官网Banner2.1.png">
 			</div>
+			<!-- 成功案例 -->
+			<div class="case">
+				<div class="case-top">
+					<div class="case-top-l">
+						成功案例
+					</div>
+					<div class="case-top-r">
+						<div :style="{'color': (item.active ===true ? '#E74F12':'#000000')}" @click="ifyprojectBtn(index)" :key="index" v-for="(item,index) in ifyprojects">{{item.name}}</div>
+					</div>
+				</div>
+				<div class="case-bottom">
+					<div class="case-bottom-items" :key="index" v-for="(item,index) in ifyprojects_item">
+						<img :src="item.imgsrc" alt="">
+						<div class="case-bottom-items-con">
+							{{item.title}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<iframe class="iframe2" src="bottom.html" width="" height=""></iframe>
+		</div>
 		</div>
 	</body>
+	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/successfulcase.js" type="text/javascript" charset="utf-8"></script>
 </html>
