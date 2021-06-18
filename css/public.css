@@ -11,3 +11,13 @@ ul{
 .fr{
     float:right;
 }
+iframe{
+	width: 100%;
+	/* overflow: hidden; */
+}
+.iframe1{
+	 height: 114px;
+}
+.iframe2{
+	 height: 448px;
+}
