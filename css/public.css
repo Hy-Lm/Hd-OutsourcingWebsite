@@ -1,0 +1,13 @@
+*{margin: 0 auto;padding: 0;list-style: none;box-sizing: border-box;}
+body{background:#fff;}
+a{text-decoration: none;color: black;}
+ul{
+    padding: 0;
+    list-style: none;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
