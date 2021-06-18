@@ -21,6 +21,7 @@
 }
 
 .case-top-l {
+	padding-left: 16px;
 	float: left;
 	opacity: 1;
 	font-size: 48px;
@@ -28,8 +29,18 @@
 	font-weight: 700;
 	text-align: left;
 	color: #333333;
+	position: relative;
 }
-
+.case-top-l::after{
+	content: '';
+	position: absolute;
+	top: 13px;
+	left: 0;
+	width: 7px;
+	height: 46px;
+	opacity: 1;
+	background: #333333;
+}
 .case-top-r {
 	float: right;
 	display: flex;
