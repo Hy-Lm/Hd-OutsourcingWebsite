@@ -1,13 +1,74 @@
 #app {
   box-sizing: border-box;
 }
-
+header {
+  width: 1400px;
+  height: 110px;
+  padding: 32px 0;
+}
+header img {
+  float: left;
+  width: 215px;
+  height: 49px;
+}
+header ul {
+  float: right;
+}
+header ul li {
+  float: left;
+  margin-left: 50px;
+  text-align: right;
+  width: auto;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+  cursor: pointer;
+}
+header ul li a {
+  color: #ffffff;
+}
+header ul .top_serve {
+  position: relative;
+}
+header ul .top_serve div {
+  position: absolute;
+  top: 75px;
+  left: -170px;
+  z-index: 999;
+  width: 658px;
+  height: 700px;
+  color: #ffffff;
+  background-color: #5F18A6;
+  border-radius: 0px 0px 10px 10px;
+}
+header ul .top_serve div ol {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 0 30px;
+}
+header ul .top_serve div ol li {
+  float: left;
+  margin: 0;
+  font-size: 24px;
+  text-align: left;
+  padding: 60px 0;
+  width: 33.33%;
+  color: #ffffff;
+}
+header ul .top_serve:hover div {
+  display: block;
+}
+.wb-box {
+  position: relative;
+}
 .wb-box .banner {
   width: 100%;
+  height: 700px;
+  overflow: hidden;
 }
 .wb-box .banner img {
   width: 100%;
-  height: 100%;
+  height: 700px;
 }
 .wb-box .website {
   width: 1400px;
@@ -261,7 +322,7 @@
 }
 .wb-box .diligently {
   width: 100%;
-  height: 1100px;
+  overflow: hidden;
 }
 .wb-box .diligently .diligently_box {
   border-bottom: 1px solid #7070706b;
@@ -318,8 +379,55 @@
   text-align: left;
   color: #666666;
 }
-
-
+.wb-box .right {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  top: 40%;
+}
+.wb-box .right ul li {
+  position: relative;
+  padding: 15px;
+  height: 100%;
+  margin-bottom: 15px;
+  background-color: #F5F7F7;
+  cursor: pointer;
+  transition: all 1.5s;
+}
+.wb-box .right ul li img {
+  width: 50px;
+  height: 50px;
+}
+.wb-box .right ul li p {
+  font-size: 24px;
+  text-align: center;
+}
+.wb-box .right ul li .show {
+  position: absolute;
+  width: 300px;
+  height: 85px;
+  left: -220px;
+  top: 0;
+  font-size: 24px;
+  line-height: 80px;
+  transform: scaleX(1);
+  transition-duration: 2s;
+  transition: linear;
+  margin: 0;
+  display: none;
+  background-color: #E9E9E9;
+}
+.wb-box .right ul li .show_img::after {
+  content: url(../image/外包二维码.jpg);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: -430px;
+  top: -310;
+}
+.wb-box .right ul li:hover .show {
+  display: block;
+}
 .general {
   text-align: center;
   padding: 90px 0;
@@ -364,4 +472,51 @@
   height: 33px;
   font-size: 24px;
   color: #666666;
+}
+.footer {
+  width: 100%;
+  height: 468px;
+  background: #16167d;
+  border: 1px solid #707070;
+}
+.footer .footer_box {
+  padding-top: 100px;
+  width: 1400px;
+  height: 100%;
+}
+.footer .footer_box ul {
+  float: left;
+  margin-right: 145px;
+}
+.footer .footer_box ul li {
+  margin: 12px 0;
+  width: auto;
+  height: 33px;
+  font-size: 24px;
+  text-align: left;
+  color: #ffffff;
+  line-height: 33px;
+}
+.footer .footer_box ul li:nth-child(1) {
+  height: 45px;
+  line-height: 45px;
+  font-size: 32px;
+}
+.footer .footer_box div {
+  float: left;
+}
+.footer .footer_box div p {
+  margin: 12px 0;
+  width: 174px;
+  height: 56px;
+  line-height: 56px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+}
+.footer .footer_box div img {
+  width: 174px;
+  height: 174px;
 }

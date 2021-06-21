@@ -2,37 +2,75 @@
     box-sizing: border-box;
 }
 // 头部
-    header{
-        width: 1400px;
-        height: 110px;
-        padding: 32px 0;
-        // background-color: red;
-        img{
+header{
+    width: 1400px;
+    height: 110px;
+    padding: 32px 0;
+    // background-color: red;
+    img{
+        float: left;
+        width: 215px;
+        height: 49px;
+    }
+    ul{
+        float: right;
+        li{
             float: left;
-            width: 215px;
-            height: 49px;
-        }
-        ul{
-            float: right;
-            li{
-                float: left;
-                margin-left: 50px;
-                text-align: right;
-                width: auto;
-                height: 45px;
-                font-size: 32px;
-                color: #333333;
+            margin-left: 50px;
+            text-align: right;
+            width: auto;
+            height: 45px;
+            font-size: 32px;
+            color: #333333;
+            cursor:pointer;
+            a{
+                color: #ffffff;
             }
         }
+        .top_serve{
+            position: relative;
+            div{
+                position: absolute;
+                // display: none;
+                top:75px;
+                left:-170px;
+                z-index: 999;
+                width: 658px;
+                height: 700px;
+                color: #ffffff;
+                background-color: #5F18A6;
+                border-radius: 0px 0px 10px 10px;
+                ol{
+                    width: 100%;
+                    height: 100%;
+                    padding:50px 0 0 30px;
+                    li{
+                        float: left;
+                        margin: 0;
+                        font-size: 24px;
+                        text-align: left;
+                        padding: 60px 0;
+                        width: 33.33%;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+        .top_serve:hover div{
+            display: block;
+        }
     }
+}
 .wb-box{
-    
+    position: relative;
     // 轮播
     .banner{
         width: 100%;
+        height: 700px;
+        overflow: hidden;
         img{
             width: 100%;
-            height: 100%;
+            height: 700px;
         }
     }
     // 网站建设我们更专业
@@ -305,7 +343,8 @@
     // 用心对待每一个项目！
     .diligently{
         width: 100%;
-        height: 1100px;
+        // height: 1100px;
+        overflow: hidden;
         // background: #0686d8;
         .diligently_box{
             border-bottom: 1px solid #7070706b;
@@ -335,6 +374,7 @@
             }
         }
     }
+    // 辉达时代动态
     .dynamic{
         width: 1400px;
         height: 900px;
@@ -365,7 +405,60 @@
             }
         }
     }
-    
+    // 定位
+    .right{
+        position: fixed;
+        z-index: 999;
+        right:0;
+        top:40%;
+        ul{
+           
+            li{
+                position: relative;
+                padding: 15px;
+                height: 100%;
+                margin-bottom: 15px;
+                background-color: #F5F7F7;
+                cursor:pointer;
+                transition: all 1.5s;
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+                p{
+                    font-size: 24px;
+                    text-align: center;
+                }
+                .show{
+                    position: absolute;
+                    width: 300px;
+                    height: 85px;
+                    left:-220px;
+                    top:0;
+                    font-size: 24px;
+                    line-height: 80px;
+                    transform: scaleX(1);
+                    transition-duration: 2s;
+                    transition: linear;
+                    margin: 0;
+                    // transition:  1.5s linear;
+                    display: none;
+                    background-color: #E9E9E9;
+                }
+                .show_img::after{
+                    content: url(../image/外包二维码.jpg);
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    left: -430px;
+                    top:-310;
+                }
+            }
+            li:hover .show{
+                display: block;
+            }
+        }
+    }
 }
 .general{
     text-align: center;
