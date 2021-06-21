@@ -13,7 +13,6 @@ while($row=$res->fetch_assoc()){
 	$imgs=[];
 	foreach($row['small_img'] as $key=>$val){
 		array_push($imgs,$URL.$val);
-		// $imgs.=$URL.$val.',';
 	}
 	$row['small_img']=$imgs;
 	// 小标题
