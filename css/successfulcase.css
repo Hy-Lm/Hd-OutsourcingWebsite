@@ -1,0 +1,128 @@
+/* 背景图 */
+.bg {
+	width: 100%;
+	height: 700px;
+}
+
+.bg>img {
+	width: 100%;
+	height: 100%;
+}
+
+.case {
+	margin-top: 116px;
+	width: 1400px;
+}
+
+.case-top {
+	margin: 0;
+	height: 67px;
+	/* line-height: 67px; */
+}
+
+.case-top-l {
+	padding-left: 16px;
+	float: left;
+	opacity: 1;
+	font-size: 48px;
+	font-family: PingFang SC, PingFang SC-Bold;
+	font-weight: 700;
+	text-align: left;
+	color: #333333;
+	position: relative;
+}
+.case-top-l::after{
+	content: '';
+	position: absolute;
+	top: 13px;
+	left: 0;
+	width: 7px;
+	height: 46px;
+	opacity: 1;
+	background: #333333;
+}
+.case-top-r {
+	float: right;
+	display: flex;
+}
+
+.case-top-r>div {
+	margin-top: 11px;
+	margin-left: 24px;
+	box-sizing: border-box;
+	height: 45px;
+	/* width: 120px; */
+	opacity: 1;
+	font-size: 32px;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #333333;
+	border-right: 1px solid #999999;
+	padding-right: 24px;
+}
+
+.case-top-r>div:last-child {
+	padding-right: 0;
+	border: none;
+}
+
+.case-bottom {
+	margin-top: 86px;
+	width: 100%;
+	/* display: flex;
+	flex-wrap: wrap;
+	justify-content: center; */
+}
+
+.case-bottom-items {
+	margin-right:40px;
+	float: left;
+	width: 440px;
+	height: 330px;
+	text-align: center;
+	position: relative;
+	margin-bottom: 40px;
+}
+.case-bottom-items:nth-child(3n){
+	margin-right: 0;
+}
+.case-bottom-items-con {
+	position: absolute;
+	bottom: 6px;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	color: #ffffff;
+	background: #fa965a;
+	border-radius: 0px 0px 10px 10px;
+}
+.iframe2{
+	margin-top: 100px;
+}
+.case-top-r>div:hover{
+	cursor: pointer;
+}
+header {
+  width: 1400px;
+  height: 110px;
+  padding: 32px 0;
+}
+header img {
+  float: left;
+  width: 215px;
+  height: 49px;
+}
+header ul {
+  float: right;
+}
+header ul li {
+  float: left;
+  margin-left: 50px;
+  text-align: right;
+  width: auto;
+  height: 45px;
+  font-size: 32px;
+  color: #333333;
+}
