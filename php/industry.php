@@ -10,11 +10,12 @@ while($row=$res->fetch_assoc()){
 	// 进行数组的切割
 	// 小标题图片
 	$row['small_img']=explode(',',$row['small_img']);
-	$imgs=null;
+	$imgs=[];
 	foreach($row['small_img'] as $key=>$val){
-		$imgs.=$URL.$val.',';
+		array_push($imgs,$URL.$val);
+		// $imgs.=$URL.$val.',';
 	}
-	$row['small_img']=explode(',',$imgs);
+	$row['small_img']=$imgs;
 	// 小标题
 	$row['small_title']=explode(',',$row['small_title']);
 	// 小标题内容
