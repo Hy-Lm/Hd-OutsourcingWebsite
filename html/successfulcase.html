@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/public.css" />
-		
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
 		<script src="../js/vue.js"></script>
 	</head>
@@ -13,10 +13,25 @@
 			<!-- 头部 -->
 			<!-- <iframe class="iframe1" src="top.html" width="" height=""></iframe> -->
 			<header>
-				<img src="../image/辉达外包LOGO.png" >
+				<img src="../image/辉达外包LOGO.png">
 				<ul>
-					<li>首页</li>
-					<li>服务项目</li>
+					<li><a href="index.html">首页</a></li>
+					<li class="top_serve">服务项目
+						<div>
+							<ol>
+								<li><a href="app.html">APP开发</a></li>
+								<li>小程序开发</li>
+								<li>公众号开发</li>
+								<li>分销系统开发</li>
+								<li>管理系统开发</li>
+								<li>吸粉工具开发</li>
+								<li>分销系统开发</li>
+								<li>技术服务支持</li>
+								<li>电商平台开发</li>
+								<li>运营维护</li>
+							</ol>
+						</div>
+					</li>
 					<li>成功案例</li>
 					<li>联系我们</li>
 				</ul>
@@ -32,7 +47,9 @@
 						成功案例
 					</div>
 					<div class="case-top-r">
-						<div :style="{'color': (item.active ===true ? '#E74F12':'#000000')}" @click="ifyprojectBtn(index)" :key="index" v-for="(item,index) in ifyprojects">{{item.name}}</div>
+						<div :style="{'color': (item.active ===true ? '#E74F12':'#000000')}"
+							@click="ifyprojectBtn(index)" :key="index" v-for="(item,index) in ifyprojects">{{item.name}}
+						</div>
 					</div>
 				</div>
 				<div class="case-bottom">
@@ -44,11 +61,32 @@
 					</div>
 				</div>
 			</div>
+			<!-- 右边定位 -->
+			<div class="right">
+				<ul>
+					<li>
+						<img src="../image/电话01.svg" alt="">
+						<!-- <p>电话</p> -->
+						<p class="show">15011556811</p>
+					</li>
+					<li>
+						<img src="../image/微信.svg" alt="">
+						<!-- <p>微信</p> -->
+						<img class="show" src="../image/外包二维码.jpg" alt="">
+					</li>
+					<li>
+						<img src="../image/咨询.svg" alt="">
+						<!-- <p>咨询</p> -->
+						<img class="show" src="../image/外包二维码.jpg" alt="">
+					</li>
+				</ul>
+			</div>
 			<!-- 底部 -->
 			<iframe class="iframe2" src="bottom.html" width="" height=""></iframe>
 		</div>
 		</div>
 	</body>
-	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8">
+	</script>
 	<script src="../js/successfulcase.js" type="text/javascript" charset="utf-8"></script>
 </html>

@@ -16,16 +16,21 @@ header{
         float: right;
         li{
             float: left;
-            margin-left: 50px;
+            // margin-left: 50px;
+            padding: 10px 20px ;
             text-align: right;
             width: auto;
             height: 45px;
+            line-height:25px;
             font-size: 32px;
             color: #333333;
             cursor:pointer;
             a{
-                color: #ffffff;
+                color: #000;
             }
+        }
+        li:hover{
+            color: #FA965A;
         }
         .top_serve{
             position: relative;
@@ -48,12 +53,18 @@ header{
                         float: left;
                         margin: 0;
                         font-size: 24px;
-                        text-align: left;
+                        text-align: center;
                         padding: 60px 0;
                         width: 33.33%;
                         color: #ffffff;
+                        a{
+                            color: #ffffff;
+                        }
                     }
                 }
+            }
+            li:hover{
+                color: #FA965A;
             }
         }
         .top_serve:hover div{
@@ -120,7 +131,8 @@ header{
     // 深耕细分行业
     .solution{
         width: 100%;
-        height: 950px;
+        height: 920px;
+        overflow: hidden;
         background: #0686d8;
         .solution_box{
             width: 1400px;
@@ -168,9 +180,7 @@ header{
                         margin: 0;
                     }
                 }
-                .active{
-                    background: #fa965a;
-                }
+              
             }
             .list_div{
                 float: left;
@@ -405,58 +415,59 @@ header{
             }
         }
     }
-    // 定位
-    .right{
-        position: fixed;
-        z-index: 999;
-        right:0;
-        top:40%;
-        ul{
-           
-            li{
-                position: relative;
-                padding: 15px;
-                height: 100%;
-                margin-bottom: 15px;
-                background-color: #F5F7F7;
-                cursor:pointer;
-                transition: all 1.5s;
-                img{
-                    width: 50px;
-                    height: 50px;
-                }
-                p{
-                    font-size: 24px;
-                    text-align: center;
-                }
-                .show{
-                    position: absolute;
-                    width: 300px;
-                    height: 85px;
-                    left:-220px;
-                    top:0;
-                    font-size: 24px;
-                    line-height: 80px;
-                    transform: scaleX(1);
-                    transition-duration: 2s;
-                    transition: linear;
-                    margin: 0;
-                    // transition:  1.5s linear;
-                    display: none;
-                    background-color: #E9E9E9;
-                }
-                .show_img::after{
-                    content: url(../image/外包二维码.jpg);
-                    width: 100px;
-                    height: 100px;
-                    position: absolute;
-                    left: -430px;
-                    top:-310;
-                }
+    
+}
+// 定位
+.right{
+    position: fixed;
+    z-index: 999;
+    right:0;
+    top:40%;
+    ul{
+       
+        li{
+            position: relative;
+            padding: 15px;
+            height: 100%;
+            margin-bottom: 15px;
+            background-color: #F5F7F7;
+            cursor:pointer;
+            transition: all 1.5s;
+            img{
+                width: 50px;
+                height: 50px;
             }
-            li:hover .show{
-                display: block;
+            p{
+                font-size: 24px;
+                text-align: center;
             }
+            .show{
+                position: absolute;
+                width: 300px;
+                height: 85px;
+                left:-220px;
+                top:0;
+                font-size: 24px;
+                line-height: 80px;
+                transform: scaleX(1);
+                transition-duration: 2s;
+                transition: linear;
+                margin: 0;
+                // transition:  1.5s linear;
+                display: none;
+                background-color: #E9E9E9;
+            }
+            .show_img::after{
+                content: url(../image/外包二维码.jpg);
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: -430px;
+                top:-310;
+            }
+        }
+        li:hover .show{
+            display: block;
         }
     }
 }
