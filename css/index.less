@@ -1,5 +1,6 @@
 #app{
     box-sizing: border-box;
+    overflow: hidden;
 }
 // 头部
 header{
@@ -73,15 +74,18 @@ header{
     }
 }
 .wb-box{
+    // width: 1920px;
+    width: 100%;
     position: relative;
     // 轮播
     .banner{
         width: 100%;
-        height: 700px;
+        height: 100%;
         overflow: hidden;
         img{
             width: 100%;
-            height: 700px;
+            // height: 700px;
+            height: 100%;
         }
     }
     // 网站建设我们更专业
@@ -167,7 +171,9 @@ header{
                 text-align: center;
                 box-sizing: border-box;
                 margin-right: 20px;
-                // background-color: pink;
+                li:first-child{
+                    background-color: #FA965A;
+                }
                 li{
                     width: 100%;
                     margin:20px 0;
@@ -180,7 +186,6 @@ header{
                         margin: 0;
                     }
                 }
-              
             }
             .list_div{
                 float: left;
@@ -198,6 +203,7 @@ header{
                 }
                 p{
                     width: 100%;
+                    height: 160px;
                     font-size: 24px;
                     text-align: left;
                     color: #ffffff;
@@ -415,27 +421,23 @@ header{
             }
         }
     }
-    
-}
-// 定位
+   // 定位
 .right{
     position: fixed;
     z-index: 999;
     right:0;
-    top:40%;
+    top:20%;
     ul{
-       
         li{
             position: relative;
-            padding: 15px;
-            height: 100%;
+            height: 168px;
+            text-align: right;
             margin-bottom: 15px;
-            background-color: #F5F7F7;
             cursor:pointer;
-            transition: all 1.5s;
+            overflow: hidden;
             img{
-                width: 50px;
-                height: 50px;
+                width: 168px;
+                height: 168px;
             }
             p{
                 font-size: 24px;
@@ -444,33 +446,56 @@ header{
             .show{
                 position: absolute;
                 width: 300px;
-                height: 85px;
-                left:-220px;
+                height: 168px;
+                left:-300px;
                 top:0;
                 font-size: 24px;
-                line-height: 80px;
-                transform: scaleX(1);
-                transition-duration: 2s;
-                transition: linear;
+                line-height: 168px;
                 margin: 0;
-                // transition:  1.5s linear;
-                display: none;
                 background-color: #E9E9E9;
+                img{
+                    width: 150px;
+                    width: 150px;
+                }
             }
             .show_img::after{
-                content: url(../image/外包二维码.jpg);
-                width: 100px;
-                height: 100px;
+                content: '';
+                background: url(../image/外包二维码.jpg) no-repeat;
+                background-size: 100%;
+                width: 285px;
+                height: 285px;
                 position: absolute;
-                left: -430px;
-                top:-310;
+                left: -285px;
             }
         }
-        li:hover .show{
-            display: block;
+        li:nth-child(1):hover {
+            width: 300px;
+            img{
+                display: none;
+            }
+            .show{
+                width: 300px;
+                background-color: #e9e9e9;
+                transform: translate(300px, 0);
+                transition: all 1.5s;
+            }
+        }
+        li:nth-child(2):hover {
+            width: 300px;
+            img{
+                opacity: 0;
+            }
+            .show{
+                width: 300px;
+                background-color: #e9e9e9;
+                transform: translate(300px, 0);
+                transition: all 1s;
+            }
         }
     }
+} 
 }
+
 .general{
     text-align: center;
     padding: 90px 0;
@@ -520,7 +545,7 @@ header{
         width: 100%;
         height: 468px;
         background: #16167d;
-        border: 1px solid #707070;
+        // border: 1px solid #707070;
         .footer_box{
             padding-top: 100px;
             width: 1400px;
@@ -559,6 +584,17 @@ header{
                 img{
                     width: 174px;
                     height: 174px;
+                }
+            }
+            .footer_bot{
+                width: 100%;
+                clear: both;
+                p{
+                    width: 100%;
+                    border: none;
+                    text-align: center;
+                    font-size: 16px;
+                    padding: 30px 0;
                 }
             }
         }

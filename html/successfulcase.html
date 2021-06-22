@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>成功案例</title>
 		<link rel="stylesheet" type="text/css" href="../css/public.css" />
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
@@ -11,24 +11,16 @@
 	<body>
 		<div id="app">
 			<!-- 头部 -->
-			<!-- <iframe class="iframe1" src="top.html" width="" height=""></iframe> -->
 			<header>
 				<img src="../image/辉达外包LOGO.png">
 				<ul>
-					<li><a href="index.html">首页</a></li>
+					<li><a href="index.html"  target="_blank" >首页</a></li>
 					<li class="top_serve">服务项目
 						<div>
 							<ol>
-								<li><a href="app.html">APP开发</a></li>
-								<li>小程序开发</li>
-								<li>公众号开发</li>
-								<li>分销系统开发</li>
-								<li>管理系统开发</li>
-								<li>吸粉工具开发</li>
-								<li>分销系统开发</li>
-								<li>技术服务支持</li>
-								<li>电商平台开发</li>
-								<li>运营维护</li>
+								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+									{{item}}
+								</li>
 							</ol>
 						</div>
 					</li>
@@ -65,24 +57,29 @@
 			<div class="right">
 				<ul>
 					<li>
-						<img src="../image/电话01.svg" alt="">
-						<!-- <p>电话</p> -->
-						<p class="show">15011556811</p>
+						<div class="show" style="line-height: 60px;padding: 15px 0;">
+							<p>电话</p>
+							<p>15011556811</p>
+						</div>
+						<img src="../image/dianhua.png" alt="">
+						
 					</li>
 					<li>
-						<img src="../image/微信.svg" alt="">
+						<img src="../image/weixin.png" alt="">
 						<!-- <p>微信</p> -->
-						<img class="show" src="../image/外包二维码.jpg" alt="">
+						<p class="show show_img">微信咨询</p>
+						<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
 					</li>
-					<li>
-						<img src="../image/咨询.svg" alt="">
+					<li @click="consult($event)">
+						<img src="../image/zixun.png" alt="">
 						<!-- <p>咨询</p> -->
-						<img class="show" src="../image/外包二维码.jpg" alt="">
+						<!-- <p class="show">咨询登记</p> -->
+					</li>
+					<li @click="top()">
+						<img src="../image/top.png" alt="">
 					</li>
 				</ul>
 			</div>
-			<!-- 底部 -->
-			<iframe class="iframe2" src="bottom.html" width="" height=""></iframe>
 		</div>
 		</div>
 	</body>

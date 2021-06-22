@@ -41,7 +41,7 @@
 								</ol>
 							</div>
 						</li>
-						<li><a href="./successfulcase.html">成功案例</a></li>
+						<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
 						<li>联系我们</li>
 					</ul>
 				</header>
@@ -333,25 +333,71 @@
 				<div class="right">
 					<ul>
 						<li>
-							<img src="../image/电话01.svg" alt="">
-							<!-- <p>电话</p> -->
-							<p class="show">15011556811</p>
+							<div class="show" style="line-height: 60px;padding: 15px 0;">
+								<p>电话</p>
+								<p>15011556811</p>
+							</div>
+							<img src="../image/dianhua.png" alt="">
+							
 						</li>
 						<li>
-							<img src="../image/微信.svg" alt="">
+							<img src="../image/weixin.png" alt="">
 							<!-- <p>微信</p> -->
 							<p class="show show_img">微信咨询</p>
 							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
 						</li>
-						<li>
-							<img src="../image/咨询.svg" alt="">
+						<li @click="consult($event)">
+							<img src="../image/zixun.png" alt="">
 							<!-- <p>咨询</p> -->
-							<p class="show">咨询登记</p>
+							<!-- <p class="show">咨询登记</p> -->
+						</li>
+						<li @click="top()">
+							<img src="../image/top.png" alt="">
 						</li>
 					</ul>
 				</div>
 				<!-- 底部 -->
-				<iframe class="iframe2" src="./bottom.html" width="" height=""></iframe>
+				<div class="footer">
+					<div class="footer_box">
+						<ul>
+							<li>产品服务</li>
+							<li>APP开发</li>
+							<li>小程序开发</li>
+							<li>商城开发</li>
+							<li>平台开发</li>
+						</ul>
+						<ul>
+							<li>推荐系统</li>
+							<li>社交电商</li>
+							<li>租赁系统</li>
+							<li>淘客系统</li>
+							<li>数字货币</li>
+						</ul>
+						<ul>
+							<li>辉耀简介</li>
+							<li>关于辉耀</li>
+							<li>客户案例</li>
+							<li>新闻资讯</li>
+							<li>联系我们</li>
+						</ul>
+						<ul>
+							<li>联系我们</li>
+							<li>地址:</li>
+							<li>电话:15011556811</li>
+							<li>邮箱:</li>
+						</ul>
+						<div>
+							<p>一元建站</p>
+							<img src="../image/外包二维码.jpg" alt="">
+						</div>
+						<div class="footer_bot">
+							<p>北京辉达时代网络技术有限公司
+								版权所有Copyright 2017-2022 All Rights Reserved
+								京ICP备13009754号</p>
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 
@@ -370,6 +416,7 @@
 					color:true
 				},
 				methods: {
+					// 行业背景
 					putin(index,e){
 						var lis = document.querySelectorAll('.list_ul li')
 						for(var i = 0 ;i <lis.length; i++){
@@ -433,11 +480,20 @@
 							}
 						})
 					},
+					// 跳转app页面
 					fun(index) {
 						// console.log(index)
 						if (this.banner_title[index] == 'APP开发') {
-							window.location.href = './app.html'
+							window,open('app.html')
 						}
+					},
+					// 咨询，跳到底部
+					consult(e){
+						window.scrollTo(0,document.documentElement.scrollHeight-document.documentElement.clientHeight);
+					},
+					// 回到顶部
+					top(){
+						document.body.scrollTop = document.documentElement.scrollTop = 0;
 					}
 				},
 				mounted() {

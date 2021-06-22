@@ -1,4 +1,4 @@
-*{margin: 0 auto;padding: 0;list-style: none;box-sizing: border-box;}
+*{margin: 0 auto;padding: 0;list-style: none;box-sizing: border-box;border: none}
 body{background:#fff;}
 a{text-decoration: none;color: black;}
 ul{
@@ -16,6 +16,7 @@ ul li:hover{
 }
 iframe{
 	width: 100%;
+	;
 	/* overflow: hidden; */
 }
 .iframe1{
