@@ -10,7 +10,7 @@
 .content {
     text-align: center;
     border-radius: 8px;
-    background-color:rgba(186, 86, 83, 0.5);
+    background-color: #e9e9e9;
     position: relative;
     z-index: 10;
     top: 130px;
@@ -47,11 +47,13 @@ input{
     height: 35px;
 	border: none;
 	background-color:  rgba(211, 224 ,236, .1);
-    /* border:1px solid cornflowerblue; */
 	
 }
 .user_info div .user_info_but {
+    margin-top: 20px;
     margin-left:75px;
+    text-align: center;
+    background-color: #c9bebe;
     width: 110px;
     height: 30px;
 }

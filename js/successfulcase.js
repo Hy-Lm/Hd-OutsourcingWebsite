@@ -1,7 +1,8 @@
 	new Vue({
 			el: '#app',
 			data: {
-				url:'http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/',
+				// url:'http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/',
+				url:'http://www.huidait.cn/item2/Hd-OutsourcingWebsite/php',
 				imgUrl:'http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/images/',
 				ifyprojects:[],
 				ifyprojects_item:[],
