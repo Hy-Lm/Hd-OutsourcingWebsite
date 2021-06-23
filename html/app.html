@@ -9,13 +9,9 @@
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 		<script src="../js/axios.min.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
-		<script src="../js/swiper.min.js"></script>
 		<link rel="stylesheet" href="../css/public.css">
-		<link rel="stylesheet" href="../css/swiper.min.css">
-		<link rel="stylesheet" href="../css/Swiper.css">
 		<link rel="stylesheet" href="../css/index.css">
 		<link rel="stylesheet" href="../css/app.css">
-		<script src="../js/swiper.min.js"></script>
 		<script src="../js/vue.js"></script>
 	<body>
 		<div id="app">
@@ -38,8 +34,8 @@
 						<li>联系我们</li>
 					</ul>
 				</header>
-				<div class="banner">
-					<img src="../image/外包官网banner.png" alt="">
+				<div class="tu" style="background-color: #259CE8;">
+					<img src="../image/App.png" alt="">
 				</div>
 				<div class="tu">
 					<img src="../image/项目流程.png" alt="">
@@ -105,26 +101,27 @@
 				<div class="right">
 					<ul>
 						<li>
-							<div class="show" style="line-height: 60px;padding: 15px 0;">
-								<p>电话</p>
+							<div class="show" style="line-height: 40px;padding: 15px 0;">
+								<p>电话：</p>
+								<p>15011556811</p>
 								<p>15011556811</p>
 							</div>
-							<img src="../image/dianhua.png" alt="">
+							<img src="../image/dianhuagoutong-icon.png" alt="">
 							
 						</li>
 						<li>
-							<img src="../image/weixin.png" alt="">
+							<img src="../image/weixinzixun-icon.png" alt="">
 							<!-- <p>微信</p> -->
 							<p class="show show_img">微信咨询</p>
 							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
 						</li>
 						<li @click="consult($event)">
-							<img src="../image/zixun.png" alt="">
+							<img src="../image/zixundengji-icon.png" alt="">
 							<!-- <p>咨询</p> -->
 							<!-- <p class="show">咨询登记</p> -->
 						</li>
 						<li @click="top()">
-							<img src="../image/top.png" alt="">
+							<img src="../image/huidaodingbu-icon.png" alt="">
 						</li>
 					</ul>
 				</div>
@@ -206,17 +203,6 @@
 					this.load()
 				},
 
-			})
-		</script>
-		<script>
-			var mySwiper = new Swiper('.swiper-container', {
-				// 是否无缝滚动
-				loop: true,
-				// 如果需要分页器
-				pagination: '.swiper-pagination',
-				autoplay: 2000,
-				// 滑动到下一页触发条
-				longSwipesRatio: 0.33,
 			})
 		</script>
 	</body>
