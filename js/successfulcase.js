@@ -9,7 +9,15 @@
 					banner_title: [],
 			},
 			methods: {
-				
+				// 移入
+				mouseOver() {
+					console.log(111)
+					$('.banner .top_serve')[0].style = "display:block"
+				},
+				// 移出
+				mouseLeave() {
+					$('.banner .top_serve')[0].style = "display:none";
+				},
 				ifyproject(){
 					axios.get(this.url+'ifyproject.php').then(res=>{
 						// console.log(res)

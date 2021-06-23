@@ -17,7 +17,6 @@ header{
         float: right;
         li{
             float: left;
-            // margin-left: 50px;
             padding: 10px 20px ;
             text-align: right;
             width: 200px;
@@ -33,48 +32,6 @@ header{
         li:hover{
             color: #FA965A;
         }
-        .top_serve{
-            position: relative;
-            div{
-                position: absolute;
-                // display: none;
-                top:75px;
-                left:0;
-                z-index: 999;
-                width: 100%;
-                height: 800px;
-                background-color: rgba(0, 0, 0, 0.2);
-                border-radius: 0px 0px 10px 10px;
-                ol{
-                    width: 100%;
-                    height: 100%;
-                    li{
-                        margin: 0;
-                        font-size: 32px;
-                        text-align: center;
-                        width: 100%;
-                        height: 70px;
-                        line-height: 70px;
-                        // font-weight: bold;
-                        padding: 0;
-                        color: #000000;
-                    }
-                    li:hover{
-                        // background-color: #FA965A;
-                        // color: #707070;
-                    }
-                }
-            }
-            li:hover{
-                color: #FA965A;
-                div{
-                    display: block;
-                }
-            }
-        }
-        .top_serve:hover div{
-            display: block;
-        }
     }
 }
 .wb-box{
@@ -88,6 +45,37 @@ header{
         img{
             width: 100%;
             height: 100%;
+        }
+        .top_serve{
+            position: absolute;
+            display: none;
+            top:0px;
+            left:53%;
+            // transform: translateX(-50%);
+            z-index: 999;
+            width: 240px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 0px 0px 10px 10px;
+            ol{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                li{
+                    flex:1;
+                    text-align: center;
+                    margin: 0;
+                    font-size: 32px;
+                    width: 100%;
+                    padding: 30px 20px 0 20px;
+                    padding-top: 30px;
+                    color: #ffffff;
+                    cursor:pointer;
+                }
+                li:hover{
+                   background-color:  #16167d;
+                }
+            }
         }
     }
     // 网站建设我们更专业

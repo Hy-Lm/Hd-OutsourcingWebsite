@@ -32,42 +32,6 @@ header ul li a {
 header ul li:hover {
   color: #FA965A;
 }
-header ul .top_serve {
-  position: relative;
-}
-header ul .top_serve div {
-  position: absolute;
-  top: 75px;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  height: 800px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 10px 10px;
-}
-header ul .top_serve div ol {
-  width: 100%;
-  height: 100%;
-}
-header ul .top_serve div ol li {
-  margin: 0;
-  font-size: 32px;
-  text-align: center;
-  width: 100%;
-  height: 70px;
-  line-height: 70px;
-  padding: 0;
-  color: #000000;
-}
-header ul .top_serve li:hover {
-  color: #FA965A;
-}
-header ul .top_serve li:hover div {
-  display: block;
-}
-header ul .top_serve:hover div {
-  display: block;
-}
 .wb-box {
   width: 100%;
   position: relative;
@@ -79,6 +43,36 @@ header ul .top_serve:hover div {
 .wb-box .banner img {
   width: 100%;
   height: 100%;
+}
+.wb-box .banner .top_serve {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 53%;
+  z-index: 999;
+  width: 240px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 10px 10px;
+}
+.wb-box .banner .top_serve ol {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wb-box .banner .top_serve ol li {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+  width: 100%;
+  padding: 30px 20px 0 20px;
+  padding-top: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.wb-box .banner .top_serve ol li:hover {
+  background-color: #16167d;
 }
 .wb-box .website {
   width: 1400px;

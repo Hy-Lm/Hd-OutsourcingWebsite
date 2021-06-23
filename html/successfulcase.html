@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>成功案例</title>
-		<link rel="stylesheet" type="text/css" href="../css/public.css" />
-		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
-		<script src="../js/vue.js"></script>
-	</head>
-	<body>
-		<div id="app">
-			<div  class="wb-box">
-				<!-- 头部 -->
+
+<head>
+	<meta charset="utf-8">
+	<title>成功案例</title>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/public.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
+	<script src="../js/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="wb-box">
+			<!-- 头部 -->
 			<header>
 				<img src="../image/辉达外包LOGO.png">
 				<ul>
-					<li><a href="index.html"  target="_blank" >首页</a></li>
-					<li class="top_serve">服务项目
-						<div>
-							<ol>
-								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
-									{{item}}
-								</li>
-							</ol>
-						</div>
-					</li>
+					<li><a href="index.html" target="_blank">首页</a></li>
+					<li  @mouseover="mouseOver">服务项目</li>
 					<li>成功案例</li>
 					<li>联系我们</li>
 				</ul>
 			</header>
-			<!-- 背景图 -->
-			<div class="bg">
+			<!-- 轮播 -->
+			<div class="bg banner">
 				<img src="../image/cganli.png">
+				<div class="top_serve" @mouseleave="mouseLeave">
+					<ol>
+						<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+							{{item}}
+						</li>
+					</ol>
+				</div>
 			</div>
 			<!-- 成功案例 -->
 			<div class="case">
@@ -64,7 +66,7 @@
 							<p>15011556811</p>
 						</div>
 						<img src="../image/dianhuagoutong-icon.png" alt="">
-						
+
 					</li>
 					<li>
 						<img src="../image/weixinzixun-icon.png" alt="">
@@ -122,12 +124,13 @@
 							京ICP备13009754号</p>
 					</div>
 				</div>
-				
-			</div>
+
 			</div>
 		</div>
-	</body>
-	<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8">
-	</script>
-	<script src="../js/successfulcase.js" type="text/javascript" charset="utf-8"></script>
+	</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8">
+</script>
+<script src="../js/successfulcase.js" type="text/javascript" charset="utf-8"></script>
+
 </html>
