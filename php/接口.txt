@@ -1,8 +1,14 @@
 banner.php  首页轮播   不传值  返回 背景图片，多个小标题（app开发）
 
 industry.php 行业      不传值  返回 所有参数
+
 project.php   项目     不传值  返回 项目名称、项目图片
+
 ifyproject.php 所有项目 不传值  返回 所有项目
+
 news.php    	新闻    不传值  返回 新闻时间、新闻标题
 
+login.php   后台登陆  传账号，密码  返回ok ，no
+
+addBanner.php  通过from表单提交图片  
 
