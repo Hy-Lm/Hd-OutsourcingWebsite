@@ -22,9 +22,7 @@
 		                <input type="password" class="user_info_input" id="pass" placeholder="请输入密码">
 		            </div>
 		            <div>
-		                <label>
-		                    <input type="button" class="user_info_but" value="登录" onclick="sub()">
-		                </label>
+		                <input type="button" class="user_info_but" value="登录" onclick="sub()">
 		            </div>
 		        </div>
 		    </div>
@@ -52,7 +50,7 @@
                 $('#pass').focus()
                 return false
             }
-			let url='http://192.168.1.170/dream/php/login.php?name='+user+'&password='+pass;
+			let url='http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/login.php?name='+user+'&pass='+pass;
 			axios.get(url).then(res=>{
 				console.log(res)
 				if(res.data=='ok'){

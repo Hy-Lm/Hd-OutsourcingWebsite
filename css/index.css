@@ -17,12 +17,13 @@ header ul {
 }
 header ul li {
   float: left;
-  padding: 10px 20px ;
+  padding: 10px 10px ;
   text-align: right;
-  width: 200px;
+  width: 160px;
   height: 45px;
   line-height: 25px;
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: bold;
   color: #333333;
   cursor: pointer;
 }
@@ -30,6 +31,9 @@ header ul li a {
   color: #000;
 }
 header ul li:hover {
+  color: #FA965A;
+}
+header ul a:hover {
   color: #FA965A;
 }
 .wb-box {
@@ -48,26 +52,24 @@ header ul li:hover {
   position: absolute;
   display: none;
   top: 0px;
-  left: 53%;
+  left: 62%;
   z-index: 999;
-  width: 240px;
+  width: 200px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 10px 10px;
 }
 .wb-box .banner .top_serve ol {
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 .wb-box .banner .top_serve ol li {
   flex: 1;
   text-align: center;
   margin: 0;
-  font-size: 32px;
+  font-size: 24px;
   width: 100%;
-  padding: 30px 20px 0 20px;
-  padding-top: 30px;
+  height: 60px;
+  line-height: 60px;
   color: #ffffff;
   cursor: pointer;
 }
@@ -201,6 +203,10 @@ header ul li:hover {
   padding: 25px 0;
   margin-right: 64px;
 }
+.wb-box .solution .solution_list .list_div ul li img {
+  width: 80px;
+  height: 80px;
+}
 .wb-box .solution .solution_list .list_div ul li:last-child {
   margin: 0;
 }
@@ -298,6 +304,9 @@ header ul li:hover {
   padding: 15px 0;
   line-height: 33px;
 }
+.wb-box .serve ul img:hover {
+  transform: scale(1.2);
+}
 .wb-box .safeguard {
   width: 1400px;
   height: 590px;
@@ -325,6 +334,9 @@ header ul li:hover {
   opacity: 1;
   font-size: 18px;
   color: #666666;
+}
+.wb-box .safeguard ul img:hover {
+  transform: scale(1.2);
 }
 .wb-box .diligently {
   width: 100%;
@@ -367,7 +379,6 @@ header ul li:hover {
   height: 67px;
   opacity: 1;
   font-size: 48px;
-  font-weight: bold;
   text-align: center;
   color: #000000;
 }
@@ -389,54 +400,54 @@ header ul li:hover {
   position: fixed;
   z-index: 999;
   right: 0;
-  top: 20%;
+  top: 35%;
 }
 .wb-box .right ul li {
   position: relative;
-  height: 168px;
+  height: 80px;
   text-align: right;
   margin-bottom: 5px;
   cursor: pointer;
 }
 .wb-box .right ul li img {
-  width: 168px;
-  height: 168px;
+  width: 80px;
+  height: 80px;
 }
 .wb-box .right ul li p {
-  font-size: 24px;
+  font-size: 16px;
   text-align: left;
-  padding-left: 15px;
+  padding-left: 50px;
 }
 .wb-box .right ul li .show {
   position: absolute;
-  width: 300px;
-  height: 168px;
+  width: 180px;
+  height: 80px;
   opacity: 0;
   top: 0;
-  font-size: 24px;
-  line-height: 168px;
+  font-size: 18px;
+  line-height: 80px;
   margin: 0;
-  background-color: #E9E9E9;
+  background-color: #F9F9F9;
 }
 .wb-box .right ul li .show img {
-  width: 150px;
+  width: 100px;
 }
 .wb-box .right ul li .show_img::after {
   content: '';
   background: url(../image/外包二维码.jpg) no-repeat;
   background-size: 100%;
-  width: 285px;
-  height: 285px;
+  width: 180px;
+  height: 180px;
   position: absolute;
-  left: -285px;
+  left: -180px;
 }
 .wb-box .right ul li:nth-child(1):hover img {
   opacity: 0;
 }
 .wb-box .right ul li:nth-child(1):hover .show {
   opacity: 1;
-  width: 300px;
-  background-color: #e9e9e9;
+  width: 180px;
+  background-color: #F9F9F9;
   transform: translate(-100px, 0);
   transition: all 1s;
 }
@@ -445,21 +456,27 @@ header ul li:hover {
 }
 .wb-box .right ul li:nth-child(2):hover .show {
   opacity: 1;
-  width: 300px;
-  background-color: #e9e9e9;
+  width: 180px;
+  background-color: #F9F9F9;
   transform: translate(-100px, 0);
   transition: all 1s;
 }
 .general {
   text-align: center;
   padding: 90px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.general p,
+.general div {
+  float: left;
 }
 .general p:nth-child(1) {
   width: 100%;
   height: 67px;
   opacity: 1;
   font-size: 48px;
-  font-weight: bold;
   color: #333333;
   margin-bottom: 10px;
 }
@@ -507,7 +524,7 @@ header ul li:hover {
 }
 .footer .footer_box ul {
   float: left;
-  margin-right: 145px;
+  margin-right: 120px;
 }
 .footer .footer_box ul li {
   margin: 12px 0;
