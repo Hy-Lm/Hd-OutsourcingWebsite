@@ -1,3 +1,4 @@
+
 #app{
     box-sizing: border-box;
     overflow: hidden;
@@ -98,7 +99,6 @@ header{
                 img{
                     width: 133px;
                     height: 133px;
-                    
                 }
                 .title{
                     padding: 18px 0;
@@ -120,6 +120,11 @@ header{
                     color: #666666;
                     line-height: 34px;
                     text-align: left;
+                }
+            }
+            li:hover{
+                img{
+                    animation: jello 1s;
                 }
             }
         }
@@ -322,7 +327,7 @@ header{
                 }
             }
             img:hover{
-                transform: scale(1.2);
+                animation: swing 1s;
             }
         }
     }
@@ -354,7 +359,7 @@ header{
                 }
             }
             img:hover{
-                transform: scale(1.2);
+                animation: bounceIn 1s;
             }
         }
     }
@@ -469,6 +474,11 @@ header{
                 height: 180px;
                 position: absolute;
                 left: -180px;
+            }
+        }
+        li:hover{
+            img{
+                animation: bounce 1s;
             }
         }
         li:nth-child(1):hover {

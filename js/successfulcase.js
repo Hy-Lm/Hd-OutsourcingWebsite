@@ -2,12 +2,12 @@
 			el: '#app',
 			data: {
 				// url:'http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/',
-				url:'http://www.huidait.cn/item2/Hd-OutsourcingWebsite/php',
-				imgUrl:'http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/images/',
+				url:'http://www.huidait.cn/php/',
+				imgUrl:'http://www.huidait.cn/php/images/',
 				ifyprojects:[],
 				ifyprojects_item:[],
 				bannerImgs: [],
-					banner_title: [],
+				banner_title: [],
 			},
 			methods: {
 				// 移入
