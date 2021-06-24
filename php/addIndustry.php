@@ -42,7 +42,7 @@ include('./public.php');
 		    }
 	$SmallImg=substr($val,0,strlen($val)-1);;//小标题图片
 // 判断数据库是否这个标题 有的话就是修改  没有的话就是增加
-$title=$_POST['title'];
+$title=$_POST['title'];//标题
 $sql="select * from industry where title='$title'";
 $res=$conn->query($sql);
 if($res->num_rows){

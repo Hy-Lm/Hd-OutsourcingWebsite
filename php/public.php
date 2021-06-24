@@ -4,5 +4,5 @@
     $conn->query('set names utf8');
     header('Access-Control-Allow-Origin:*');
 	$URL="./php/images";
-	// $URL='http://localhost/item2/Hd-OutsourcingWebsite/php/images/';
+	// $URL='http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/images/';
 ?>
