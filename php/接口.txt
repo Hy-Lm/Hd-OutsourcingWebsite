@@ -12,3 +12,14 @@ login.php   后台登陆  传账号，密码  返回ok ，no
 
 addBanner.php  通过from表单提交图片  
 
+addTitle.php--增加/修改/删除标题   以数组的形式传递过来
+
+addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟小标题内容以-分开
+
+addIfyproject.php--增加/修改项目  通过from表单形式传递  传id 
+
+delIfyproject.php--删除项目   传id 返回ok 或 no
+
+addNews.php--增加/修改时间  传id，time，title  以get的形式传递 
+
+delNews.php--删除项目   传id 返回ok 或 no

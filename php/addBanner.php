@@ -25,9 +25,9 @@ $arr=$_FILES['imgs'];
 		$sql="update banner set bannerImgs='$val'";
 		$res=$conn->query($sql);
 		if($res){
-			echo "<script>alert('图片上传成功');history.go(-1);</script>";
+			echo "<script>alert('图片替换成功');history.go(-1);</script>";
 			
 		}else{
-			echo "<script>alert('图片上传失败')</script>";
+			echo "<script>alert('图片替换失败')</script>";
 		}
 ?>
