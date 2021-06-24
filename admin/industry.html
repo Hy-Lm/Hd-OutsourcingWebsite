@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>行业</title>
+	<link href="css/adminStyle.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="./css/banner.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="box">
+		<div class="wrap">
+			<div class="page-title">
+				<span class="modular fl"><i class="add_user"></i><em>行业</em></span>
+			</div>
+			<form>
+                <table class="list-style">
+                    <tr style="text-align: center;">
+                        <td rowspan="15" style="width: 5%;">行业</td>  
+                    </tr>
+
+                </table>
+            </form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 防止用户从地址栏直接进入
+	// if(window.sessionStorage.getItem('user')==''|| window.sessionStorage.getItem('user')==null){
+	// 	window.location.href="index.html"
+	// }
+	new Vue({
+		el: '#box',
+		data: {
+			list: [],
+			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
+			// url:'http://www.huidait.cn/php/',
+		},
+		methods: {
+			// 初始化图片
+			load() {
+				let url = this.url + "industry.php"
+				axios.get(url).then(res => {
+					this.list = res.data
+					console.log(this.list)
+
+				})
+			}
+		},
+		mounted() {
+			this.load()
+		}
+	})
+</script>
+
+</html>

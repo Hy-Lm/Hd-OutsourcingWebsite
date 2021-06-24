@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var system = {};
+        var p = navigator.platform;
+        console.log(p);
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        if (system.win || system.mac) {//如果是电脑
+            console.log('电脑')
+            location.replace("./login.html")
+        } else { //如果是手机,
+            this.uploadShow = false
+            location.replace("./login.html")
+            console.log('手机')
+        }
+    </script>
+</body>
+
+</html>

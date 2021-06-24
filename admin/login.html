@@ -29,6 +29,8 @@
 		</div>
 	</body>
 	<script type="text/javascript">
+	// let url='http://www.huidait.cn/php/'
+	let url='http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/'
 		 //键盘按下
 		 window.onkeydown=function(e){
 			//console.log(e.keyCode)
@@ -50,8 +52,8 @@
                 $('#pass').focus()
                 return false
             }
-			let url='http://192.168.8.103/item2/Hd-OutsourcingWebsite/php/login.php?name='+user+'&pass='+pass;
-			axios.get(url).then(res=>{
+			let urls=url + 'login.php?name='+user+'&pass='+pass;
+			axios.get(urls).then(res=>{
 				console.log(res)
 				if(res.data=='ok'){
 					window.sessionStorage.setItem('user',user);
