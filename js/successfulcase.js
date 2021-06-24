@@ -4,6 +4,7 @@
 				url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 				// url:'http://www.huidait.cn/php/',
 				// imgUrl:'http://www.huidait.cn/php/images/',
+				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
 				ifyprojects:[],
 				ifyprojects_item:[],
 				bannerImgs: [],

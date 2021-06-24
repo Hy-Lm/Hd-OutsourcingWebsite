@@ -3,14 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>APP开发</title>
-		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>  
-		<meta name="description" content="辉达IT教育国内良心品牌，辉达IT教育有多年的外包项目经验，开设培训班JAVA,UI设计，全栈，网站测试等多种课程，登陆官网，了解更多培训课程（https://www.hd512.com)"/>  
+		<meta name="keywords" content=""/>  
+		<meta name="description" content=""/>  
 		<link rel="icon" href="../image/logos.png" sizes="50x50"> 
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 		<script src="../js/axios.min.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
 		<link rel="stylesheet" href="../css/public.css">
 		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="../css/animate.css">
 		<link rel="stylesheet" href="../css/app.css">
 		<script src="../js/vue.js"></script>
 	<body>
@@ -140,7 +141,9 @@
 						</ul>
 						<ul>
 							<li>关于我们</li>
-							<li>辉耀简介</li>
+							<li>
+								<a href="./intro.html" target="_blank">辉耀简介</a>
+							</li>
 							<li>客户案例</li>
 							<li>新闻资讯</li>
 						</ul>
@@ -169,8 +172,8 @@
 			var vm = new Vue({
 				el: '#app',
 				data: {
-					url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
-					// url:'http://www.huidait.cn/php/',
+					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+					url:'http://www.huidait.cn/php',
 					bannerImgs: [],
 					banner_title: [],
 					project:[]
