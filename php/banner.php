@@ -11,6 +11,7 @@ $imgs=null;
 foreach($row['bannerImgs'] as $val){
 	$imgs.=$URL.$val.',';
 }
+$imgs= substr($imgs,0,strlen($imgs)-1);
 $row['bannerImgs']=explode(',',$imgs);
 $row['banner_title']=explode(',',$row['banner_title']);
 echo json_encode($row);
