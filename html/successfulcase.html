@@ -52,7 +52,7 @@
 				</div>
 				<div class="case-bottom">
 					<div class="case-bottom-items" :key="index" v-for="(item,index) in ifyprojects_item">
-						<img :src="item.imgsrc" alt="">
+						<img :src="'.'+item.imgsrc" alt="">
 						<div class="case-bottom-items-con">
 							{{item.title}}
 						</div>

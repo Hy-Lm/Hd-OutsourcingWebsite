@@ -38,7 +38,7 @@
 .case-top-l::after{
 	content: '';
 	position: absolute;
-	top: 13px;
+	top: 0;
 	left: 0;
 	width: 7px;
 	height: 46px;
