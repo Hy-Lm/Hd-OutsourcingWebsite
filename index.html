@@ -3,9 +3,9 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>IT教育选辉达IT,辉达IT教育助你成功走向高薪--辉达IT教育官网</title>  
-		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>  
-		<meta name="description" content="辉达IT教育国内良心品牌，辉达IT教育有多年的外包项目经验，开设培训班JAVA,UI设计，全栈，网站测试等多种课程，登陆官网，了解更多培训课程（https://www.hd512.com)"/>  
+		<title>官网</title>  
+		<meta name="keywords" content=""/>  
+		<meta name="description" content=""/>  
 		<link rel="icon" href="./image/logos.png" sizes="50x50"> 
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
@@ -18,7 +18,9 @@
 		<link rel="stylesheet" href="./css/Swiper.css">
 		<script src="./js/swiper.min.js"></script>
 		
-
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<body>
 		<div id="app">
 			<div class="wb-box">
@@ -365,7 +367,9 @@
 						</ul>
 						<ul>
 							<li>关于我们</li>
-							<li>辉耀简介</li>
+							<li>
+								<a href="./html/intro.html" target="_blank">辉耀简介</a>
+							</li>
 							<li>客户案例</li>
 							<li>新闻资讯</li>
 						</ul>
@@ -387,6 +391,31 @@
 					</div>
 
 				</div>
+				<!-- 弹窗 -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width: 400px; margin-top: 40px;">
+						<div class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									项目开发您定价
+								</h4>
+							</div>
+							<div class="modal-body">
+								<h4>团队免费驻场开发</h4>
+							</div>
+							<div class="modal-body">
+								<h4>15011556811</h4>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+								</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
 			</div>
 		</div>
 
@@ -394,8 +423,8 @@
 			var vm = new Vue({
 				el: '#app',
 				data: {
-					url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
-					// url:'http://www.huidait.cn/php/',
+					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+					url:'http://www.huidait.cn/php',
 					bannerImgs: [],
 					banner_title: [],
 					industry: [],
@@ -497,7 +526,12 @@
 					// 回到顶部
 					top() {
 						document.body.scrollTop = document.documentElement.scrollTop = 0;
-					}
+					},
+					openwin(){
+						setInterval(function(){
+							$('#myModal').modal('show')
+						}, 120000) 
+				　　}
 				},
 				mounted() {
 					var system = {};
@@ -514,6 +548,7 @@
 						return false
 					}
 					this.load()
+					this.openwin()
 				}
 			})
 			var mySwiper = new Swiper('.banner .swiper-container', {
