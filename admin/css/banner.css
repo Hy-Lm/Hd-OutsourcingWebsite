@@ -17,7 +17,102 @@ input{
 	border:none;
 	font-size: 16px;
 }
-textarea{
+body {
+	height: 100vh;
+	background-color: #fff;
+}
+
+#box {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.item {
+	display: flex;
+	flex: 1;
+	
+	border-bottom: 1px solid #CCCCCC;
+	align-items: center;
+}
+
+.item_imgs {
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.item_image {
+	width: 300px;
+	height: 150px;
+	margin:0 8px;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.item_image鈥攊con {
+	position: absolute;
+	right: -5px;
+	top: -10px;
+	z-index: 1;
+}
+
+.item_image .item_image_imgs {
 	width: 100%;
+	height: 100%;
+}
+
+.item_image .item_image_imgs img {
+	width: 100%;
+	height: 100%;
+}
+
+.item_title {
+	height: 100%;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid #CCCCCC;
+}
+
+.item_eit {
+	height: 100%;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+.item_eit>span,
+.icon {
+	cursor: pointer;
+}
+
+.item_eit>span:hover {
+	color: #EC971F;
+}
+
+#uppic {
 	border: none;
+	width: 85px;
+}
+.ban_tit{
+	position: relative;
+}
+.ban_tit>div{
+	position: absolute;
+	right:10px;
+	top:0;
+	width: 10px;
+	font-size: 24px;
+	border-radius: 50%;
+	height: 10px;
+	/* color:red; */
+	cursor: pointer;
 }

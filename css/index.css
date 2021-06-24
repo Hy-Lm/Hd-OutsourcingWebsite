@@ -52,7 +52,7 @@ header ul a:hover {
   position: absolute;
   display: none;
   top: 0px;
-  left: 62%;
+  left: 64%;
   z-index: 999;
   width: 200px;
   height: 100%;
@@ -279,7 +279,7 @@ header ul a:hover {
   top: 55px;
 }
 .wb-box .why .why_list .why_tu p {
-  height: 106px;
+  height: 140px;
   font-size: 18px;
   text-align: left;
   color: #666666;
@@ -338,7 +338,7 @@ header ul a:hover {
   font-size: 18px;
   color: #666666;
 }
-.wb-box .safeguard ul img:hover {
+.wb-box .safeguard ul li > img:hover {
   animation: bounceIn 1s;
 }
 .wb-box .diligently {
@@ -403,7 +403,7 @@ header ul a:hover {
   position: fixed;
   z-index: 999;
   right: 0;
-  top: 35%;
+  top: 20%;
 }
 .wb-box .right ul li {
   position: relative;
@@ -432,18 +432,6 @@ header ul a:hover {
   margin: 0;
   background-color: #F9F9F9;
 }
-.wb-box .right ul li .show img {
-  width: 100px;
-}
-.wb-box .right ul li .show_img::after {
-  content: '';
-  background: url(../image/外包二维码.jpg) no-repeat;
-  background-size: 100%;
-  width: 180px;
-  height: 180px;
-  position: absolute;
-  left: -180px;
-}
 .wb-box .right ul li:hover img {
   animation: bounce 1s;
 }
@@ -457,15 +445,32 @@ header ul a:hover {
   transform: translate(-100px, 0);
   transition: all 1s;
 }
+.wb-box .right ul li:nth-child(1):hover .show_img::after {
+  content: '15011556811';
+  background-color: #F9F9F9;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  padding-left: 20px;
+  left: -120px;
+}
 .wb-box .right ul li:nth-child(2):hover img {
   opacity: 0;
 }
 .wb-box .right ul li:nth-child(2):hover .show {
   opacity: 1;
-  width: 180px;
   background-color: #F9F9F9;
   transform: translate(-100px, 0);
   transition: all 1s;
+}
+.wb-box .right ul li:nth-child(2):hover .show_img::after {
+  content: '';
+  background: url(../image/外包二维码.jpg) no-repeat;
+  background-size: 100%;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: -180px;
 }
 .general {
   text-align: center;
@@ -552,8 +557,7 @@ header ul a:hover {
 .footer .footer_box div p {
   margin: 12px 0;
   width: 174px;
-  height: 56px;
-  line-height: 56px;
+  line-height: 32px;
   border: 1px solid #ffffff;
   border-radius: 8px;
   text-align: center;
@@ -570,8 +574,75 @@ header ul a:hover {
 }
 .footer .footer_box .footer_bot p {
   width: 100%;
+  height: 56px;
   border: none;
   text-align: center;
   font-size: 16px;
   padding: 30px 0;
+}
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+  header,
+  .website,
+  .solution_box,
+  .why,
+  .serve,
+  .safeguard,
+  .diligently_box,
+  .dynamic {
+    width: 980px !important;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  header,
+  .website,
+  .solution_box,
+  .solution_list,
+  .why,
+  .serve,
+  .safeguard,
+  .diligently_box,
+  .dynamic,
+  .footer_box {
+    width: 1200px !important;
+  }
+  .wb-box .banner .top_serve {
+    position: absolute;
+    top: 0px;
+    left: 59%;
+  }
+  .wb-box .website ul li .title {
+    font-size: 28px;
+  }
+  .wb-box .website ul li p {
+    font-size: 18px;
+  }
+  .wb-box .solution .solution_list .list_div ul li ol li {
+    font-size: 16px;
+  }
+  .wb-box .footer .footer_box ul {
+    margin-right: 70px;
+  }
+  .wb-box .why .why_list .why_tu div {
+    width: 198px;
+  }
+  .wb-box .why .why_list .why_tu div span {
+    margin-left: 50px;
+  }
+  .wb-box .diligently .diligently_box ul li div {
+    line-height: 36px;
+    background-color: transparent;
+  }
+}
+@media screen and (max-width: 1400px) {
+  header,
+  .solution_list,
+  .website,
+  .solution_box,
+  .why,
+  .serve,
+  .safeguard,
+  .diligently_box,
+  .dynamic {
+    width: 1400px;
+  }
 }
