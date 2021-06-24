@@ -12,7 +12,7 @@ login.php   后台登陆  传账号，密码  返回ok ，no
 
 addBanner.php  通过from表单提交图片  
 
-addTitle.php--增加/修改/删除标题   以数组的形式传递过来
+addTitle.php--增加/修改/删除标题   以title=数组的形式传递过来
 
 addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟小标题内容以-分开
 
