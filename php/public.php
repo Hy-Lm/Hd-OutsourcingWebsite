@@ -12,6 +12,6 @@
 	  return $data;
 	 }
 	}
-	$URL="./php/images/";
+	$URL="../php/images/";
 	// $URL='http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/images/';
 ?>

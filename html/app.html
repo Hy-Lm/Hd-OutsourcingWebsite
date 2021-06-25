@@ -88,9 +88,9 @@
 						</div>
 						<ul>
 							<li v-for="project in this.project">
-								<img :src="project.img" alt="">
+								<img :src="project.imgsrc" alt="">
 								<div>
-									{{project.name}}
+									{{project.title}}
 								</div>
 							</li>
 						</ul>
@@ -219,10 +219,11 @@
 							// console.log(this.banner_title)
 						})
 						// 项目
-						let project = this.url + "/project.php"
+						let project = this.url + "/ifyproject.php"
 						axios.get(project).then(res1 => {
-							// console.log(res1.data)
-							this.project = res1.data
+							console.log(res1.data)
+							this.project = res1.data[0].all
+							this.project=this.project.splice(0,6)
 							console.log(this.project)
 						})
 					},
