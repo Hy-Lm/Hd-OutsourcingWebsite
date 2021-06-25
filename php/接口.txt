@@ -2,8 +2,6 @@ banner.php--首页轮播   不传值  返回 背景图片，多个小标题（ap
 
 industry.php--行业      不传值  返回 所有参数
 
-project.php--项目     不传值  返回 项目名称、项目图片
-
 ifyproject.php--所有项目 不传值  返回 所有项目
 
 news.php--新闻    不传值  返回 新闻时间、新闻标题
@@ -14,7 +12,7 @@ addBanner.php--添加/修改轮播  通过from表单提交图片
 
 addTitle.php--增加/修改/删除标题   以title=数组的形式传递过来
 
-addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟小标题内容以-分开
+addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟以-分开,小标题内容以逗号分开
 								$BigTitle=$_POST['BigTitle'];//大标题
 								$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
 								$SmallTitle=$_POST['SmallTitle'];//小标题

@@ -16,7 +16,9 @@ $arr=$_FILES['imgs'];
 	    $tempName=$files[$i]['tmp_name'];//临时文件名
 	                //避免上传文件的中文名乱码
 	                $fileName=iconv("UTF-8", "GBK", $fileName);//把iconv抓取到的字符编码从utf-8转为gbk输出
-	                $fileName=str_replace(".", time().".", $fileName);//在图片名称后加入时间戳，避免重名文件覆盖
+					// 截取后缀名
+					$hou=pathinfo($fileName,PATHINFO_EXTENSION);
+	                $fileName=rand(10,1000).time().'.'.$hou;//在图片名称后加入时间戳，避免重名文件覆盖
 	                move_uploaded_file($tempName, "images/".$fileName);
 					$val.=$fileName.',';
 	    }

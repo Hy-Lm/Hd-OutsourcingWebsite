@@ -5,7 +5,7 @@ include('./public.php');
 	$BigTitle=$_POST['BigTitle'];//大标题
 	$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
 	$SmallTitle=$_POST['SmallTitle'];//小标题
-	$SmallTitleCon=$_POST['SmallTitleCon'];//小标题内容
+	
 	// 小标题内容以-分开 转换成字符串以,拼接
 	$SmallTitle=explode('-',$SmallTitle);
 		$SmallTitle_con=null;           //存储内容
@@ -14,13 +14,17 @@ include('./public.php');
 			}
 			// 小标题
 		$SmallTitle_con= substr($SmallTitle_con,0,strlen($SmallTitle_con)-1);
-		$SmallTitleCon=explode('-',$SmallTitleCon);
+		// //小标题内容
+		$SmallTitleCon0=$_POST['SmallTitleCon0'];//小标题内容1
+		$SmallTitleCon1=$_POST['SmallTitleCon1'];//小标题内容2
+		$SmallTitleCon2=$_POST['SmallTitleCon2'];//小标题内容3
+		// $SmallTitleCon=explode('-',$SmallTitleCon);
 				$SmallTitleCon_con=null;           //存储内容
-					foreach($SmallTitleCon as $val){
-						$SmallTitleCon_con.=$val.',';
-					}
+				$SmallTitleCon_con=$SmallTitleCon0.'-'.$SmallTitleCon1.'-'.$SmallTitleCon2;
 			// 小标题内容
-		$SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
+		// $SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
+		// echo $SmallTitleCon_con;
+		// 图片
 	$arr=$_FILES['imgs'];
 		    $files=array();
 		    for($i=0;$i<count($arr['name']);$i++){//count()统计数组键值name长度
@@ -36,7 +40,9 @@ include('./public.php');
 		    $tempName=$files[$i]['tmp_name'];//临时文件名
 		                //避免上传文件的中文名乱码
 		                $fileName=iconv("UTF-8", "GBK", $fileName);//把iconv抓取到的字符编码从utf-8转为gbk输出
-		                $fileName=str_replace(".", time().".", $fileName);//在图片名称后加入时间戳，避免重名文件覆盖
+						// 截取后缀名
+						$hou=pathinfo($fileName,PATHINFO_EXTENSION);
+						$fileName=rand(10,1000).time().'.'.$hou;//在图片名称后加入时间戳，避免重名文件覆盖
 		                move_uploaded_file($tempName, "images/".$fileName);
 						$val.=$fileName.',';
 		    }
