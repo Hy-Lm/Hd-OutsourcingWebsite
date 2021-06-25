@@ -1,19 +1,21 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>行业</title>
 	<link href="css/adminStyle.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="./css/banner.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/public.js"></script>
 	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/axios.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -23,13 +25,77 @@
 				<span class="modular fl"><i class="add_user"></i><em>行业</em></span>
 			</div>
 			<form>
-                <table class="list-style">
-                    <tr style="text-align: center;">
-                        <td rowspan="15" style="width: 5%;">行业</td>  
-                    </tr>
-
-                </table>
-            </form>
+				<table class="list-style">
+					<tr style="text-align: center;">
+						<td style="width: 10%;">类型</td>
+						<td style="width: 10%;">标题</td>
+						<td style="width: 25%;">标题内容</td>
+						<td style="width: 10%;">图片</td>
+						<td style="width: 10%;">分类</td>
+						<td style="width: 25%;">分类简介</td>
+						<td style="width: 10%;">编辑</td>
+					</tr>
+					<tr v-for="(item,index) in list" :key="index">
+						<td style="width: 10%;">{{item.title}}</td>
+						<td>{{item.big_title}}</td>
+						<td>{{item.big_title_con}}</td>
+						<td>
+							<div v-for="imgs in item.small_img">
+								<img :src="imgs" alt=""
+									style="background-color: #beb5b5;width: 70px; height: 70px;margin: 5px 0; padding: 5px 0;">
+							</div>
+						</td>
+						<td style="width: 140px;">
+							<p v-for="(small_t,i) in item.small_title">{{i+1}}、{{small_t}}</p>
+						</td>
+						<td>
+							<p v-for="(small_con,ins) in item.small_title_con">
+								{{ins+1}}、
+								<span style="display:list-item;list-style-type:disc;margin-left: 20px;"
+									v-for="con in small_con">{{con}}</span>
+							</p>
+						</td>
+						<td style="text-align: center;">
+							<a title="编辑" @click="compile(item.id,index)" data-toggle="modal" data-target="#myModal">
+								<span>编辑</span>
+							</a>
+							<a title="删除" @click="del(item.id)">
+								<span>删除</span>
+							</a>
+						</td>
+						<!-- 模态框 -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">
+											数据编辑
+										</h4>
+									</div>
+									<div class="modal-body">
+										<form role="form" :action="this.url+'add_gift.php'" method="post"
+											enctype="multipart/form-data">
+											<div class="form-group">
+												<input type="hidden" name="id" id="" value="" />
+												<label>类型</label>
+												<input class="form-control" type="text" name="" placeholder="请输入类型" />
+												<label>类型</label>
+												<input class="form-control" type="text" name="" placeholder="请输入类型" />
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+												</button>
+												<input type="submit" name="sub" value="提交更改" class="btn btn-primary" />
+											</div>
+										</form>
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal -->
+						</div>
+						<!-- 结束 -->
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 </body>
@@ -44,15 +110,21 @@
 			list: [],
 			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 			// url:'http://www.huidait.cn/php/',
+			small_title_con: []
 		},
 		methods: {
+			compile(id, index) {
+				console.log(id, index)
+			},
+			del(id) {
+				console.log(id)
+			},
 			// 初始化图片
 			load() {
 				let url = this.url + "industry.php"
 				axios.get(url).then(res => {
 					this.list = res.data
 					console.log(this.list)
-
 				})
 			}
 		},

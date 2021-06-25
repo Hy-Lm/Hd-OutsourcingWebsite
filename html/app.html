@@ -14,6 +14,9 @@
 		<link rel="stylesheet" href="../css/animate.css">
 		<link rel="stylesheet" href="../css/app.css">
 		<script src="../js/vue.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<body>
 		<div id="app">
 			<div class="wb-box">
@@ -28,7 +31,7 @@
 					</ul>
 				</header>
 				<div class="tu banner" style="background-color: #259CE8;">
-					<img src="../image/App.png" alt="">
+					<img src="../image/APP开发Banner.png" alt="">
 					<div class="top_serve" @mouseleave="mouseLeave">
 						<ol>
 							<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
@@ -165,6 +168,32 @@
 					</div>
 
 				</div>
+				<!-- 弹窗 -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width: 400px; margin-top: 0; top: 50%; left: 0; transform: translate(0%, -50%);">
+						<div class="modal-content" style="background: #fa965a;padding:0 20px;text-align:center; font-size:32px;">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									项目开发您定价
+								</h4>
+							</div>
+							<div class="modal-body">
+								<h4>团队免费驻场开发</h4>
+							</div>
+							<hr style="margin: 0;">
+							<div class="modal-body">
+								<h4>15011556811</h4>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+								</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
 			</div>
 		</div>
 
@@ -205,10 +234,18 @@
 					// 移出
 					mouseLeave() {
 						$('.banner .top_serve')[0].style = "display:none";
-					}
+					},
+					// 弹窗
+					openwin(){
+						setInterval(function(){
+							$('#myModal').modal('show')
+						}, 120000) 
+				　　}
 				},
 				mounted() {
 					this.load()
+					this.openwin()
+					$('#myModal').modal('show')
 				},
 
 			})
