@@ -3,7 +3,7 @@
 			data: {
 				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 				url:'http://www.huidait.cn/php/',
-				imgUrl:'http://www.huidait.cn/php/images/',
+				// imgUrl:'http://www.huidait.cn/php/images/',
 				ifyprojects:[],
 				ifyprojects_item:[],
 				bannerImgs: [],
@@ -30,7 +30,7 @@
 						this.ifyprojects[0].active=true
 					})
 					// 轮播
-					let ban = this.url + "banner.php"
+					let ban = this.url + "/banner.php"
 					axios.get(ban).then(res => {
 						console.log(res.data)
 						this.bannerImgs = res.data.bannerImgs
@@ -53,16 +53,8 @@
 						window,open('app.html')
 					}
 				},
-				// 弹窗
-				openwin(){
-					setInterval(function(){
-						$('#myModal').modal('show')
-					}, 120000) 
-			　　}
 			},
 			mounted() {
 				this.ifyproject()
-				this.openwin()
-				$('#myModal').modal('show')
 			},
 		})
