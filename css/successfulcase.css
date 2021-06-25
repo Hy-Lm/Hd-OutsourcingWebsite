@@ -18,12 +18,15 @@
 	margin-top: 116px;
 	width: 1400px;
 	overflow: hidden;
+	
 }
 
 .case-top {
+	width: 1400px;
 	margin: 0;
 	height: 67px;
-	/* line-height: 67px; */
+	margin: 0 auto;
+	margin-bottom: 86px;
 }
 
 .case-top-l {
@@ -59,8 +62,6 @@
 	/* width: 120px; */
 	opacity: 1;
 	font-size: 32px;
-	font-family: PingFang SC, PingFang SC-Regular;
-	font-weight: 400;
 	text-align: left;
 	color: #333333;
 	border-right: 1px solid #999999;
@@ -71,38 +72,12 @@
 	padding-right: 0;
 	border: none;
 }
+@media screen and (min-width:1200px) and (max-width:1400px){
 
-.case-bottom {
-	margin-top: 86px;
-	width: 100%;
-}
-
-.case-bottom-items {
-	margin-right:40px;
-	float: left;
-	width: 440px;
-	height: 330px;
-	text-align: center;
-	position: relative;
-	margin-bottom: 40px;
-}
-.case-bottom-items:nth-child(3n){
-	margin-right: 0;
-}
-.case-bottom-items-con {
-	position: absolute;
-	bottom: 6px;
-	width: 100%;
-	height: 60px;
-	line-height: 60px;
-	font-size: 24px;
-	color: #ffffff;
-	background: #fa965a;
-	border-radius: 0px 0px 10px 10px;
-}
-.iframe2{
-	margin-top: 100px;
-}
-.case-top-r>div:hover{
-	cursor: pointer;
+    .case,.footer_box{
+        width: 1200px !important; 
+    }
+    .footer .footer_box ul {
+        margin-right: 70px;
+    }
 }

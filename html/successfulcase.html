@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title></title>  
+	<title>成功案例</title>  
 	<meta name="keywords" content=""/>  
 	<meta name="description" content=""/>  
 	<link rel="icon" href="../image/logos.png" sizes="50x50"> 
@@ -13,6 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/successfulcase.css" />
 	<link rel="stylesheet" href="../css/animate.css">
 	<script src="../js/vue.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -40,7 +43,7 @@
 				</div>
 			</div>
 			<!-- 成功案例 -->
-			<div class="case">
+			<div class="case diligently">
 				<div class="case-top">
 					<div class="case-top-l">
 						成功案例
@@ -51,13 +54,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="case-bottom">
-					<div class="case-bottom-items" :key="index" v-for="(item,index) in ifyprojects_item">
-						<img :src="'.'+item.imgsrc" alt="">
-						<div class="case-bottom-items-con">
-							{{item.title}}
-						</div>
-					</div>
+				<div class="diligently_box">
+					<ul>
+						<li v-for="(project,ins) in ifyprojects_item">
+							<img :src="project.imgsrc" alt="">
+							<div>
+								{{project.title}}
+							</div>
+						</li>
+					</ul>
+
 				</div>
 			</div>
 			<!-- 右边定位 -->
@@ -127,6 +133,33 @@
 					</div>
 				</div>
 
+			</div>
+
+			<!-- 弹窗 -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" style="width: 400px; margin-top: 0; top: 50%; left: 0; transform: translate(0%, -50%);">
+					<div class="modal-content" style="background: #fa965a;padding:0 20px;text-align:center; font-size:32px;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								项目开发您定价
+							</h4>
+						</div>
+						<div class="modal-body">
+							<h4>团队免费驻场开发</h4>
+						</div>
+						<hr style="margin: 0;">
+						<div class="modal-body">
+							<h4>15011556811</h4>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
 			</div>
 		</div>
 	</div>
