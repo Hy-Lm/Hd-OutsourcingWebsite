@@ -15,15 +15,15 @@ include('./public.php');
 			// 小标题
 		$SmallTitle_con= substr($SmallTitle_con,0,strlen($SmallTitle_con)-1);
 		// //小标题内容
-		$SmallTitleCon0=$_GET['SmallTitleCon0'];
-		$SmallTitleCon1=$_GET['SmallTitleCon1'];
-		$SmallTitleCon2=$_GET['SmallTitleCon2'];
+		$SmallTitleCon0=$_POST['SmallTitleCon0'];//小标题内容1
+		$SmallTitleCon1=$_POST['SmallTitleCon1'];//小标题内容2
+		$SmallTitleCon2=$_POST['SmallTitleCon2'];//小标题内容3
 		// $SmallTitleCon=explode('-',$SmallTitleCon);
 				$SmallTitleCon_con=null;           //存储内容
 				$SmallTitleCon_con=$SmallTitleCon0.'-'.$SmallTitleCon1.'-'.$SmallTitleCon2;
 			// 小标题内容
 		// $SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
-		echo $SmallTitleCon_con;
+		// echo $SmallTitleCon_con;
 		// 图片
 	$arr=$_FILES['imgs'];
 		    $files=array();
