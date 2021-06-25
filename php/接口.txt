@@ -14,7 +14,7 @@ addBanner.php--添加/修改轮播  通过from表单提交图片
 
 addTitle.php--增加/修改/删除标题   以title=数组的形式传递过来
 
-addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟小标题内容以-分开
+addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟以-分开,小标题内容以逗号分开
 								$BigTitle=$_POST['BigTitle'];//大标题
 								$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
 								$SmallTitle=$_POST['SmallTitle'];//小标题

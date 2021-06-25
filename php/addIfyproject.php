@@ -7,11 +7,6 @@ $title=$_POST['title'];//标题
 $file=$_FILES['imgsrc'];//以传递过来的图片路径
 	        	// echo $name.$file;
 	        	    if(is_uploaded_file($file['tmp_name'])){//$file['tmp_name'] 临时路径
-	        		function get_password( $length = 4 )
-	        		{
-	        		    $str = substr(md5(time()), 0, $length);//md5加密，time()当前时间戳
-	        		    return $str;
-	        		}
 					$hou=pathinfo($file['name'],PATHINFO_EXTENSION);
 					$fileName=rand(10,1000).time().'.'.$hou;//在图片名称后加入时间戳，避免重名文件覆盖
 	        	    move_uploaded_file($file['tmp_name'],$fileName);

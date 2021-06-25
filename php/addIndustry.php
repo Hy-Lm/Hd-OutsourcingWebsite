@@ -5,7 +5,7 @@ include('./public.php');
 	$BigTitle=$_POST['BigTitle'];//大标题
 	$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
 	$SmallTitle=$_POST['SmallTitle'];//小标题
-	$SmallTitleCon=$_POST['SmallTitleCon'];//小标题内容
+	
 	// 小标题内容以-分开 转换成字符串以,拼接
 	$SmallTitle=explode('-',$SmallTitle);
 		$SmallTitle_con=null;           //存储内容
@@ -14,13 +14,17 @@ include('./public.php');
 			}
 			// 小标题
 		$SmallTitle_con= substr($SmallTitle_con,0,strlen($SmallTitle_con)-1);
-		$SmallTitleCon=explode('-',$SmallTitleCon);
+		// //小标题内容
+		$SmallTitleCon0=$_GET['SmallTitleCon0'];
+		$SmallTitleCon1=$_GET['SmallTitleCon1'];
+		$SmallTitleCon2=$_GET['SmallTitleCon2'];
+		// $SmallTitleCon=explode('-',$SmallTitleCon);
 				$SmallTitleCon_con=null;           //存储内容
-					foreach($SmallTitleCon as $val){
-						$SmallTitleCon_con.=$val.',';
-					}
+				$SmallTitleCon_con=$SmallTitleCon0.'-'.$SmallTitleCon1.'-'.$SmallTitleCon2;
 			// 小标题内容
-		$SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
+		// $SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
+		echo $SmallTitleCon_con;
+		// 图片
 	$arr=$_FILES['imgs'];
 		    $files=array();
 		    for($i=0;$i<count($arr['name']);$i++){//count()统计数组键值name长度
