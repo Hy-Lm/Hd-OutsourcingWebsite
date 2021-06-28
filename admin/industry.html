@@ -24,7 +24,7 @@
 			<div class="page-title">
 				<span class="modular fl"><i class="add_user"></i><em>行业</em></span>
 			</div>
-			<form>
+			<form  :action="this.url+'addIndustry.php'" method="post" enctype="multipart/form-data">
 				<table class="list-style">
 					<tr style="text-align: center;">
 						<td style="width: 10%;">类型</td>
@@ -63,6 +63,13 @@
 								<span>删除</span>
 							</a>
 						</td>
+						<tr>
+							<td colspan="7">
+								<a style="margin: 50%;" @click="add()"  data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-plus"></span>
+								</a>
+							</td>
+						</tr>
 						<!-- 模态框 -->
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							<div class="modal-dialog">
@@ -73,14 +80,26 @@
 										</h4>
 									</div>
 									<div class="modal-body">
-										<form role="form" :action="this.url+'add_gift.php'" method="post"
-											enctype="multipart/form-data">
+										<form role="form">
 											<div class="form-group">
-												<input type="hidden" name="id" id="" value="" />
+												<input type="hidden" name="id" v-model="id" id="" value="" />
 												<label>类型</label>
-												<input class="form-control" type="text" name="" placeholder="请输入类型" />
-												<label>类型</label>
-												<input class="form-control" type="text" name="" placeholder="请输入类型" />
+												<input class="form-control" type="text" name="title" placeholder="请输入类型" v-model="title" />
+												<label>标题</label>
+												<input class="form-control" type="text" name="BigTitle" placeholder="请输入标题" v-model="big_title"/>
+												<label>标题内容</label>
+												<textarea rows="5" cols="1" class="form-control" type="text" name="BigTitleCon" placeholder="请输入标题内容" v-model="big_title_con">
+													
+												</textarea>
+												<label>图片</label>
+												<!-- <input class="form-control" type="text" name="" placeholder="请输入图片" /> -->
+												<input type="file" name="imgs[]" multiple="multiple" />
+												<label>分类</label>
+												<div v-for="(s,i) in small_title" >
+													<input class="form-control" type="text" name="SmallTitle[]"  placeholder="请输入分类" v-model="small_title[i]" />
+													<!-- <label>分类简介</label> -->
+													<textarea rows="3" cols="1" class="form-control" name="SmallTitleCon[]" type="text" name="" placeholder="请输入分类简介" v-model="small_title_con[i]"  ></textarea>
+												</div>
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -110,14 +129,53 @@
 			list: [],
 			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 			// url:'http://www.huidait.cn/php/',
-			small_title_con: []
+			id:'',
+			title:'',
+			big_title:'',
+			big_title_con:'',
+			small_img:[],
+			small_title:[''],
+			small_title_con: ['']
 		},
 		methods: {
+			// 模态框
 			compile(id, index) {
 				console.log(id, index)
+				this.id = id
+				this.title = this.list[index].title
+				this.big_title = this.list[index].big_title
+				this.big_title_con = this.list[index].big_title_con
+				this.small_img = this.list[index].small_img
+				this.small_title = this.list[index].small_title
+				this.small_title_con = this.list[index].small_title_con
+				console.log(this.small_title)
+				console.log()
 			},
+			add(){
+				this.list.push({})
+				this.id= this.list.length+1
+				console.log(this.id)
+				this.title='',
+				this.big_title='',
+				this.big_title_con='',
+				this.small_img=[''],
+				this.small_title=['','',''],
+				this.small_title_con=['','','']
+				console.log(this.list)
+			},
+			// 删除
 			del(id) {
 				console.log(id)
+				let url = this.url + "delIndustry.php?id=" + id
+				console.log(url)
+				axios.get(url).then(res => {
+					if(res.data=="ok"){
+						alert('删除成功')
+						this.load()
+					}else{
+						alert('删除失败')
+					}
+				})
 			},
 			// 初始化图片
 			load() {

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>项目</title>
+	<link href="css/adminStyle.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="box">
+		<div class="wrap">
+			<div class="page-title">
+				<span class="modular fl"><i class="add_user"></i><em>全部项目</em></span>
+			</div>
+			<form  :action="this.url+'addIfyproject.php'" method="post" enctype="multipart/form-data">
+				<table class="list-style" style="text-align: center;">
+					<tr>
+						<td style="width: 15%;">名称</td>
+						<td style="width: 70%;">详情</td>
+					</tr>
+					<tr v-for="(item,index) in list" :key="index">
+						<td style="width: 10%;">{{item.name}}</td>
+						<td style="padding: 0;">
+							<table border="none" style="width: 100%; padding: 0;"  frame=void>
+								<tr>
+									<td style="width: 15%;">项目类型</td>
+									<td style="width: 15%;">项目名称</td>
+									<td style="width: 55%;">图片</td>
+									<td style="width: 15%;">编辑</td>
+								</tr>
+								<tr v-for="(all,ins) in item.all">
+									<td>{{all.name}}</td>
+									<td>{{all.title}}</td>
+									<td>
+										<img :src="all.imgsrc" alt="" style="width: 200px; height: 150px;margin: 5px 0;">
+									</td>
+									<td style="text-align: center;">
+										<a title="编辑" @click="compile(all.id,ins,index)" data-toggle="modal" data-target="#myModal">
+											<span>编辑</span>
+										</a>
+										<a title="删除" @click="del(all.id,ins,index)">
+											<span>删除</span>
+										</a>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<tr>
+							<td colspan="7">
+								<a style="margin: 50%;" @click="add()"  data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-plus"></span>
+								</a>
+							</td>
+						</tr>
+						<!-- 模态框 -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">
+											数据编辑
+										</h4>
+									</div>
+									<div class="modal-body">
+										<form role="form">
+											<div class="form-group">
+												<input type="hidden" name="id"  v-model="id" id="" value="" />
+												<label>项目类型</label>
+												<input class="form-control" type="text" name="name" placeholder="请输入项目类型" v-model="name" />
+												<label>项目名称</label>
+												<input class="form-control" type="text" name="title" placeholder="请输入项目名称" v-model="title" />
+												<label>图片</label>
+												<input type="file" name="imgs"  multiple="multiple" />
+											
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+												</button>
+												<input type="submit" name="sub" value="提交更改" class="btn btn-primary" />
+											</div>
+										</form>
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal -->
+						</div>
+						<!-- 结束 -->
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 防止用户从地址栏直接进入
+	// if(window.sessionStorage.getItem('user')==''|| window.sessionStorage.getItem('user')==null){
+	// 	window.location.href="index.html"
+	// }
+	new Vue({
+		el: '#box',
+		data: {
+			list: [],
+			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
+			// url:'http://www.huidait.cn/php/',
+			id:'',
+			name:'',
+			title:''
+		},
+		methods: {
+			// 模态框
+			compile(id,ins,index) {
+				// console.log(ins,index)
+				// console.log(this.list[index].all[ins])
+				this.id = id
+				this.name = this.list[index].all[ins].name
+				this.title = this.list[index].all[ins].title
+			
+				// console.log(this.id,this.name,this.title)
+			},
+			add(){
+				this.list.push('')
+				this.id= 0
+				// console.log(this.list)
+				// console.log(this.id)
+				this.title=''
+				this.name='' 
+			},
+			// 删除
+			del(id,ins,index) {
+				// console.log(id,ins,index)
+				// console.log(this.list[index])
+				// console.log(id)
+				// console.log(this.list[index].all[ins])
+				let url = this.url + "delIfyproject.php?id=" + id
+				console.log(url)
+				axios.get(url).then(res => {
+					if(res.data=="ok"){
+						alert('删除成功')
+						this.load()
+					}else{
+						alert('删除失败')
+					}
+				})
+			},
+			// 初始化图片
+			load() {
+				let url = this.url + "ifyproject.php"
+				axios.get(url).then(res => {
+					this.list = res.data
+					console.log(this.list)
+				})
+			}
+		},
+		mounted() {
+			this.load()
+		}
+	})
+</script>
+
+</html>

@@ -38,6 +38,7 @@
 	text-align: left;
 	color: #333333;
 	position: relative;
+	
 }
 .case-top-l::after{
 	content: '';
@@ -52,6 +53,7 @@
 .case-top-r {
 	float: right;
 	display: flex;
+	cursor: pointer;
 }
 
 .case-top-r>div {

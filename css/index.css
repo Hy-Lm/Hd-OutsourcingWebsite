@@ -356,14 +356,20 @@ header ul a:hover {
   flex-wrap: wrap;
   justify-content: center;
 }
+.wb-box .diligently .diligently_box ul img {
+  width: 440px;
+  height: 330px;
+}
 .wb-box .diligently .diligently_box ul li {
+  width: 440px;
+  height: 330px;
   text-align: center;
   position: relative;
   margin-bottom: 40px;
 }
 .wb-box .diligently .diligently_box ul li div {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   width: 100%;
   height: 60px;
   line-height: 60px;
