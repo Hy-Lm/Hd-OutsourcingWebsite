@@ -12,17 +12,26 @@ addBanner.php--添加/修改轮播  通过from表单提交图片
 
 addTitle.php--增加/修改/删除标题   以title=数组的形式传递过来
 
-addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题跟以-分开,小标题内容以逗号分开
+addIndustry.php--增加/修改行业  通过from表单形式传递  图片用imgs  小标题内容以逗号分开
 								$BigTitle=$_POST['BigTitle'];//大标题
 								$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
-								$SmallTitle=$_POST['SmallTitle'];//小标题
-								$SmallTitleCon=$_POST['SmallTitleCon'];//小标题内容
-								$title=$_POST['title'];//标题
+								//固定的三个标题
+								$SmallTitle1=$_POST['SmallTitle1'];//小标题1
+								$SmallTitle2=$_POST['SmallTitle2'];//小标题2
+								$SmallTitle3=$_POST['SmallTitle3'];//小标题3
+								//固定的三个标题内容
+								$SmallTitleCon0=$_POST['SmallTitleCon0'];//小标题内容1
+								$SmallTitleCon1=$_POST['SmallTitleCon1'];//小标题内容2
+								$SmallTitleCon2=$_POST['SmallTitleCon2'];//小标题内容3
+								$title=$_POST['title'];//标题  
+								$id  （用来判断添加还是删除）
+								
+delIndustry.php--删除行业   传id 返回ok 或 no
 
 addIfyproject.php--增加/修改项目  通过from表单形式传递  传id 
 
 delIfyproject.php--删除项目   传id 返回ok 或 no
 
-addNews.php--增加/修改时间  传id，time，title  以get的形式传递 
+addNews.php--增加/修改新闻  传id，time，title  以get的形式传递 
 
-delNews.php--删除项目   传id 返回ok 或 no
+delNews.php--删除新闻   传id 返回ok 或 no

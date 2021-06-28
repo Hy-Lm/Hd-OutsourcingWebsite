@@ -1,11 +1,11 @@
 <?php
 // 连接数据库
 include('./public.php');
+// 判断数据库是否这个id 有的话就是修改  没有的话就是增加
+$id=$_GET['id'];
 // 接收的参数
 $time=$_GET['time'];//新闻时间
 $title=$_GET['title'];//标题
-// 判断数据库是否这个id 有的话就是修改  没有的话就是增加
-$id=$_GET['id'];
 $sql="select * from news where id='$id'";
 $res=$conn->query($sql);
 if($res->num_rows){

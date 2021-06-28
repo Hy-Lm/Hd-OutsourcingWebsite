@@ -2,28 +2,24 @@
 // 连接数据库
 include('./public.php');
 // 接收的参数
+//判断数据库是否这个标题 有的话就是修改  没有的话就是增加
+$id=$_POST['id'];//id
+$title=$_POST['title'];//标题
 	$BigTitle=$_POST['BigTitle'];//大标题
 	$BigTitleCon=$_POST['BigTitleCon'];//大标题内容
 	$SmallTitle=$_POST['SmallTitle'];//小标题
+	$SmallTitle_con=null;           //存储内容
+	foreach($SmallTitle as $val){
+		$SmallTitle_con.=$val.',';
+	}
+	$SmallTitle_con= substr($SmallTitle_con,0,strlen($SmallTitle_con)-1);
 	
-	// 小标题内容以-分开 转换成字符串以,拼接
-	$SmallTitle=explode('-',$SmallTitle);
-		$SmallTitle_con=null;           //存储内容
-			foreach($SmallTitle as $val){
-				$SmallTitle_con.=$val.',';
-			}
-			// 小标题
-		$SmallTitle_con= substr($SmallTitle_con,0,strlen($SmallTitle_con)-1);
-		// //小标题内容
-		$SmallTitleCon0=$_POST['SmallTitleCon0'];//小标题内容1
-		$SmallTitleCon1=$_POST['SmallTitleCon1'];//小标题内容2
-		$SmallTitleCon2=$_POST['SmallTitleCon2'];//小标题内容3
-		// $SmallTitleCon=explode('-',$SmallTitleCon);
-				$SmallTitleCon_con=null;           //存储内容
-				$SmallTitleCon_con=$SmallTitleCon0.'-'.$SmallTitleCon1.'-'.$SmallTitleCon2;
-			// 小标题内容
-		// $SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
-		// echo $SmallTitleCon_con;
+	$SmallTitleCon=$_POST['SmallTitleCon'];//小标题内容
+	$SmallTitleCon_con=null;           //存储内容
+	foreach($SmallTitleCon as $val){
+		$SmallTitleCon_con.=str_replace(',','-',$val).',';
+	}
+	$SmallTitleCon_con= substr($SmallTitleCon_con,0,strlen($SmallTitleCon_con)-1);
 		// 图片
 	$arr=$_FILES['imgs'];
 		    $files=array();
@@ -34,6 +30,7 @@ include('./public.php');
 		        $files[$i]['error']=$arr['error'][$i];
 		        $files[$i]['size']=$arr['size'][$i];
 		    }
+			$con=null;
 		    for($i=0;$i<count($files);$i++){
 		    //取得上传文件信息
 		    $fileName=$files[$i]['name'];
@@ -44,29 +41,28 @@ include('./public.php');
 						$hou=pathinfo($fileName,PATHINFO_EXTENSION);
 						$fileName=rand(10,1000).time().'.'.$hou;//在图片名称后加入时间戳，避免重名文件覆盖
 		                move_uploaded_file($tempName, "images/".$fileName);
-						$val.=$fileName.',';
+						$con.=$fileName.',';
 		    }
-	$SmallImg=substr($val,0,strlen($val)-1);;//小标题图片
-// 判断数据库是否这个标题 有的话就是修改  没有的话就是增加
-$title=$_POST['title'];//标题
-$sql="select * from industry where title='$title'";
+	$SmallImg=substr($con,0,strlen($con)-1);//小标题图片
+$sql="select * from industry where id='$id'";
 $res=$conn->query($sql);
 if($res->num_rows){
 	// 有该标题，然后进行修改
-	$sql="update industry set big_title='$BigTitle',big_title_con='$BigTitleCon',small_img='$SmallImg',small_title='$SmallTitle_con',small_title_con='$SmallTitleCon_con' where title='$title'";
+	// $sql="update industry set title='$title' where id='$id'";
+	$sql="update industry set title='$title',big_title='$BigTitle',big_title_con='$BigTitleCon',small_img='$SmallImg',small_title='$SmallTitle_con',small_title_con='$SmallTitleCon_con' where id='$id'";
 	$res=$conn->query($sql);
 	if($res){
-		echo 'ok';
+		echo "<script>alert('修改成功');history.go(-1);</script>";
 	}else{
-		echo 'no';
+		echo "<script>alert('修改失败')</script>";
 	}
 }else{//添加
-	$sql="insert into industry (title,big_title,big_title_con,small_img,small_title,small_title_con) values('$title','$BigTitle','$BigTitleCon','$SmallImg','$SmallTitle_con','$SmallTitleCon_con'";
+	$sql="insert into industry (title,big_title,big_title_con,small_img,small_title,small_title_con) values('$title','$BigTitle','$BigTitleCon','$SmallImg','$SmallTitle_con','$SmallTitleCon_con')";
 	$res=$conn->query($sql);
 	if($res){
-		echo 'ok';
+		echo "<script>alert('添加成功');history.go(-1);</script>";
 	}else{
-		echo 'no';
+		echo "<script>alert('添加失败')</script>";
 	}
-}
+}	
 ?>
