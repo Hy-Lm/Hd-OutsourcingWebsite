@@ -55,30 +55,33 @@ header{
             position: absolute;
             display: none;
             top:0px;
-            left:64%;
+            left:66%;
             // transform: translateX(-50%);
             z-index: 999;
-            width: 200px;
+            width: 160px;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 0px 0px 10px 10px;
             ol{
                 height: 100%;
+                background-color: rgba(250,150,90,0.8);
                 // display: flex;
                 // flex-direction: column;
                 li{
                     flex:1;
                     text-align: center;
                     margin: 0;
-                    font-size: 24px;
+                    font-weight: bold;
+                    font-size: 20px;
                     width: 100%;
                     height: 50px;
                     line-height: 50px;
-                    color: #ffffff;
+                    color:#333333;
                     cursor:pointer;
                 }
                 li:hover{
                    background-color:  #16167d;
+                   color: #ffffff;
                 }
             }
         }
@@ -523,9 +526,44 @@ header{
             }
         }
     }
-} 
 }
-
+}
+// 弹窗
+.modal{
+    position: relative;
+    .tanchuang{
+        position: absolute;
+        padding: 0;
+        top: 50%;
+        width: 250px;
+        height: 190px;
+        background-color: rgba(250,150,90,0.8);
+        top:50%;
+        margin-left: 50%;
+        transform: translate(-50%,-50%);
+        div{
+            float: right;
+            margin-right: 10px;
+            right: 20px;
+            width: 20px;
+            height: 25px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        h4{
+            padding: 0 30px;
+            clear: both;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            line-height: 40px;
+            border-bottom: 1px solid #707070FF;
+        }
+        h4:nth-child(4){
+            border-bottom: none;
+        }
+    }
+}
 .general{
     text-align: center;
     padding: 90px 0;
@@ -658,7 +696,7 @@ header{
                 .top_serve {
                     position: absolute; 
                     top:0px;
-                    left:59%; 
+                    left:61%; 
                 }
             }
             .website{

@@ -1,178 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <title>辉耀简介</title>
-	<meta name="keywords" content=""/>  
-	<meta name="description" content=""/>  
+
+	<title>辉耀简介</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
 	<link rel="icon" href="../image/logos.png" sizes="50x50">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="../js/axios.min.js"></script>
-    <link rel="stylesheet" href="../css/public.css">
-    <link rel="stylesheet" href="../css/intro.css">
-    <script src="../js/vue.js"></script>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="../js/axios.min.js"></script>
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../css/intro.css">
+	<script src="../js/vue.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <div id="app">
-        <div class="wb-box">
-            <!-- 头部 -->
-            <header>
-                <img src="../image/辉达外包LOGO.png">
-                <ul>
-                    <li><a href="./index.html" target="_blank">首页</a></li>
-                    <li @mouseover="mouseOver">服务项目
-                        <div class="top_serve" @mouseleave="mouseLeave">
-                            <ol>
-                                <li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
-                                    {{item}}
-                                </li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
-                    <li><a href="./map.html" target="_blank">联系我们</a></li>
-                </ul>
-            </header>
-            <div class="intro">
-                <h1>辉达简介</h1>
-                <hr>
-                <p>
-                    辉耀技术联盟，由辉达时代集团公司技术精英组建的创业联盟，我们以过硬的专业IT技术和多年累积的经验，为我们的客户提供专业到位的服务。
-                </p>
-                <p>
-                    辉耀技术联盟是可以把整个开发团队平移到公司所在地进行工作的团队。
-                </p>
-                <p>
-                    选择辉耀请您放心：我们承诺，辉耀让您花最少的钱
-                </p>
-            </div>
-
-            
-        </div>
-        <!-- 底部 -->
+	<div id="app">
+		<div class="wb-box">
+			<!-- 头部 -->
+			<header>
+				<img src="../image/辉达外包LOGO.png">
+				<ul>
+					<li><a href="./index.html" target="_blank">首页</a></li>
+					<li @mouseover="mouseOver">服务项目
+						<div class="top_serve" @mouseleave="mouseLeave">
+							<ol>
+								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+									{{item}}
+								</li>
+							</ol>
+						</div>
+					</li>
+					<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
+					<li><a href="./map.html" target="_blank">联系我们</a></li>
+				</ul>
+			</header>
+			<div class="intro">
+				<h1>辉耀简介</h1>
+				<p>
+					辉耀技术联盟，由辉达时代集团公司技术精英组建的创业联盟，我们以过硬的专业IT技术和多年累积的经验，为我们的客户提供专业到位的服务。
+				</p>
+				<p>
+					辉耀技术联盟是可以把整个开发团队平移到公司所在地进行工作的团队。
+				</p>
+				<p>
+					辉耀技术联盟一切以客户利益为首任，给客户提供“海底捞”的服务，“华为”的技术。
+				</p>
+				<p>我们秉承“以技术求生存，以服务求发展”的理念，真诚的服务好每一个客户。</p>
+			</div>
+		</div>
+		<!-- 底部 -->
 		<div class="footer">
-					<div class="footer_box">
-						<ul>
-							<li>产品服务</li>
-							<li>APP开发</li>
-							<li>小程序开发</li>
-							<li>商城开发</li>
-							<li>平台开发</li>
-						</ul>
-						<ul>
-							<li>推荐系统</li>
-							<li>社交电商</li>
-							<li>租赁系统</li>
-							<li>淘客系统</li>
-							<li>数字货币</li>
-						</ul>
-						<ul>
-							<li>关于我们</li>
-							<li>
-								辉耀简介
-							</li>
-							<li>客户案例</li>
-							<li>新闻资讯</li>
-						</ul>
-						<ul>
-							<li>联系我们</li>
-							<li>地址:北京市朝阳区望京北马泉营</li>
-							<li>电话:15011556811</li>
-							<li>邮箱:qqi2001@sina.com</li>
-						</ul>
-						<div>
-							<p>加入我们：<br />"一元"建站	</p>
-							<img src="../image/外包二维码.jpg" alt="">
-						</div>
-						<div class="footer_bot">
-							<p>北京辉达时代网络技术有限公司
-								版权所有Copyright 2017-2022 All Rights Reserved
-								京ICP备13009754号</p>
-						</div>
-					</div>
+			<div class="footer_box">
+				<ul>
+					<li>产品服务</li>
+					<li>APP开发</li>
+					<li>小程序开发</li>
+					<li>商城开发</li>
+					<li>平台开发</li>
+				</ul>
+				<ul>
+					<li>推荐系统</li>
+					<li>社交电商</li>
+					<li>租赁系统</li>
+					<li>淘客系统</li>
+					<li>数字货币</li>
+				</ul>
+				<ul>
+					<li>关于我们</li>
+					<li>
+						辉耀简介
+					</li>
+					<li>客户案例</li>
+					<li>新闻资讯</li>
+				</ul>
+				<ul>
+					<li>联系我们</li>
+					<li>地址:北京市朝阳区望京北马泉营</li>
+					<li>电话:15011556811</li>
+					<li>邮箱:qqi2001@sina.com</li>
+				</ul>
+				<div>
+					<p>加入我们<br />"一元"建站 </p>
+					<img src="../image/外包二维码.jpg" alt="">
+				</div>
+				<div class="footer_bot">
+					<p>北京辉达时代网络技术有限公司
+						版权所有Copyright 2017-2022 All Rights Reserved
+						京ICP备13009754号</p>
+				</div>
+			</div>
 
 		</div>
-        <!-- 弹窗 -->
+		<!-- 弹窗 -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog" style="width: 400px; margin-top: 0; top: 50%; left: 0; transform: translate(0%, -50%);">
-						<div class="modal-content" style="background: #fa965a;padding:0 20px;text-align:center; font-size:32px;">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title" id="myModalLabel">
-									项目开发您定价
-								</h4>
-							</div>
-							<div class="modal-body">
-								<h4>团队免费驻场开发</h4>
-							</div>
-							<hr style="margin: 0;">
-							<div class="modal-body">
-								<h4>15011556811</h4>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-								</button>
-							</div>
-						</div><!-- /.modal-content -->
-					</div><!-- /.modal -->
+			<div class="tanchuang">
+				<div  data-dismiss="modal" aria-hidden="true">×</div>
+				<h4>项目开发您定价</h4>
+				<h4>团队免费驻场开发</h4>
+				<h4>电话:15011556811</h4>
+			</div>
 		</div>
-    </div>
-    <script type="text/javascript">
-        var vm = new Vue({
-            el: '#app',
-            data: {
-                // url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
-                url:'http://www.huidait.cn/php',
-                banner_title:[]
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+				url: 'http://www.huidait.cn/php',
+				banner_title: []
 
-            },
-            methods: {
-                load(){
-                    // 轮播
-						let ban = this.url + "/banner.php"
-						axios.get(ban).then(res => {
-							console.log(res.data)
-							this.banner_title = res.data.banner_title
-							console.log(this.banner_title)
-						})
-                },
-                // 移入
-                mouseOver() {
-                    console.log(111)
-                    $('li .top_serve')[0].style = "display:block"
-                },
-                // 移出
-                mouseLeave() {
-                    $('li .top_serve')[0].style = "display:none";
-                },
-                // 跳转app页面
+			},
+			methods: {
+				load() {
+					// 轮播
+					let ban = this.url + "/banner.php"
+					axios.get(ban).then(res => {
+						console.log(res.data)
+						this.banner_title = res.data.banner_title
+						console.log(this.banner_title)
+					})
+				},
+				// 移入
+				mouseOver() {
+					console.log(111)
+					$('li .top_serve')[0].style = "display:block"
+				},
+				// 移出
+				mouseLeave() {
+					$('li .top_serve')[0].style = "display:none";
+				},
+				// 跳转app页面
 				fun(index) {
 					// console.log(index)
 					if (this.banner_title[index] == 'APP开发') {
-						window,open('app.html')
+						window, open('app.html')
 					}
 				},
-                // 弹窗
-					openwin(){
-						setInterval(function(){
-							$('#myModal').modal('show')
-						}, 120000) 
-				　　}
-            },
-            mounted() {
-                this.load()
-                this.openwin()
+				// 弹窗
+				openwin() {
+					setInterval(function () {
+						$('#myModal').modal('show')
+					}, 120000)
+				}
+			},
+			mounted() {
+				this.load()
+				this.openwin()
 				$('#myModal').modal('show')
-            }
-        })
-    </script>
+			}
+		})
+	</script>
 </body>
+
 </html>

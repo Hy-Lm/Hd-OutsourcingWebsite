@@ -16,7 +16,7 @@ body {
   height: 49px;
 }
 .wb-box header a {
-  color: #000000;
+  color: #333;
   text-decoration: none;
 }
 .wb-box header ul {
@@ -39,11 +39,11 @@ body {
   position: absolute;
   display: none;
   top: 50px;
-  left: 0;
+  left: 20px;
   z-index: 999;
-  width: 200px;
+  width: 160px;
   height: 500px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(250, 150, 90, 0.6);
   border-radius: 0px 0px 10px 10px;
 }
 .wb-box header ul .top_serve ol {
@@ -53,14 +53,15 @@ body {
   flex: 1;
   text-align: center;
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   width: 100%;
   height: 50px;
   line-height: 30px;
-  color: #ffffff;
+  color: #333333;
   cursor: pointer;
 }
 .wb-box header ul .top_serve ol li:hover {
+  color: #ffffff;
   background-color: #16167d;
 }
 .wb-box header ul li:hover {
@@ -71,23 +72,53 @@ body {
   text-decoration: none;
 }
 .wb-box .intro {
+  width: 800px;
   box-sizing: border-box;
   padding: 50px 80px;
-  height: 500px;
-  width: 100%;
+  overflow: hidden;
+  color: #333;
 }
 .wb-box .intro h1 {
   text-align: center;
-}
-.wb-box .intro hr {
-  height: 2px;
-  background: #e9e9e9;
-  margin: 30px 0;
 }
 .wb-box .intro p {
   text-indent: 2em;
   font-size: 24px;
   line-height: 60px;
+}
+.modal {
+  position: relative;
+}
+.modal .tanchuang {
+  position: absolute;
+  padding: 0;
+  width: 250px;
+  height: 190px;
+  background-color: rgba(250, 150, 90, 0.8);
+  top: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal .tanchuang div {
+  float: right;
+  margin-right: 10px;
+  right: 20px;
+  width: 20px;
+  height: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.modal .tanchuang h4 {
+  padding: 0 30px;
+  clear: both;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  line-height: 40px;
+  border-bottom: 1px solid #707070FF;
+}
+.modal .tanchuang h4:nth-child(4) {
+  border-bottom: none;
 }
 .footer {
   width: 100%;
@@ -98,6 +129,7 @@ body {
   padding-top: 80px;
   width: 1400px;
   height: 100%;
+  overflow: hidden;
 }
 .footer .footer_box ul {
   float: left;

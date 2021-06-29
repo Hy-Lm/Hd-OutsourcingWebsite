@@ -53,8 +53,16 @@
 						window,open('app.html')
 					}
 				},
+				// 弹窗
+				openwin(){
+					setInterval(function(){
+						$('#myModal').modal('show')
+					}, 120000) 
+			　　}
 			},
 			mounted() {
 				this.ifyproject()
+                this.openwin()
+				$('#myModal').modal('show')
 			},
 		})
