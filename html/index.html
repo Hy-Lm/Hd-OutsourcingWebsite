@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../css/index.css">
 		<link rel="stylesheet" href="../css/swiper.min.css">
 		<link rel="stylesheet" href="../css/Swiper.css">
-		<script src="../js/swiper.min.js"></script>
+		<!-- <script src="../js/swiper.min.js"></script> -->
 		
 		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -408,7 +408,7 @@
 				</div>
 			</div>
 		</div>
-
+		<script src="../js/swiper.min.js"></script>
 		<script type="text/javascript">
 			var vm = new Vue({
 				el: '#app',
@@ -521,23 +521,26 @@
 						setInterval(function(){
 							$('#myModal').modal('show')
 						}, 120000) 
-				　　}
+				　　},
+					swiper(){
+						setTimeout(function() {
+							new Swiper('.swiper-container', {
+								loop: true,
+								pagination: '.swiper-pagination',
+								autoplay: 2000,
+								paginationClickable: true,
+								autoplayDisableOnInteraction: false,
+								observer: true,
+								observerParents: true
+							})
+						}, 500)
+					}
 				},
 				mounted() {
 					var system = {};
 					var p = navigator.platform;
 					console.log(p);
-					var mySwiper = new Swiper('.banner .swiper-container', {
-						initialSlide :0,
-						observer:true,//修改swiper自己或子元素时，自动初始化swiper
-						// 是否无缝滚动
-						loop: true,
-						// 如果需要分页器
-						pagination: '.swiper-pagination',
-						autoplay: 2000,
-						// 滑动到下一页触发条
-						longSwipesRatio: 0.33,
-					})
+					this.swiper()
 					system.win = p.indexOf("Win") == 0;
 					system.mac = p.indexOf("Mac") == 0;
 					if (system.win || system.mac) {//如果是电脑
@@ -553,16 +556,8 @@
 					$('#myModal').modal('show')
 				}
 			})
-			// var mySwiper = new Swiper('.banner .swiper-container', {
-			// 	// 是否无缝滚动
-			// 	loop: true,
-			// 	// 如果需要分页器
-			// 	pagination: '.swiper-pagination',
-			// 	autoplay: 2000,
-			// 	// 滑动到下一页触发条
-			// 	longSwipesRatio: 0.33,
-			// })
 		</script>
+		
 	</body>
 
 </html>
