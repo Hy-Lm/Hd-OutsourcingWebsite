@@ -32,7 +32,7 @@
 				},
 				ifyproject(){
 					axios.get(this.url+'ifyproject.php').then(res=>{
-						// console.log(res)
+						console.log(res.data)
 						this.ifyprojects=res.data
 						this.ifyprojects_item=res.data[0].all
 						this.ifyprojects.forEach((val,index)=>{
@@ -60,6 +60,7 @@
 				openwin(){
 					setInterval(function(){
 						$('#myModal').modal('show')
+						$('body').removeClass('modal-open')
 					}, 120000) 
 			　　}
 			},
@@ -68,5 +69,6 @@
 				this.ifyproject()
                 this.openwin()
 				$('#myModal').modal('show')
+				$('body').removeClass('modal-open')
 			},
 		})

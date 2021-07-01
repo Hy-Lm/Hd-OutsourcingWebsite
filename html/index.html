@@ -16,9 +16,7 @@
 		<link rel="stylesheet" href="../css/index.css">
 		<link rel="stylesheet" href="../css/swiper.min.css">
 		<link rel="stylesheet" href="../css/Swiper.css">
-		<!-- <script src="../js/swiper.min.js"></script> -->
-		
-		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
 		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<body>
@@ -310,8 +308,9 @@
 				</div>
 				<!-- 辉达时代动态 -->
 				<div class="dynamic">
-					<div class="title">辉达时代动态</div>
-					<ul>
+					<div class="title">合作商家</div>
+					<img src="../image/hudt.png" style="width: 100%; height: 100%;" alt="">
+					<!-- <ul>
 						<li>
 							<img src="../image/辉达动态1.png" alt="">
 						</li>
@@ -327,7 +326,7 @@
 							<span>{{t}}</span>
 							<span>{{news[k].title}}!</span>
 						</li>
-					</ol>
+					</ol> -->
 				</div>
 				<!-- 右边定位 -->
 				<div class="right">
@@ -520,6 +519,7 @@
 					openwin(){
 						setInterval(function(){
 							$('#myModal').modal('show')
+							$('body').removeClass('modal-open')
 						}, 120000) 
 				　　},
 					swiper(){
@@ -527,7 +527,7 @@
 							new Swiper('.swiper-container', {
 								loop: true,
 								pagination: '.swiper-pagination',
-								autoplay: 2000,
+								autoplay: 3000,
 								paginationClickable: true,
 								autoplayDisableOnInteraction: false,
 								observer: true,
@@ -554,6 +554,7 @@
 					this.load()
 					this.openwin()
 					$('#myModal').modal('show')
+					$('body').removeClass('modal-open')
 				}
 			})
 		</script>
