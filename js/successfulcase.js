@@ -1,6 +1,7 @@
 	new Vue({
 			el: '#app',
 			data: {
+				// url: 'http://192.168.43.216/item2/Hd-OutsourcingWebsite/php/',
 				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 				url:'http://www.huidait.cn/php/',
 				// imgUrl:'http://www.huidait.cn/php/images/',
@@ -19,6 +20,16 @@
 				mouseLeave() {
 					$('.banner .top_serve')[0].style = "display:none";
 				},
+				ban(){
+					// 轮播
+					let ban = this.url + "banner.php"
+					axios.get(ban).then(res => {
+						console.log(res.data)
+						this.bannerImgs = res.data.bannerImgs
+						this.banner_title = res.data.banner_title
+						// console.log(this.banner_title)
+					})
+				},
 				ifyproject(){
 					axios.get(this.url+'ifyproject.php').then(res=>{
 						// console.log(res)
@@ -28,14 +39,6 @@
 							val['active']=false
 						})
 						this.ifyprojects[0].active=true
-					})
-					// 轮播
-					let ban = this.url + "/banner.php"
-					axios.get(ban).then(res => {
-						console.log(res.data)
-						this.bannerImgs = res.data.bannerImgs
-						this.banner_title = res.data.banner_title
-						// console.log(this.banner_title)
 					})
 				},
 				// 点击切换
@@ -61,6 +64,7 @@
 			　　}
 			},
 			mounted() {
+				this.ban()
 				this.ifyproject()
                 this.openwin()
 				$('#myModal').modal('show')
