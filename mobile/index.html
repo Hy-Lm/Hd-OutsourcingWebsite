@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="./css/public.css">
 		<link rel="stylesheet" href="./css/index.css">
 		<link rel="stylesheet" href="./Swiper-3.3.1/dist/css/swiper.min.css">
+		<link rel="stylesheet" href="../css/Swiper.css">
 		<script src="./js/setRem.js"></script>
 		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js" type="text/javascript" charset="utf-8">
@@ -186,15 +187,21 @@
 	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
 	
 	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container', {
-		       pagination: '.swiper-pagination',
-		       nextButton: '.swiper-button-next',
-		       prevButton: '.swiper-button-prev',
-		       paginationClickable: true,
-		       spaceBetween: 0,
-		       centeredSlides: true,
-		       autoplay: 2000,
-		       autoplayDisableOnInteraction: false
+		
+		setTimeout(function() {
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				loop: true,
+				paginationClickable: true,
+				spaceBetween: 0,
+				centeredSlides: true,
+				autoplay: 2000,
+				autoplayDisableOnInteraction: false,
+				observer: true,
+				observerParents: true
 		   });
+		}, 500)
 	</script>
 </html>
