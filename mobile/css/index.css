@@ -414,8 +414,8 @@ html {
 /* 保障 */
 .safeguard-t{
 	width: 5.786666rem;
-	height: 238px;
-	overflow: hidden;
+	/* height: 238px; */
+	/* overflow: hidden; */
 }
 .safeguard-t>div:nth-child(2){
 	width: 6.72rem;
