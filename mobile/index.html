@@ -19,15 +19,31 @@
 		<div id="box">
 			<!-- 顶部-->
 			<div class="box-top">
-				<img src="./images/logo-icon.svg" >
-				<img src="./images/san.png" >
+				<!-- <img src="./images/logo-icon.png" > -->
+				<img src="./images/logo-icon@2x.png" >
+				<!-- <img src="./images/logo-icon@3x.png" > -->
+				<img src="./images/弹窗按钮@2x.png" @click="Btn" >
+				<!-- 导航栏 -->
+				<div class="box-top-nav" v-if="active">
+					<div class="top-nav-t">
+						<img src="./images/logo-icon@2x.png" >
+						<img src="./images/×@2x.png" @click="Btn()">
+					</div>
+					<div class="top-nav-c">
+						<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]" v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
+					</div>
+					<div class="top-nav-b">
+						<img src="./images/dianhua-icon.svg" >
+						<div>- 15011556811</div>
+					</div>
+				</div>
 			</div>
 			<!-- 背景图 -->
 			<div class="box-bg">
 				<div class="swiper-container">
-				        <div class="swiper-wrapper">
-				            <div class="swiper-slide" v-for="(item,index) in 4" :key="index">
-								<img src="./images/xinwen-1-image.jpg" >
+				        <div class="swiper-wrapper" >
+				            <div class="swiper-slide" v-for="(item,index) in banners" :key="index">
+								<img :src="item" >
 							</div>
 				        </div>
 						<div class="swiper-pagination"></div>
@@ -39,31 +55,143 @@
 					<div>网站建设我们更专业</div>
 					<div>我们的服务理念：尽一切力量做到最好！</div>
 				</div>
-				<div class="construction-items">
-					<div class="construction-item">
-						<div>
-							<img src="images/xinwen-2-image.jpg" >
-						</div>
-						<div>电商解决方案</div>
-						<div>
-							结合多年开发经验及市场深度调研，
-							需求整合 制定开发方案开发项目包括 
-							微网后台。
+				<div class="constructions">
+					<div class="construction-items">
+						<div class="construction-item" v-for="(item,index) in construction_items" :key="index">
+							<div>
+								<img :src="item.img" >
+							</div>
+							<div>{{item.title}}</div>
+							<div>
+								{{item.con}}
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- 行业 -->
+			<div class="box-industry">
+				<div class="industry-t">
+					<div>深耕细分行业，提供更加垂直的行业解决方案</div>
+					<div>电商，APP，小程序，公众号,管理系统，区块链等都有完整解决方案</div>
+				</div>
+				<!-- 行业导航 -->
+				<div class="industry-nav">
+					<div class="industry-navs">
+						<div @click="industrys(index)"  :style="[index===inds?style1:style2]" :key="index" v-for="(item,index) in industry_items">{{item.title}}</div>
+					</div>
+				</div>
+				<!-- 行业内容 -->
+				<div class="industry-content">
+					<div>{{big_title}}</div>
+					<div>{{big_title_con}}</div>
+					<div class="industry-content-items">
+						<div class="industry-content-item" v-for="(item,index) in 3" :key="index">
+							<div>
+								<img :src="small_img[index]" >
+								<div>{{small_title[index]}}</div>
+							</div>
+							<div>
+								<li :key="i" v-for="(item,i) in small_title_con[index]">{{item}}</li>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 服务 -->
+			<div class="box-serve">
+				<div class="serve-t construction-t">
+					<div>一站式服务</div>
+					<div>我们为您提供一站式网站建设解决方案让您顾虑全无!</div>
+				</div>
+				<!-- 服务内容 -->
+				<div class="serve-items">
+					<div class="serve-item" v-for="(item,index) in serve_item" :key="index">
+						<img :src="item.img" alt="">
+						<img src="./images/xiajiantou-icon.svg" >
+						<div>{{item.con}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 保障 -->
+			<div class="box-safeguard">
+				<div class="safeguard-t construction-t">
+					<div>服务保障</div>
+					<div>您还在为建设网站过程中繁琐的事情而烦恼么？</div>
+				</div>
+				<!-- 保障内容 -->
+				<div class="serve-items">
+					<div class="serve-item" v-for="(item,index) in safeguard_items" :key="index">
+						<img :src="item.img" alt="">
+						<img src="./images/xiajiantou-2-icon.svg" >
+						<div>{{item.con}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 项目 -->
+			<div class="box-project">
+				<div class="project-t construction-t">
+					<div>用心对待每一个项目！</div>
+					<div>我们的服务理念：尽一切力量做到最好！</div>
+				</div>
+				<!-- 项目内容 -->
+				<div class="project-items">
+					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">
+						<img :src="item.imgsrc" >
+						<div>{{item.title}}</div>
+						<div>{{ifyproject_con[index]}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 新闻 -->
+			<div class="box-news">
+				<div class="construction-t news-t">
+					<div>新闻资讯</div>
+					<div>新闻资讯是包含海量资讯的新闻服务品台 真实反映每时每刻的新闻热点</div>
+				</div>
+				<!-- 新闻内容 -->
+				<div class="news-content">
+					<div class="news-item" v-for="(item,index) in neww" :key="index">
+						<img :src="new_img[index]" alt="">
+						<div>{{item.title}}</div>
+					</div>
+					<!-- 查看更多 --> 
+					<div class="news-more">
+						<div>点击查看更多资讯</div>
+						<img src="images/youjiantou.svg" >
+					</div>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<div class="copyright">
+				<div>北京辉达时代网络技术有限公司</div>
+				<div>版权所有 Copyright 2013-2023 All Rights Reserved</div>
+				<div>京ICP备13009754号-4</div>
+			</div>
+			<!-- 定位 -->
+			<div class="footer">
+				<div class="footer-l" @click="robotBtn">
+					<img src="./images/kefu-icon.svg">
+					<div class="footer-con">在线客服</div>
+				</div>
+				<div class="footer-r" @click="robotBtn">
+					<img src="./images/dianhua-2-icon.svg">
+					<div class="footer-con">咨询电话</div>
+				</div>
+			</div>
 		</div>
 	</body>
-	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
+	
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container', {
 		       pagination: '.swiper-pagination',
 		       nextButton: '.swiper-button-next',
 		       prevButton: '.swiper-button-prev',
 		       paginationClickable: true,
-		       spaceBetween: 30,
+		       spaceBetween: 0,
 		       centeredSlides: true,
 		       autoplay: 2000,
 		       autoplayDisableOnInteraction: false
