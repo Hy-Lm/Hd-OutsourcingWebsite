@@ -17,6 +17,7 @@ html {
 }
 /* 顶部 */
 .box-top{
+	z-index: 99999;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -71,7 +72,7 @@ html {
 	/* height: 0.426666rem; */
 }
 .top-nav-c>div{
-	border: 0.026666rem solid #707070;
+	border: 0.026666rem solid rgba(112,112,112,.1);
 	border-left: none;
 	border-right: none;
 	border-bottom: none;
@@ -83,7 +84,7 @@ html {
 	color: #333333;
 }
 .top-nav-c>div:last-child{
-	border-bottom: 0.026666rem solid #707070;
+	border-bottom: 0.026666rem solid rgba(112,112,112,.1);
 }
 .top-nav-b{
 	align-items: flex-end;
@@ -196,7 +197,7 @@ html {
 }
 .construction-item{
 	border-radius: 0.133333rem;
-	margin: 0 30px;
+	margin: 0 0.4rem;
 	padding-top: 0.266666rem;
 	box-sizing: border-box;
 	justify-content: space-around;
@@ -280,7 +281,7 @@ html {
 	display: flex;
 	justify-content: space-around;
 	opacity: 1;
-	border: 0.013333rem solid #FA965A;
+	/* border: 0.013333rem solid #FA965A; */
 	height: 0.8rem;
 	line-height: 0.8rem;
 	border-radius: 0.4rem;
@@ -413,6 +414,8 @@ html {
 /* 保障 */
 .safeguard-t{
 	width: 5.786666rem;
+	height: 238px;
+	overflow: hidden;
 }
 .safeguard-t>div:nth-child(2){
 	width: 6.72rem;
@@ -428,10 +431,19 @@ html {
 }
 /* 项目内容 */
 .project-item{
-	margin-bottom: 0.533333rem;
+	display: flex;
+	flex-direction: column;
+	/* margin-bottom: 0.533333rem; */
 	height: 4.186666rem;
 }
-.project-item>img:nth-child(1){
+.project-item>div:nth-child(1){
+	width: 4.266666rem;
+	height: 2.533333rem;
+	border-radius: 0.4rem;
+	overflow: hidden;
+	margin-bottom: 0.266666rem;
+}
+.project-item img{
 	width: 4.266666rem;
 	height: 3.173333rem;
 	opacity: 1;
@@ -492,7 +504,7 @@ html {
 	height:1.333333rem;
 	align-items: center;
 	padding-bottom: 0.6rem;
-	border-bottom: 2px solid #999999;
+	border-bottom: 2px solid rgba(153,153,153,.1);
 }
 .news-item>img{
 	width: 1.36rem;

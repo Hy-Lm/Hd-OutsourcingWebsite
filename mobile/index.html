@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>外包</title>
+		<title>辉达时代官网</title>
 		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>
 		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。"/>
 		<link rel="icon" href="./images/logos.svg" sizes="50x50">
@@ -139,7 +139,9 @@
 				<!-- 项目内容 -->
 				<div class="project-items">
 					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">
-						<img :src="item.imgsrc" >
+						<div>
+							<img :src="item.imgsrc" >
+						</div>
 						<div>{{item.title}}</div>
 						<div>{{ifyproject_con[index]}}</div>
 					</div>
