@@ -457,10 +457,11 @@ header ul a:hover {
   transition: all 1s;
 }
 .wb-box .right ul li:nth-child(1):hover .show_img::after {
-  content: '15011556811';
+  content: '15011556811 15236241008';
   background-color: #F9F9F9;
   width: 120px;
   height: 80px;
+  line-height: 40px;
   position: absolute;
   padding-left: 20px;
   left: -120px;
