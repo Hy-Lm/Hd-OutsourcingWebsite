@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>辉达时代官网</title>
+		<title>辉达时代</title>
 		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>
 		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。"/>
 		<link rel="icon" href="./images/logos.png" sizes="50x50">
@@ -18,8 +18,10 @@
 	</head>
 	<body>
 		<div id="box">
+			
 			<!-- 顶部-->
 			<div class="box-top">
+				
 				<!-- <img src="./images/logo-icon.png" > -->
 				<img src="./images/logo-icon@2x.png" >
 				<!-- <img src="./images/logo-icon@3x.png" > -->
@@ -37,8 +39,12 @@
 						<img src="./images/dianhua-icon.svg" >
 						<div>- 15011556811</div>
 					</div>
+					
 				</div>
+				<!-- 遮罩层 -->
+					<div class="mask" @click="mask" v-if="active"></div>		
 			</div>
+			
 			<!-- 背景图 -->
 			<div class="box-bg">
 				<div class="swiper-container">
@@ -184,8 +190,19 @@
 					<div class="footer-con">咨询电话</div>
 				</div>
 			</div>
+			<!-- 回到顶部 -->
+			<div class="back" v-if="backs" @click="back">
+				<img src="images/jiantou2.svg" >
+				<div>回到顶部</div>
+			</div>
+			<!-- 咨询 -->
+			<div class="zixun">
+				<img src="./images/zixun2-icon.svg" >
+				<div>咨询</div>
+			</div>
 		</div>
 	</body>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
 	

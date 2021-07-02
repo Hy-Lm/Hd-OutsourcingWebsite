@@ -259,13 +259,14 @@ header ul a:hover {
 .wb-box .why .why_list .why_tu div {
   width: 100%;
   height: 200px;
-  background: url(../image/liubianxing-icon.png) no-repeat;
+  background: url(../image/liubianxing-icon.png) no-repeat center top;
   position: relative;
+  text-align: center;
 }
 .wb-box .why .why_list .why_tu div span {
   display: block;
   text-align: center;
-  margin-left: 45px;
+  /* margin-left: 45px; */
   width: 50%;
   height: 200px;
   padding: 35px 0;
@@ -278,8 +279,9 @@ header ul a:hover {
 .wb-box .why .why_list .why_tu div::after {
   content: url(../image/jiahao-icon.png);
   position: absolute;
-  right: -55px;
-  top: 65px;
+  right: -50%;
+  top: 66px;
+  margin-right: 45px;
 }
 .wb-box .why .why_list .why_tu p {
   height: 140px;
@@ -342,7 +344,7 @@ header ul a:hover {
   color: #666666;
 }
 .wb-box .safeguard ul li > img:hover {
-  animation: bounceIn 1s;
+   animation: jello 1s;
 }
 .wb-box .diligently {
   width: 100%;

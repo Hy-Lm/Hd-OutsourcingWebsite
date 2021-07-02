@@ -15,9 +15,52 @@
 html {
 	font-size: 75px;
 }
+.zixun{
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 12%;
+	transform: translate(-50%,-50%);
+	width: 1.733333rem;
+	height: 1.733333rem;
+	background-color:#3258e5;
+	border-radius: 50%;
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 0.266666rem;
+}
+.zixun>img{
+	width: 0.666666rem;
+	height: 0.666666rem;
+}
+/* 回到顶部 */
+.back{
+	text-align: center;
+	position: fixed;
+	bottom: 1.466666rem;
+	right: 0.4rem;
+	width: 1.433333rem;
+	height: 1.433333rem;
+	background-color: rgba(153,153,153,.5);
+	border-radius: 50%;
+	color: #333333;
+	background-color: ;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 0.213333rem;
+}
+.back>img{
+	width: 0.4rem;
+	height: 0.4rem;
+}
 /* 顶部 */
 .box-top{
-	z-index: 99999;
+	z-index: 3;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -40,7 +83,7 @@ html {
 }
 /* 导航栏 */
 .box-top-nav{
-	z-index: 999999999999;
+	z-index: 4;
 	/* display: none; */
 	position: absolute;
 	right: 0;
@@ -50,18 +93,31 @@ html {
 	/* overflow: auto; */
 	display: flex;
 	flex-direction: column;
-	padding-left: 0.4rem;
-	padding-right: 0.4rem;
+	/* background-color: #CCCCCC; */
 	padding-bottom: 0.626666rem;
 	box-sizing: border-box;
 	/* opacity: 1; */
 	background: #ffffff;
 }
+/* 遮罩层 */
+.mask{
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 10rem;
+	height: 100vh;
+	opacity: 0.5;
+	background-color: #CCCCCC;
+}
 .top-nav-t{
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
 	height: 1.2rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-bottom: 0.026666rem solid rgba(112,112,112,.1);
 }
 .top-nav-t>img:nth-child(1){
 	width: 2.64rem;
@@ -70,6 +126,10 @@ html {
 .top-nav-t>img:nth-child(2){
 	width: 0.573333rem;
 	/* height: 0.426666rem; */
+}
+.top-nav-c{
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
 }
 .top-nav-c>div{
 	border: 0.026666rem solid rgba(112,112,112,.1);
@@ -84,10 +144,15 @@ html {
 	color: #333333;
 	padding-left: 0.4rem;
 }
+.top-nav-c>div:first-child{
+	border-top: none;
+}
 .top-nav-c>div:last-child{
-	border-bottom: 0.026666rem solid rgba(112,112,112,.1);
+	border-bottom: none;
 }
 .top-nav-b{
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
 	align-items: flex-end;
 	margin-top: 1.333333rem;
 	display: flex;
@@ -452,7 +517,7 @@ html {
 .project-item{
 	display: flex;
 	flex-direction: column;
-	/* margin-bottom: 0.533333rem; */
+	margin-bottom: 0.2rem;
 	height: 4.186666rem;
 }
 .project-item>div:nth-child(1){
