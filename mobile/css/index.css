@@ -65,7 +65,7 @@ html {
 	width: 100%;
 	height: 100vh;
 	opacity: 0.5;
-	background-color: #CCCCCC;
+	background-color: rgba(0,0,0,.9);
 }
 .zixun{
 	text-align: center;
@@ -75,7 +75,7 @@ html {
 	transform: translate(-50%,-50%);
 	width: 1.733333rem;
 	height: 1.733333rem;
-	background-color:#3258e5;
+	background-color:rgba(50,88,229,.7);
 	border-radius: 50%;
 	color: #FFFFFF;
 	display: flex;
@@ -96,7 +96,7 @@ html {
 	right: 0.4rem;
 	width: 1.433333rem;
 	height: 1.433333rem;
-	background-color: rgba(153,153,153,.5);
+	background-color: rgba(250, 150, 90, 0.8);
 	border-radius: 50%;
 	color: #333333;
 	background-color: ;
@@ -105,6 +105,7 @@ html {
 	flex-direction: column;
 	justify-content: center;
 	font-size: 0.213333rem;
+	color:#fff;
 }
 .back>img{
 	width: 0.4rem;
@@ -160,7 +161,7 @@ html {
 	width: 10rem;
 	height: 100vh;
 	opacity: 0.5;
-	background-color: #CCCCCC;
+	background-color: rgba(0,0,0,.9);
 }
 .top-nav-t{
 	padding-left: 0.4rem;
