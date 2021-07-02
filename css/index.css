@@ -278,8 +278,8 @@ header ul a:hover {
 .wb-box .why .why_list .why_tu div::after {
   content: url(../image/jiahao-icon.png);
   position: absolute;
-  right: -60px;
-  top: 55px;
+  right: -55px;
+  top: 65px;
 }
 .wb-box .why .why_list .why_tu p {
   height: 140px;

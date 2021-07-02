@@ -18,12 +18,12 @@ var vm = new Vue({
 		inds:0,
 		// 切换状态
 		style1: {
-			"background": "#fa965a",
-			"border-radius": "30px",
-			"color":"#ffffff"
+			"transform": "scale(1.2)",
+			"fontWeight": "900",
+			"color":"#000000"
 		},
 		style2: {
-			'color': '#000000'
+			'color': '#333333'
 		},
 		//行业
 		industry_items:[],
@@ -132,7 +132,7 @@ var vm = new Vue({
 					num++;
 					this.top_nav_c.splice(0+num,0,res)
 				})
-				console.log(this.top_nav_c)
+				// console.log(this.top_nav_c)
 			})
 		},
 		robotBtn() {
@@ -147,7 +147,7 @@ var vm = new Vue({
 				this.small_img=this.industry_items[this.industry_index].small_img
 				this.small_title=this.industry_items[this.industry_index].small_title
 				this.small_title_con=this.industry_items[this.industry_index].small_title_con
-				console.log(this.industry_items )
+				// console.log(this.industry_items )
 			})
 		},
 		// 项目
@@ -173,6 +173,7 @@ var vm = new Vue({
 		},
 		// 行业状态切换
 		industrys(index){
+			
 			this.inds=index
 			this.industry_index=index
 			this.big_title=this.industry_items[this.industry_index].big_title

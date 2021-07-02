@@ -79,7 +79,8 @@
 				<!-- 行业导航 -->
 				<div class="industry-nav">
 					<div class="industry-navs">
-						<div @click="industrys(index)"  :style="[index===inds?style1:style2]" :key="index" v-for="(item,index) in industry_items">{{item.title}}</div>
+						<div @click="industrys(index)"  :style="[index===inds?style1:style2]" :key="index" v-for="(item,index) in industry_items">{{item.title}}<span :style="{'backgroundColor': (index===inds?'#000000':'#ffffff')}"></span></div>
+						
 					</div>
 				</div>
 				<!-- 行业内容 -->

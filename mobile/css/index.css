@@ -284,6 +284,7 @@ html {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	opacity: 1;
 	/* border: 0.013333rem solid #FA965A; */
 	height: 0.8rem;
@@ -291,17 +292,30 @@ html {
 	border-radius: 0.4rem;
 }
 .industry-navs>div{
-	flex: 1;
+	padding: 0.133333rem 0.266666rem;
+	box-sizing: border-box;
+	/* flex: 1; */
 	opacity: 1;
 	/* background: #fa965a; */
 	background: #FFFFFF;
-	border-radius: 0.4rem;
+	/* border-radius: 0.4rem; */
 	font-size: 0.32rem;
+	/* transform: scale(0.8); */
 	font-family: PingFang SC, PingFang SC-Regular;
 	font-weight: 400;
 	text-align: center;
 	/* color: #ffffff; */
 	color: #333333;
+	position: relative;
+}
+.industry-navs>div>span{
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: block;
+	width: 0.4rem;
+	height: 0.04rem;
 }
 /* 行业内容 */
 .industry-content{
@@ -311,6 +325,7 @@ html {
 	background: #0686d8;
 	padding: 0.426666rem 0.4rem 0.533333rem 0.4rem;
 	box-sizing: border-box;
+	opacity: 1;
 }
 .industry-content>div:nth-child(1){
 	height: 0.746666rem;
