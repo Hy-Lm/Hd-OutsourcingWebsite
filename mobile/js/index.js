@@ -8,7 +8,7 @@ var vm = new Vue({
 		mskss:false,
 		backs: true,
 		banners: [],
-		top_nav_c: ['首页', '成功案例', '联系我们', '关于我们'], //标题
+		top_nav_c: ['首页', '成功案例', '关于我们'], //标题
 		ind: 0,
 		// 切换状态
 		styleobj1: {
@@ -203,6 +203,9 @@ var vm = new Vue({
 		},
 		top_nav_cc(index) {
 			this.ind = index
+			if(this.top_nav_c[index]=='关于我们'){
+				window.location='intro.html'
+			}
 		},
 		// 行业状态切换
 		industrys(index) {
