@@ -15,6 +15,58 @@
 html {
 	font-size: 75px;
 }
+.tel{
+	position: relative;
+}
+.tels{
+	width: 100%;
+	z-index: 999;
+	position: fixed;
+	bottom: 0.533333rem;
+	left: 0;
+	padding: 0 0.4rem;
+	display: flex;
+	flex-direction: column;
+}
+.tels>div:nth-child(3),
+.tels>div:nth-child(2),
+.tels>div:nth-child(1){
+	margin-top: 0.2rem;
+	padding: 0.4rem;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	height:1.2rem;
+	background-color: #FFFFFF;
+	border-radius: 0.266666rem;
+}
+.tels>div:nth-child(2)>img,
+.tels>div:nth-child(1)>img{
+	width: 0.533333rem;
+	height: 0.533333rem;
+	margin-right: 0.8rem;
+}
+.tels>div:nth-child(3),
+.tels>div:nth-child(2)>a,
+.tels>div:nth-child(1)>a{
+	font-size: 0.533333rem;
+	color: #3258e5;
+}
+.tels>div:nth-child(3){
+	padding-left: 40%;
+}
+.tel .msks{
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 0.5;
+	background-color: #CCCCCC;
+}
 .zixun{
 	text-align: center;
 	position: fixed;

@@ -5,6 +5,8 @@ var vm = new Vue({
 		url: 'http://www.huidait.cn/php/',
 		// 图片路径
 		// urlImg: 'http://www.huidait.cn/admin/php/images/',
+		mskss:false,
+		backs: true,
 		banners: [],
 		top_nav_c: ['首页', '成功案例', '联系我们', '关于我们'], //标题
 		ind: 0,
@@ -111,28 +113,36 @@ var vm = new Vue({
 			'./images/xinwen-3@2x.png',
 			'./images/xinwen-4@2x.png'
 		],
-		active: false,
-		backs: false
+		active: false
 	},
 	mounted() {
 		this.banner()
 		this.industry()
 		this.ifyprojects()
 		this.news()
-		$(window).scroll(function() {
-			console.log($(window).scrollTop())
-			// 滚动条距离顶部的距离 大于 200px时
-			if ($(window).scrollTop() <= 300) {
-				this.backs = false
-				// console.log('1')
-			} else {
-				this.backs = true
-				// console.log('2')
-			}
-		});
-
+		// 滚动条的获取
+		window.addEventListener('scroll', this.handleScrollx, true)
 	},
 	methods: {
+		// 电话遮罩
+		telBtn(){
+			this.mskss=true
+		},
+		msksss(){
+			this.mskss=!this.mskss
+		},
+		// 咨询客服
+		zixun(){
+			window.location="message.html"
+		},
+		 handleScrollx() {
+		          // console.log('滚动高度', window.pageYOffset)
+				  if(window.pageYOffset<=500){
+					  this.backs=false
+				  }else{
+					  this.backs=true
+				  }
+		        },
 		// 回到顶部
 		back() {
 			let top = document.documentElement.scrollTop || document.body.scrollTop;
@@ -160,9 +170,7 @@ var vm = new Vue({
 				// console.log(this.top_nav_c)
 			})
 		},
-		robotBtn() {
-			console.log('小机器人')
-		},
+		
 		// 行业
 		industry() {
 			axios.get(this.url + 'industry.php').then(res => {

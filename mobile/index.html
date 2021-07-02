@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>辉达时代</title>
-		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。"/>
-		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。"/>
+		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。" />
+		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。" />
 		<link rel="icon" href="./images/logos.png" sizes="50x50">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="./css/public.css">
@@ -18,43 +18,44 @@
 	</head>
 	<body>
 		<div id="box">
-			
+
 			<!-- 顶部-->
 			<div class="box-top">
-				
+
 				<!-- <img src="./images/logo-icon.png" > -->
-				<img src="./images/logo-icon@2x.png" >
+				<img src="./images/logo-icon@2x.png">
 				<!-- <img src="./images/logo-icon@3x.png" > -->
-				<img src="./images/弹窗按钮@2x.png" @click="Btn" >
+				<img src="./images/弹窗按钮@2x.png" @click="Btn">
 				<!-- 导航栏 -->
 				<div class="box-top-nav" v-if="active">
 					<div class="top-nav-t">
-						<img src="./images/logo-icon@2x.png" >
+						<img src="./images/logo-icon@2x.png">
 						<img src="./images/×@2x.png" @click="Btn()">
 					</div>
 					<div class="top-nav-c">
-						<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]" v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
+						<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]"
+							v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
 					</div>
 					<div class="top-nav-b">
-						<img src="./images/dianhua-icon.svg" >
+						<img src="./images/dianhua-icon.svg">
 						<div>- 15011556811</div>
 					</div>
-					
+
 				</div>
 				<!-- 遮罩层 -->
-					<div class="mask" @click="mask" v-if="active"></div>		
+				<div class="mask" @click="mask" v-if="active"></div>
 			</div>
-			
+
 			<!-- 背景图 -->
 			<div class="box-bg">
 				<div class="swiper-container">
-				        <div class="swiper-wrapper" >
-				            <div class="swiper-slide" v-for="(item,index) in banners" :key="index">
-								<img :src="item" >
-							</div>
-				        </div>
-						<div class="swiper-pagination"></div>
-				    </div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="(item,index) in banners" :key="index">
+							<img :src="item">
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 			</div>
 			<!-- 网站建设 -->
 			<div class="box-construction">
@@ -66,7 +67,7 @@
 					<div class="construction-items">
 						<div class="construction-item" v-for="(item,index) in construction_items" :key="index">
 							<div>
-								<img :src="item.img" >
+								<img :src="item.img">
 							</div>
 							<div>{{item.title}}</div>
 							<div>
@@ -85,8 +86,10 @@
 				<!-- 行业导航 -->
 				<div class="industry-nav">
 					<div class="industry-navs">
-						<div @click="industrys(index)"  :style="[index===inds?style1:style2]" :key="index" v-for="(item,index) in industry_items">{{item.title}}<span :style="{'backgroundColor': (index===inds?'#000000':'#ffffff')}"></span></div>
-						
+						<div @click="industrys(index)" :style="[index===inds?style1:style2]" :key="index"
+							v-for="(item,index) in industry_items">{{item.title}}<span
+								:style="{'backgroundColor': (index===inds?'#000000':'#ffffff')}"></span></div>
+
 					</div>
 				</div>
 				<!-- 行业内容 -->
@@ -96,7 +99,7 @@
 					<div class="industry-content-items">
 						<div class="industry-content-item" v-for="(item,index) in 3" :key="index">
 							<div>
-								<img :src="small_img[index]" >
+								<img :src="small_img[index]">
 								<div>{{small_title[index]}}</div>
 							</div>
 							<div>
@@ -105,7 +108,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 			<!-- 服务 -->
 			<div class="box-serve">
@@ -117,7 +120,7 @@
 				<div class="serve-items">
 					<div class="serve-item" v-for="(item,index) in serve_item" :key="index">
 						<img :src="item.img" alt="">
-						<img src="./images/xiajiantou-icon.svg" >
+						<img src="./images/xiajiantou-icon.svg">
 						<div>{{item.con}}</div>
 					</div>
 				</div>
@@ -132,7 +135,7 @@
 				<div class="serve-items">
 					<div class="serve-item" v-for="(item,index) in safeguard_items" :key="index">
 						<img :src="item.img" alt="">
-						<img src="./images/xiajiantou-2-icon.svg" >
+						<img src="./images/xiajiantou-2-icon.svg">
 						<div>{{item.con}}</div>
 					</div>
 				</div>
@@ -147,7 +150,7 @@
 				<div class="project-items">
 					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">
 						<div>
-							<img :src="item.imgsrc" >
+							<img :src="item.imgsrc">
 						</div>
 						<div>{{item.title}}</div>
 						<div>{{ifyproject_con[index]}}</div>
@@ -166,10 +169,10 @@
 						<img :src="new_img[index]" alt="">
 						<div>{{item.title}}</div>
 					</div>
-					<!-- 查看更多 --> 
+					<!-- 查看更多 -->
 					<div class="news-more">
 						<div>点击查看更多资讯</div>
-						<img src="images/youjiantou.svg" >
+						<img src="images/youjiantou.svg">
 					</div>
 				</div>
 			</div>
@@ -181,33 +184,48 @@
 			</div>
 			<!-- 定位 -->
 			<div class="footer">
-				<div class="footer-l" @click="robotBtn">
+				<div class="footer-l" @click="zixun">
 					<img src="./images/kefu-icon.svg">
 					<div class="footer-con">在线客服</div>
 				</div>
-				<div class="footer-r" @click="robotBtn">
+				<!-- 打电话 -->
+				<div class="footer-r" @click="telBtn">
 					<img src="./images/dianhua-2-icon.svg">
 					<div class="footer-con">咨询电话</div>
 				</div>
 			</div>
+			<!-- 电话阴影 -->
+			<div class="tel" v-if="mskss">
+				<div class="msks" @click="msksss"></div>
+				<div class="tels">
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15735629946">呼叫 157 3562 9946</a>
+					</div>
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15735629946">呼叫 157 3562 9946</a>
+					</div>
+					<div @click="msksss">取消</div>
+				</div>
+
+			</div>
 			<!-- 回到顶部 -->
-			<div class="back" v-if="backs" @click="back">
-				<img src="images/jiantou2.svg" >
+			<div class="back" v-show="backs" @click="back">
+				<img src="images/jiantou2.svg">
 				<div>回到顶部</div>
 			</div>
 			<!-- 咨询 -->
-			<div class="zixun">
-				<img src="./images/zixun2-icon.svg" >
+			<div class="zixun" @click="zixun">
+				<img src="./images/zixun2-icon.svg">
 				<div>咨询</div>
 			</div>
 		</div>
 	</body>
-	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
-	
+
 	<script type="text/javascript">
-		
 		setTimeout(function() {
 			var swiper = new Swiper('.swiper-container', {
 				pagination: '.swiper-pagination',
@@ -221,7 +239,7 @@
 				autoplayDisableOnInteraction: false,
 				observer: true,
 				observerParents: true
-		   });
+			});
 		}, 500)
 	</script>
 </html>

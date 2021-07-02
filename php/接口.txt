@@ -35,3 +35,9 @@ delIfyproject.php--删除项目   传id 返回ok 或 no
 addNews.php--增加/修改新闻  传id，time，title  以get的形式传递 
 
 delNews.php--删除新闻   传id 返回ok 或 no
+
+liuyan.php  接收反馈的内容
+
+liu.php  显示所有内容
+
+delliu.php 删除反馈内容

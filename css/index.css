@@ -523,6 +523,7 @@ header ul a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 45px;
 }
 .general p,
 .general div {
