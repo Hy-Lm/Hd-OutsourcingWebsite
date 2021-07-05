@@ -18,7 +18,31 @@
 		<div id="app">
 			<!-- 顶部-->
 			<div class="box-top">
+			
+				<!-- <img src="./images/logo-icon.png" > -->
 				<img src="./images/logo-icon@2x.png">
+				<!-- <img src="./images/logo-icon@3x.png" > -->
+				<img src="./images/弹窗按钮@2x.png" @click="Btn">
+				<!-- 导航栏 -->
+				<div class="box-top-nav" v-if="active">
+					<div>
+						<div class="top-nav-t">
+							<img src="./images/logo-icon@2x.png">
+							<img src="./images/×@2x.png" @click="Btn()">
+						</div>
+						<div class="top-nav-c">
+							<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]"
+								v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
+						</div>
+					</div>
+					<div class="top-nav-b">
+						<img src="./images/dianhua-icon.svg">
+						<div>- 15011556811</div>
+					</div>
+			
+				</div>
+				<!-- 遮罩层 -->
+				<div class="mask" @click="mask" v-if="active"></div>
 			</div>
 			<!-- bg -->
 			<div class="bg">
@@ -56,12 +80,12 @@
 				</div>
 				<!-- 定位的文字 -->
 				<div class="flow-c">
-					资深策划进行项目对接、分析与实现最优方案策划，专业技术团队进行快速开 发，稳定测试，标准验收。独有的原生系统开发技术，一次开发，多平台，多 入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！					
+					资深策划进行项目对接、分析与实现最优方案策划，专业技术团队进行快速开发，稳定测试，标准验收。独有的原生系统开发技术，一次开发，多平台，多 入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！					
 				</div>
 			</div>
 			<!-- 经典案例 -->
 			<div class="box-case">
-				<div class="case-title advantage-title">APP开发流程</div>
+				<div class="case-title advantage-title">经点案例</div>
 				<!-- 项目内容 -->
 				<div class="project-items">
 					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">

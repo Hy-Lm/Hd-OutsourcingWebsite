@@ -7,6 +7,15 @@ var vm = new Vue({
 		// 电话隐藏
 		mskss:false,
 		backs: true,
+		top_nav_c: ['首页', '成功案例', '关于我们'], //标题
+		ind: 0,
+		// 切换状态
+		styleobj1: {
+			"color": "#0300bf"
+		},
+		styleobj2: {
+			'color': '#000000'
+		},
 		// 项目
 		ifyproject: [],
 		advantages:[
@@ -31,12 +40,14 @@ var vm = new Vue({
 			{
 				img:'images/anquan-icon@2x.png',
 				name:'安全性高',
-				title:'Strong Professional',
+				title:'High Security',
 				con:'项目开发前，签订正规合同，提供官方保障；项目完成后，提供源码服务确保产品安全'
 			}
-		]
+		],
+		active: false
 	},
 	mounted() {
+		this.banner()
 		this.ifyprojects()
 		if(window.pageYOffset<=500){
 			this.backs=false
@@ -45,6 +56,38 @@ var vm = new Vue({
 		window.addEventListener('scroll', this.handleScrollx, true)
 	},
 	methods: {
+		top_nav_cc(index) {
+			this.active=false
+			this.ind = index
+			console.log(this.top_nav_c[index])
+			if(this.top_nav_c[index]=='关于我们'){
+				window.location='intro.html'
+			}else if(this.top_nav_c[index]=='APP开发'){
+				window.location=' App.html '
+			}else if(this.top_nav_c[index]=='首页'){
+				window.location=' index.html '
+			}
+		},
+		// 弹出弹窗
+		Btn() {
+			this.active = !this.active
+		},
+		banner() {
+			axios.get(this.url + 'banner.php').then(res => {
+				// console.log(res.data)
+				this.banners = res.data.bannerImgs
+				var num = 0;
+				res.data.banner_title.forEach(res => {
+					num++;
+					this.top_nav_c.splice(0 + num, 0, res)
+				})
+				// console.log(this.top_nav_c)
+			})
+		},
+		// 遮罩层
+		mask() {
+			this.active = !this.active
+		},
 		zixun(){
 			window.location="message.html"
 		},

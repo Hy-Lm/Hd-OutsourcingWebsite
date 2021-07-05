@@ -147,8 +147,9 @@ html {
 	/* overflow: auto; */
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	/* background-color: #CCCCCC; */
-	padding-bottom: 0.626666rem;
+	padding-bottom: 1.466666rem;
 	box-sizing: border-box;
 	/* opacity: 1; */
 	background: #ffffff;
