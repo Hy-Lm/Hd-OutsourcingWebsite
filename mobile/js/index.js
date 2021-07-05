@@ -3,6 +3,7 @@ var vm = new Vue({
 	data: {
 		// 路径
 		url: 'http://www.huidait.cn/php/',
+		// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
 		// 图片路径
 		// urlImg: 'http://www.huidait.cn/admin/php/images/',
 		mskss:false,
@@ -101,18 +102,11 @@ var vm = new Vue({
 			}
 		],
 		// 项目
-		ifyproject_con: ['天津连锁品牌养车APP', '轻听,倾听,轻生活', '会养道,会生活', '一款线上电子产品APP', '大人孩子都能拼出自己的世界', '生活里遇见最美的自己'],
 		ifyproject: [
 
 		],
 		// 新闻
 		neww: [],
-		new_img: [
-			'./images/xinwen-1@2x.png',
-			'./images/xinwen-2@2x.png',
-			'./images/xinwen-3@2x.png',
-			'./images/xinwen-4@2x.png'
-		],
 		active: false
 	},
 	mounted() {
@@ -120,6 +114,9 @@ var vm = new Vue({
 		this.industry()
 		this.ifyprojects()
 		this.news()
+		if(window.pageYOffset<=500){
+			this.backs=false
+		}
 		// 滚动条的获取
 		window.addEventListener('scroll', this.handleScrollx, true)
 	},
@@ -136,7 +133,6 @@ var vm = new Vue({
 			window.location="message.html"
 		},
 		 handleScrollx() {
-		          // console.log('滚动高度', window.pageYOffset)
 				  if(window.pageYOffset<=500){
 					  this.backs=false
 				  }else{
