@@ -29,6 +29,7 @@ html {
 }
 /* 主要优势 */
 .advantage-title{
+	margin-top: 0.8rem;
 	text-align: center;
 	height: 0.666666rem;
 	opacity: 1;
@@ -36,15 +37,50 @@ html {
 	font-family: PingFang SC, PingFang SC-Bold;
 	font-weight: 700;
 	color: #333333;
+	margin-bottom: 0.4rem;
 }
 /* 优势内容 */
+.advantage-item{
+	padding:1.04rem 0.266666rem 0.266666rem 0.266666rem;
+	box-sizing: border-box;
+	width: 4.4rem;
+	height: 4.8rem;
+	opacity: 1;
+	background: #ffffff;
+	border: 1px solid #0686d8;
+	border-radius: 0.16rem;
+	box-shadow: 0 0.08rem 0.16rem 0 #ebebeb; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: relative;
+}
+.advantage-item-img{
+	position: absolute;
+	left: 50%;
+	top:-25%;
+	transform: translate(-50%,25%);
+	width: 1.653333rem;
+	height: 1.653333rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	background: #165eca;
+	border-radius: 50%;
+}
+.advantage-item-img>img{
+	width: 0.96rem;
+	height: 0.96rem;
+	opacity: 1;
+}
 .advantage-item>div:nth-child(1){
 	height: 0.586666rem;
 	opacity: 1;
 	font-size: 0.426666rem;
 	font-family: PingFang SC, PingFang SC-Regular;
 	font-weight: 400;
-	text-align: left;
+	text-align: center;
 	color: #333333;
 }
 .advantage-item>div:nth-child(2){
@@ -53,15 +89,30 @@ html {
 	font-size: 0.266666rem;
 	font-family: PingFang SC, PingFang SC-Regular;
 	font-weight: 400;
-	text-align: left;
+	text-align: center;
 	color: #666666;
+	padding-bottom: 0.24rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.advantage-item>div:nth-child(2)::after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -0.266666rem;
+	transform: translate(-50%);
+	width: 1.12rem;
+	height: 0.053333rem;
+	opacity: 1;
+	background-color:#165eca;
 }
 .advantage-item>div:nth-child(3){
-	height: 116px;
+	height: 1.546666rem;
 	opacity: 1;
-	font-size: 20px;
+	font-size: 0.266666rem;
 	font-family: PingFang SC, PingFang SC-Regular;
 	font-weight: 400;
 	text-align: left;
 	color: #666666;
+	transform: scale(0.9);
 }
