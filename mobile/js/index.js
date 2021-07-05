@@ -203,7 +203,7 @@ var vm = new Vue({
 			if(this.top_nav_c[index]=='关于我们'){
 				window.location='intro.html'
 			}else if(this.top_nav_c[index]=='APP开发'){
-				window.location='App.html'
+				window.location=' App.html '
 			}
 		},
 		// 行业状态切换
