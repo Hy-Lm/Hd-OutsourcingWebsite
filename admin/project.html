@@ -37,12 +37,14 @@
 								<tr>
 									<td style="width: 15%;">项目类型</td>
 									<td style="width: 15%;">项目名称</td>
-									<td style="width: 55%;">图片</td>
+									<td style="width: 15%;">项目描述</td>
+									<td style="width: 30%;">图片</td>
 									<td style="width: 15%;">编辑</td>
 								</tr>
 								<tr v-for="(all,ins) in item.all">
 									<td>{{all.name}}</td>
 									<td>{{all.title}}</td>
+									<td>{{all.title_con}}</td>
 									<td>
 										<img :src="all.imgsrc" alt="" style="width: 200px; height: 150px;margin: 5px 0;">
 									</td>
@@ -81,6 +83,8 @@
 												<input class="form-control" type="text" name="name" placeholder="请输入项目类型" v-model="name" />
 												<label>项目名称</label>
 												<input class="form-control" type="text" name="title" placeholder="请输入项目名称" v-model="title" />
+												<label>项目描述</label>
+												<input class="form-control" type="text" name="title_con" placeholder="请输入项目描述" v-model="title_con" />
 												<label>图片</label>
 												<input type="file" name="imgs"  multiple="multiple" />
 											
@@ -111,11 +115,12 @@
 		el: '#box',
 		data: {
 			list: [],
-			// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
-			url:'http://www.huidait.cn/php/',
+			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
+			// url:'http://www.huidait.cn/php/',
 			id:'',
 			name:'',
-			title:''
+			title:'',
+			title_con:''
 		},
 		methods: {
 			// 模态框
@@ -125,6 +130,7 @@
 				this.id = id
 				this.name = this.list[index].all[ins].name
 				this.title = this.list[index].all[ins].title
+				this.title_con = this.list[index].all[ins].title_con
 			
 				// console.log(this.id,this.name,this.title)
 			},
@@ -135,6 +141,7 @@
 				// console.log(this.id)
 				this.title=''
 				this.name='' 
+				this.title_con=''
 			},
 			// 删除
 			del(id,ins,index) {
@@ -158,6 +165,7 @@
 				let url = this.url + "ifyproject.php"
 				axios.get(url).then(res => {
 					this.list = res.data
+					console.log(res)
 					console.log(this.list)
 				})
 			}

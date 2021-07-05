@@ -100,6 +100,7 @@
 								<div>
 									{{project.title}}
 								</div>
+								<p>{{project.title_con}}</p>
 							</li>
 						</ul>
 						<!-- <div class="chakan">
@@ -214,8 +215,8 @@
 						axios.get(project).then(res1 => {
 							console.log(res1.data)
 							this.project = res1.data[0].all
-							this.project=this.project.splice(0,6)
-							console.log(this.project)
+							// this.project=this.project.splice(0,6)
+							// console.log(this.project)
 						})
 					},
 					// 移入

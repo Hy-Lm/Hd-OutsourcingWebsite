@@ -24,100 +24,103 @@
 			<div class="page-title">
 				<span class="modular fl"><i class="add_user"></i><em>新闻</em></span>
 			</div>
-			<form>
-				<table class="list-style">
-					<tr style="text-align: center;">
-						<td style="width: 20%;">时间</td>
-						<td style="width: 50%;">标题</td>
-						<td style="width: 20%;">编辑</td>
-					</tr>
-					<tr v-for="(item,index) in list" :key="index">
-						<td style="text-align: center;">{{times[index]}}</td>
-						<td >{{item.title}}</td>
-						<td style="text-align: center;">
-							<a title="编辑" @click="compile(item.id,index)" data-toggle="modal" data-target="#myModal">
-								<span>编辑</span>
-							</a>
-							<a title="删除" @click="del(item.id)">
-								<span>删除</span>
-							</a>
-						</td>
-						<tr>
-							<td colspan="7">
-								<a style="margin: 50%;" @click="add()"  data-toggle="modal" data-target="#myModal">
-									<span class="glyphicon glyphicon-plus"></span>
-								</a>
-							</td>
-						</tr>
-						<!-- 模态框 -->
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title" id="myModalLabel">
-											数据编辑
-										</h4>
-									</div>
-									<div class="modal-body">
-										<form role="form">
-											<div class="form-group">
-												<input type="hidden" name="id" v-model="id" id="" value="" />
-												<label>时间</label>
-												<input class="form-control" type="text" name="title" placeholder="请输入类型" v-model="time" />
-												<label>标题</label>
-												<input class="form-control" type="text" name="title" placeholder="请输入类型" v-model="title" />
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-												</button>
-												<input type="button" @click="put_in()"  value="提交更改" class="btn btn-primary" />
-											</div>
-										</form>
-									</div>
-								</div><!-- /.modal-content -->
-							</div><!-- /.modal -->
+			<table class="list-style">
+				<tr style="text-align: center;">
+					<td style="width: 20%;">图片</td>
+					<td style="width: 50%;">标题</td>
+					<td style="width: 20%;">编辑</td>
+				</tr>
+				<tr v-for="(item,index) in list" :key="index">
+					<!-- <td style="text-align: center;">{{times[index]}}</td> -->
+					<td>
+						<img :src="item.img" alt="">
+					</td>
+					<td>{{item.title}}</td>
+					<td style="text-align: center;">
+						<a title="编辑" @click="compile(item.id,index)" data-toggle="modal" data-target="#myModal">
+							<span>编辑</span>
+						</a>
+						<a title="删除" @click="del(item.id)">
+							<span>删除</span>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7">
+						<a style="margin: 50%;" @click="add()" data-toggle="modal" data-target="#myModal">
+							<span class="glyphicon glyphicon-plus"></span>
+						</a>
+					</td>
+				</tr>
+			</table>
+			<!-- 模态框 -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="myModalLabel">
+								数据编辑
+							</h4>
 						</div>
-						<!-- 结束 -->
-					</tr>
-				</table>
-			</form>
+						<div class="modal-body">
+							<form :action="this.url+'addNews.php'" method="post" enctype="multipart/form-data">
+								<div class="form-group">
+									<input type="hidden" name="id" v-model="id" />
+									<label>图片</label>
+									<input type="file" name="img" multiple="multiple" />
+									<label>标题</label>
+									<input class="form-control" type="text" name="title" placeholder="请输入类型"
+										v-model="title" />
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+									</button>
+									<input type="submit" name="sub" value="提交更改" class="btn btn-primary" />
+								</div>
+							</form>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+			<!-- 结束 -->
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
 	// 防止用户从地址栏直接进入
-	if(window.sessionStorage.getItem('user')==''|| window.sessionStorage.getItem('user')==null){
-		window.location.href="index.html"
+	if (window.sessionStorage.getItem('user') == '' || window.sessionStorage.getItem('user') == null) {
+		window.location.href = "index.html"
 	}
 	new Vue({
 		el: '#box',
 		data: {
 			list: [],
-			// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
-			url:'http://www.huidait.cn/php/',
-			id:'',
-			title:'',
-			times:[],
-			time:''  // 模态框时间
+			url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
+			// url:'http://www.huidait.cn/php/',
+			id: '',
+			title: '',
+			times: [],
+			time: ''  // 模态框时间
 		},
 		methods: {
-			put_in(){
+			put_in() {
 				console.log(this.id)
-				console.log(this.time,this.title)
-				var timeDate =this.time
-				new Date(timeDate).getTime()
-				console.log(new Date(timeDate).getTime()/1000)
-				let url = this.url + "addNews.php?id=" + this.id +"&time="+new Date(timeDate).getTime()/1000 + "&title=" + this.title
-				console.log(url)
-				axios.get(url).then(res => {
-					if(res.data=="ok"){
-						$('#myModal').modal('hide')
-						alert('修改成功')
-						this.load()
-					}else{
-						alert('编辑失败')
-					}
-				})
+				// console.log(this.time,this.title)
+				// // var timeDate =this.time
+				// new Date(timeDate).getTime()
+				// console.log(new Date(timeDate).getTime()/1000)
+				// let url = this.url + "addNews.php?id=" + this.id +"&time="+new Date(timeDate).getTime()/1000 + "&title=" + this.title
+				// console.log(url)
+				// axios.get(url).then(res => {
+				// 	if(res.data=="ok"){
+				// 		$('#myModal').modal('hide')
+				// 		alert('修改成功')
+				// 		this.load()
+				// 	}else{
+				// 		alert('编辑失败')
+				// 	}
+				// })
 			},
 			// 模态框
 			compile(id, index) {
@@ -127,12 +130,12 @@
 				this.time = this.times[index]
 				// console.log(this.times[index])
 			},
-			add(){
+			add() {
 				this.list.push({})
-				this.id= this.list.length+1
+				this.id = this.list.length + 1
 				console.log(this.id)
-				this.title=''
-				this.time=''
+				this.title = ''
+				this.time = ''
 				console.log(this.list)
 			},
 			// 删除
@@ -141,10 +144,10 @@
 				let url = this.url + "delNews.php?id=" + id
 				console.log(url)
 				axios.get(url).then(res => {
-					if(res.data=="ok"){
+					if (res.data == "ok") {
 						alert('删除成功')
 						this.load()
-					}else{
+					} else {
 						alert('删除失败')
 					}
 				})
@@ -155,15 +158,6 @@
 				axios.get(url).then(res => {
 					this.list = res.data
 					console.log(this.list)
-					for(var i = 0 ;i <this.list.length; i++){
-						console.log(this.list[i].time)
-						var t = new Date(parseInt(this.list[i].time) * 1000).toLocaleString()
-						// console.log(t)
-						var zi = t.indexOf('午') - 1
-						// console.log(zi)
-						var num = t.substr(0, zi)
-						this.times.push(num)
-					}
 				})
 			}
 		},

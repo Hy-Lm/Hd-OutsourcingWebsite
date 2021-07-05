@@ -267,6 +267,9 @@
 								<div>
 									{{project.title}}
 								</div>
+								<p>
+									{{project.title_con}}
+								</p>
 							</li>
 							<!-- <li v-for="project in this.project">
 								<img :src="project.img" alt="">
@@ -482,24 +485,24 @@
 							console.log(res1.data[0].all)
 							this.project = res1.data[0].all
 							// console.log(this.project)
-							this.project=this.project.splice(0,6)
-							console.log(this.project)
+							// this.project=this.project.splice(0,6)
+							// console.log(this.project)
 						})
 						// 新闻
-						let news = this.url + "/news.php"
-						axios.get(news).then(res1 => {
-							console.log(res1.data)
-							this.news = res1.data
-							for (var i = 0; i < this.news.length; i++) {
-								// console.log(this.news[i].time)
-								var t = new Date(parseInt(this.news[i].time) * 1000).toLocaleString()
-								var zi = t.indexOf('午') - 1
-								// console.log(zi)
-								var num = t.substr(0, zi)
-								this.times.push(num)
-								// console.log(this.times)
-							}
-						})
+						// let news = this.url + "/news.php"
+						// axios.get(news).then(res1 => {
+						// 	console.log(res1.data)
+						// 	this.news = res1.data
+						// 	for (var i = 0; i < this.news.length; i++) {
+						// 		// console.log(this.news[i].time)
+						// 		var t = new Date(parseInt(this.news[i].time) * 1000).toLocaleString()
+						// 		var zi = t.indexOf('午') - 1
+						// 		// console.log(zi)
+						// 		var num = t.substr(0, zi)
+						// 		this.times.push(num)
+						// 		// console.log(this.times)
+						// 	}
+						// })
 					},
 					// 跳转app页面
 					fun(index) {
