@@ -198,6 +198,7 @@ var vm = new Vue({
 			})
 		},
 		top_nav_cc(index) {
+			this.active=false
 			this.ind = index
 			console.log(this.top_nav_c[index])
 			if(this.top_nav_c[index]=='关于我们'){
