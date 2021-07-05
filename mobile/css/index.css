@@ -590,7 +590,7 @@ html {
 	opacity: 1;
 	border-radius: 0.1rem;
 	background: rgba(0,0,0,0.00);
-	border-radius: 0.266666rem;
+	/* border-radius: 0.266666rem; */
 }
 .project-item>div:nth-child(2){
 	height: 0.533333rem;

@@ -81,7 +81,7 @@ header ul a:hover {
 }
 .wb-box .website {
   width: 1400px;
-  height: 820px;
+  height: 700px;
 }
 .wb-box .website ul {
   display: flex;
@@ -102,7 +102,7 @@ header ul a:hover {
   padding: 18px 0;
   width: 100%;
   height: 65px;
-  font-size: 32px;
+  font-size: 24px;
   color: #333333;
 }
 .wb-box .website ul li .xian {
@@ -114,7 +114,7 @@ header ul a:hover {
   margin-top: 20px;
   width: 100%;
   height: 210px;
-  font-size: 24px;
+  font-size: 18px;
   color: #666666;
   line-height: 34px;
   text-align: left;
