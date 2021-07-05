@@ -7,6 +7,104 @@
 html {
 	font-size: 75px;
 }
+.tel{
+	position: relative;
+}
+.tels{
+	width: 100%;
+	z-index: 999;
+	position: fixed;
+	bottom: 1.2rem;
+	left: 0;
+	padding: 0 0.4rem;
+	display: flex;
+	flex-direction: column;
+}
+.tels>div:nth-child(3),
+.tels>div:nth-child(2),
+.tels>div:nth-child(1){
+	margin-top: 0.2rem;
+	padding: 0.4rem;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:1.2rem;
+	background-color: #FFFFFF;
+	border-radius: 0.266666rem;
+}
+/* 电话 */
+.tels>div:nth-child(2)>img,
+.tels>div:nth-child(1)>img{
+	width: 0.533333rem;
+	height: 0.533333rem;
+	margin-right: 0.3rem;
+}
+.tels>div:nth-child(3),
+.tels>div:nth-child(2)>a,
+.tels>div:nth-child(1)>a{
+	font-size: 0.533333rem;
+	color: #3258e5;
+}
+.tels>div:nth-child(3){
+	/*padding-left: 40%;*/
+}
+.tel .msks{
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 0.5;
+	background-color: rgba(0,0,0,.9);
+}
+.zixun{
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 12%;
+	transform: translate(-50%,-50%);
+	width: 1.733333rem;
+	height: 1.733333rem;
+	background-color:rgba(50,88,229,.7);
+	border-radius: 50%;
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 0.266666rem;
+}
+.zixun>img{
+	width: 0.666666rem;
+	height: 0.666666rem;
+}
+/* 回到顶部 */
+.back{
+	text-align: center;
+	position: fixed;
+	bottom: 1.466666rem;
+	right: 0.4rem;
+	width: 1.433333rem;
+	height: 1.433333rem;
+	background-color: rgba(250, 150, 90, 0.8);
+	border-radius: 50%;
+	color: #333333;
+	background-color: ;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 0.213333rem;
+	color:#fff;
+}
+.back>img{
+	width: 0.4rem;
+	height: 0.4rem;
+}
 .box-top{
 	width: 10rem;
 	padding: 0 0.4rem;
@@ -27,9 +125,11 @@ html {
 	width: 100%;
 	height: 100%;
 }
+.box-advantage{
+	margin-top: 0.8rem;
+}
 /* 主要优势 */
 .advantage-title{
-	margin-top: 0.8rem;
 	text-align: center;
 	height: 0.666666rem;
 	opacity: 1;
@@ -37,13 +137,21 @@ html {
 	font-family: PingFang SC, PingFang SC-Bold;
 	font-weight: 700;
 	color: #333333;
-	margin-bottom: 0.4rem;
+	margin-bottom: 1.333333rem;
 }
 /* 优势内容 */
+.advantage-items{
+	padding: 0 0.4rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: space-between;
+}
 .advantage-item{
+	margin-bottom: 1.333333rem;
 	padding:1.04rem 0.266666rem 0.266666rem 0.266666rem;
 	box-sizing: border-box;
-	width: 4.4rem;
+	width: 48%;
 	height: 4.8rem;
 	opacity: 1;
 	background: #ffffff;
@@ -66,12 +174,11 @@ html {
 	align-items: center;
 	justify-content: center;
 	opacity: 1;
-	background: #165eca;
 	border-radius: 50%;
 }
 .advantage-item-img>img{
-	width: 0.96rem;
-	height: 0.96rem;
+	width: 1.653333rem;
+	height: 1.653333rem;
 	opacity: 1;
 }
 .advantage-item>div:nth-child(1){
@@ -104,7 +211,18 @@ html {
 	width: 1.12rem;
 	height: 0.053333rem;
 	opacity: 1;
-	background-color:#165eca;
+}
+.advantage-item:nth-child(1)>div:nth-child(2)::after{
+	background-color:rgba(22,94,202,1);
+}
+.advantage-item:nth-child(2)>div:nth-child(2)::after{
+	background: rgba(53,172,28,1);
+}
+.advantage-item:nth-child(3)>div:nth-child(2)::after{
+	background: rgba(247,188,62,1);
+}
+.advantage-item:nth-child(4)>div:nth-child(2)::after{
+	background-color:rgba(6,134,216,1);
 }
 .advantage-item>div:nth-child(3){
 	height: 1.546666rem;
@@ -115,4 +233,153 @@ html {
 	text-align: left;
 	color: #666666;
 	transform: scale(0.9);
+}
+/* 项目流程 */
+.procedures-title{
+	margin-bottom: 0.4rem;
+}
+.procedures-img{
+	width: 100%;
+	height:6.32rem;
+	opacity: 1;
+	background: #414c51;
+}
+.procedures-img>img{
+	width: 100%;
+	height: 100%;
+}
+.box-procedures{
+	margin-bottom: 0.8rem;
+}
+/* APP开发流程 */
+.flow-title{
+	margin-bottom: 0.4rem;
+}
+.flow-img{
+	width: 100%;
+	height:5.226666rem;
+	opacity: 1;
+	background: #414c51;
+}
+.flow-img>img{
+	width: 100%;
+	height: 100%;
+}
+.box-flow{
+	margin-bottom: 0.8rem;
+	position: relative;
+}
+/* 定位的内容 */
+.flow-c{
+	width: 9.386666rem;
+	position: absolute;
+	top: 1.466666rem;
+	left: 50%;
+	transform: translate(-50%);
+	height: 1.12rem;
+	opacity: 1;
+	font-size: 0.266666rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #ffffff;
+}
+/* 经典案例 */
+.case-title{
+	margin-bottom: 0.4rem;
+}
+/* 项目内容 */
+.project-item{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.533333rem;
+	height: 4.186666rem;
+}
+.project-item>div:nth-child(1){
+	width:4.253333rem;
+	
+	overflow: hidden;
+}
+.project-item img{
+	width: 4.266660rem;
+	height: 3.173333rem;
+	opacity: 1;
+	/* border-radius: 0.1rem; */
+	background: rgba(0,0,0,0.00);
+	border-radius: 0.1rem;
+}
+.project-item>div:nth-child(2){
+	height: 0.533333rem;
+	opacity: 1;
+	font-size: 0.373333rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: center;
+	color: #333333;
+}
+.project-item>div:nth-child(3){
+	text-align: center;
+	height: 0.373333rem;
+	opacity: 1;
+	font-size: 0.266666rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	color: #999999;
+}
+.project-items{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding:0 0.4rem;
+	box-sizing: border-box;
+}
+/*  底部*/
+.copyright{
+	height: 1.12rem;
+	opacity: 1;
+	font-size: 0.266666rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: center;
+	color: #666666;
+	margin: 0.8rem 0;
+	margin-bottom: 1.866666rem;
+}
+/* 固定的底部 */
+.footer{
+	z-index: 99999;
+	width: 10rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 1.066666rem;
+	opacity: 1;
+	background: #3258e5;
+	display: flex;
+}
+.footer>div:nth-child(1){
+	border-right: 0.026666rem solid #FFFFFF;
+}
+.footer>div{
+	flex: 1;
+	display: flex;
+	/* text-align: center; */
+	justify-content: center;
+	align-items: center;
+}
+
+.footer img{
+	width: 0.413333rem;
+	height: 0.386666rem;
+	margin-right: 0.133333rem;
+}
+.footer-con{
+	opacity: 1;
+	font-size: 0.373333rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #ffffff;
+	letter-spacing: 0.04rem;
 }
