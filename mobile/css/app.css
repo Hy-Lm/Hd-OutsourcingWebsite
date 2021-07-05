@@ -1,0 +1,67 @@
+#app {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	opacity: 1;
+}
+html {
+	font-size: 75px;
+}
+.box-top{
+	width: 10rem;
+	padding: 0 0.4rem;
+	box-sizing: border-box;
+	height: 1.24rem;
+	background-color: #FFFFFF;
+}
+.box-top>img{
+	width: 3.466666rem;
+	height: 0.826666rem;
+}
+/* bg */
+.bg{
+	width: 100%;
+	height: 3.653333rem;
+}
+.bg>img{
+	width: 100%;
+	height: 100%;
+}
+/* 主要优势 */
+.advantage-title{
+	text-align: center;
+	height: 0.666666rem;
+	opacity: 1;
+	font-size: 0.48rem;
+	font-family: PingFang SC, PingFang SC-Bold;
+	font-weight: 700;
+	color: #333333;
+}
+/* 优势内容 */
+.advantage-item>div:nth-child(1){
+	height: 0.586666rem;
+	opacity: 1;
+	font-size: 0.426666rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #333333;
+}
+.advantage-item>div:nth-child(2){
+	height: 0.373333rem;
+	opacity: 1;
+	font-size: 0.266666rem;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #666666;
+}
+.advantage-item>div:nth-child(3){
+	height: 116px;
+	opacity: 1;
+	font-size: 20px;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	text-align: left;
+	color: #666666;
+}
