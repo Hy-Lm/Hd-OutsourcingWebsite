@@ -153,7 +153,7 @@
 							<img :src="item.imgsrc">
 						</div>
 						<div>{{item.title}}</div>
-						<div>{{ifyproject_con[index]}}</div>
+						<div>{{item.title_con}}</div>
 					</div>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 				<!-- 新闻内容 -->
 				<div class="news-content">
 					<div class="news-item" v-for="(item,index) in neww" :key="index">
-						<img :src="new_img[index]" alt="">
+						<img :src="item.img" alt="">
 						<div>{{item.title}}</div>
 					</div>
 					<!-- 查看更多 -->

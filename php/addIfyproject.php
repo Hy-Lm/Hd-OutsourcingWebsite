@@ -6,6 +6,7 @@ include('./public.php');
 $id=$_POST['id'];
 $name=$_POST['name'];//名称
 $title=$_POST['title'];//标题
+$title_con=$_POST['title_con'];//标题
 $file=$_FILES['imgs'];//以传递过来的图片路径
 // echo $name.$file;
 if(is_uploaded_file($file['tmp_name'])){//$file['tmp_name'] 临时路径
@@ -17,9 +18,8 @@ move_uploaded_file($file['tmp_name'], "images/".$fileName);
 $sql="select * from ifyproject where id='$id'";
 $res=$conn->query($sql);
 if($res->num_rows){
-	// echo 'ok';
 	// 有该标题，然后进行修改
-	$sql="update ifyproject set name='$name',title='$title',imgsrc='$fileName'  where id='$id'";
+	$sql="update ifyproject set name='$name',title='$title',imgsrc='$fileName',title_con='$title_con' where id='$id'";
 	$res=$conn->query($sql);
 	if($res){
 		echo "<script>alert('修改成功');history.go(-1);</script>";
@@ -27,8 +27,7 @@ if($res->num_rows){
 		echo "<script>alert('修改失败')</script>";
 	}
 }else{//添加
-	// echo 'no';
-	$sql="insert into ifyproject (name,title,imgsrc) values('$name','$title','$fileName') ";
+	$sql="insert into ifyproject (name,title,imgsrc,title_con) values('$name','$title','$fileName','$title_con') ";
 	$res=$conn->query($sql);
 	if($res){
 		echo "<script>alert('添加成功');history.go(-1);</script>";
