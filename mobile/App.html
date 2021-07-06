@@ -18,23 +18,127 @@
 		<div id="app">
 			<!-- 顶部-->
 			<div class="box-top">
+			
+				<!-- <img src="./images/logo-icon.png" > -->
 				<img src="./images/logo-icon@2x.png">
+				<!-- <img src="./images/logo-icon@3x.png" > -->
+				<img src="./images/弹窗按钮@2x.png" @click="Btn">
+				<!-- 导航栏 -->
+				<div class="box-top-nav" v-if="active">
+					<div>
+						<div class="top-nav-t">
+							<img src="./images/logo-icon@2x.png">
+							<img src="./images/×@2x.png" @click="Btn()">
+						</div>
+						<div class="top-nav-c">
+							<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]"
+								v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
+						</div>
+					</div>
+					<div class="top-nav-b">
+						<img src="./images/dianhua-icon.svg">
+						<div>- 15011556811</div>
+					</div>
+			
+				</div>
+				<!-- 遮罩层 -->
+				<div class="mask" @click="mask" v-if="active"></div>
 			</div>
 			<!-- bg -->
 			<div class="bg">
-				<img src="./images/App.png" >
+				<img src="./images/APP开发Banner.png" >
 			</div>
 			<!-- 主要优势 -->
 			<div class="box-advantage">
 				<div class="advantage-title">主要优势</div>
 				<!-- 优势内容 -->
 				<div class="advantage-items">
-					<div class="advantage-item">
-						<div>专业性强</div>
-						<div>Strong Professional</div>
-						<div>资深策划进行逻辑分析与最优实现方式，专业技术团队进行开发，适用性强、标准化验收，确保正常上线</div>
+					<div class="advantage-item" v-for="(item,index) in advantages" :key="index">
+						<div>{{item.name}}</div>
+						<div>{{item.title}}</div>
+						<div>{{item.con}}</div>
+						<div class="advantage-item-img">
+							<img :src="item.img" >
+						</div>
 					</div>
 				</div>
+			</div>
+			<!-- 项目流程 -->
+			<div class="box-procedures">
+				<div class="procedures-title advantage-title">项目流程</div>
+				<!-- 流程图片 -->
+				<div class="procedures-img">
+					<img src="./images/8833d8022cb83853eabae5903ec7ec4.png" alt="">
+				</div>
+			</div>
+			<!-- APP开发流程 -->
+			<div class="box-flow">
+				<div class="flow-title advantage-title">APP开发流程</div>
+				<!--  APP开发流程图片 -->
+				<div class="flow-img">
+					<img src="./images/APP开发流程@2x.png" alt="">
+				</div>
+				<!-- 定位的文字 -->
+				<div class="flow-c">
+					资深策划进行项目对接，分析与实现最优方案策划，专业技术团队进行快速开发，稳定测试，标准验收。独有的原生系统开发技术，一次开发，多平台，多入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！					
+				</div>
+			</div>
+			<!-- 经典案例 -->
+			<div class="box-case">
+				<div class="case-title advantage-title">经点案例</div>
+				<!-- 项目内容 -->
+				<div class="project-items">
+					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">
+						<div>
+							<img :src="item.imgsrc">
+						</div>
+						<div>{{item.title}}</div>
+						<div>{{item.title_con}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<div class="copyright">
+				<div>北京辉达时代网络技术有限公司</div>
+				<div>版权所有 Copyright 2013-2023 All Rights Reserved</div>
+				<div>京ICP备13009754号-4</div>
+			</div>
+			<!-- 定位 -->
+			<div class="footer">
+				<div class="footer-l" @click="zixun">
+					<img src="./images/kefu-icon.svg">
+					<div class="footer-con">在线客服</div>
+				</div>
+				<!-- 打电话 -->
+				<div class="footer-r" @click="telBtn">
+					<img src="./images/dianhua-2-icon.svg">
+					<div class="footer-con">咨询电话</div>
+				</div>
+			</div>
+			<!-- 电话阴影 -->
+			<div class="tel" v-if="mskss">
+				<div class="msks" @click="msksss"></div>
+				<div class="tels">
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15011556811">呼叫 150 1155 6811</a>
+					</div>
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15236241008">呼叫 152 3624 1008</a>
+					</div>
+					<div @click="msksss">取消</div>
+				</div>
+			</div>
+			<!-- 回到顶部 -->
+			<div class="back" v-show="backs" @click="back">
+				<img src="images/jiantou2.svg">
+				<div>回到顶部</div>
+			</div>
+			<!-- 咨询 -->
+			<div class="zixun" @click="zixun">
+				<img src="./images/zixun2-icon.svg">
+				<div>咨询</div>
 			</div>
 		</div>
 	</body>
