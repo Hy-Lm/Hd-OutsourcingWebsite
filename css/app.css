@@ -1,6 +1,10 @@
 .banner {
   height: 100%;
 }
+.wb-box .banner .top_serve {
+  position: absolute;
+  left:71%;
+}
 .wb-box .banner .top_serve ol {
   background-color: rgba(250, 150, 90, 0.8);
   color: #333333;
