@@ -11,7 +11,7 @@ var vm = new Vue({
 	methods:{
 		btn(){
 			if(this.text==''){
-				alert('请输入反馈内容')
+				alert('请输入留言内容')
 				$('.text').focus()
 				return
 			}
@@ -34,7 +34,7 @@ var vm = new Vue({
 			}).then(res=>{
 				console.log(res.data)
 				if(res.data=='ok'){
-					alert('反馈成功')
+					alert('留言已送达、2个小时内与您联系')
 					setTimeout(()=>{
 						window.location='index.html'
 					},100)
