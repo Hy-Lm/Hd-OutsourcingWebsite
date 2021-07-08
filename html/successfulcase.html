@@ -145,6 +145,32 @@
 				<h4>电话:15011556811</h4>
 			</div>
 		</div>
+		<!-- 咨询登记 -->
+		<div class="consult">
+			<div id="box1">
+				<div>
+					<div>请您留言</div>
+					<div @click="close_consult()">×</div>
+				</div>
+				<div>
+					<label>留言内容（必填）</label>
+					<textarea v-model="text" rows="5" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
+				</div>
+				<div>
+					<div>
+						<label><img src="../image/xingming-icon@2x.png"></label>
+						<input v-model="name" type="text" class="name" placeholder="姓名">
+					</div>
+					<div>
+						<label>
+							<img src="../image/dianhua3@2x.png" >
+						</label>
+						<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+					</div>
+				</div>
+				<button type="button" @click="btn">发送</button>
+			</div>
+		</div>
 	</div>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript" charset="utf-8">

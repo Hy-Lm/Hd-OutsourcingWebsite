@@ -58,7 +58,33 @@
 				</p>
 				<p>我们秉承“以技术求生存，以服务求发展”的理念，真诚的服务好每一位客户。</p>
 			</div>
+			<!-- 右边定位 -->
+		<div class="right">
+			<ul>
+				<li>
+					<!-- <p>15011556811</p> -->
+					<!-- <p></p>  -->
+					<img src="../image/dianhuagoutong-icon.png" alt="">
+					<p class="show show_img">联系我们</p>
+				</li>
+				<li>
+					<img src="../image/weixinzixun-icon.png" alt="">
+					<!-- <p>微信</p> -->
+					<p class="show show_img">微信咨询</p>
+					<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
+				</li>
+				<li @click="consult($event)">
+					<img src="../image/zixundengji-icon.png" alt="">
+					<!-- <p>咨询</p> -->
+					<!-- <p class="show">咨询登记</p> -->
+				</li>
+				<li @click="top()">
+					<img src="../image/huidaodingbu-icon.png" alt="">
+				</li>
+			</ul>
 		</div>
+		</div>
+		
 		<!-- 底部 -->
 		<div class="footer">
 			<div class="footer_box">
@@ -111,6 +137,32 @@
 				<h4>电话:15011556811</h4>
 			</div>
 		</div>
+		<!-- 咨询登记 -->
+		<div class="consult">
+			<div id="box1">
+				<div>
+					<div>请您留言</div>
+					<div @click="close_consult()">×</div>
+				</div>
+				<div>
+					<label>留言内容（必填）</label>
+					<textarea v-model="text" rows="5" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
+				</div>
+				<div>
+					<div>
+						<label><img src="../image/xingming-icon@2x.png"></label>
+						<input v-model="name" type="text" class="name" placeholder="姓名">
+					</div>
+					<div>
+						<label>
+							<img src="../image/dianhua3@2x.png" >
+						</label>
+						<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+					</div>
+				</div>
+				<button type="button" @click="btn">发送</button>
+			</div>
+		</div>
 	</div>
 	<script type="text/javascript">
 		var vm = new Vue({
@@ -118,8 +170,10 @@
 			data: {
 				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
 				url: 'http://www.huidait.cn/php',
-				banner_title: []
-
+				banner_title: [],
+				text:'',
+				name:'',
+				tel:''
 			},
 			methods: {
 				load() {
@@ -140,6 +194,22 @@
 				mouseLeave() {
 					$('li .top_serve')[0].style = "display:none";
 				},
+				// 回到顶部
+				top() {
+						document.body.scrollTop = document.documentElement.scrollTop = 0;
+					},
+				// 咨询，跳到底部
+				consult(e) {
+						// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+						// .clientHeight);
+						$('.consult')[0].style = "display:block"
+						$('#myModal').modal('hide')
+						clearInterval(a)
+					},
+					close_consult(){
+						$('.consult')[0].style = "display:none"
+						this.openwin()
+					},
 				// 跳转app页面
 				fun(index) {
 					// console.log(index)
@@ -149,7 +219,7 @@
 				},
 				// 弹窗
 				openwin() {
-					setInterval(function () {
+					a=setInterval(function () {
 						$('#myModal').modal('show')
 						$('body').removeClass('modal-open')
 					}, 120000)

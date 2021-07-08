@@ -9,6 +9,9 @@
 				ifyprojects_item:[],
 				bannerImgs: [],
 				banner_title: [],
+				text:'',
+				name:'',
+				tel:''
 			},
 			methods: {
 				// 移入
@@ -19,6 +22,18 @@
 				// 移出
 				mouseLeave() {
 					$('.banner .top_serve')[0].style = "display:none";
+				},
+				// 咨询，跳到底部
+				consult(e) {
+					// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+					// .clientHeight);
+					$('.consult')[0].style = "display:block"
+					$('#myModal').modal('hide')
+					clearInterval(a)
+				},
+				close_consult(){
+					$('.consult')[0].style = "display:none"
+					this.openwin()
 				},
 				ban(){
 					// 轮播
@@ -58,7 +73,7 @@
 				},
 				// 弹窗
 				openwin(){
-					setInterval(function(){
+					a=setInterval(function(){
 						$('#myModal').modal('show')
 						$('body').removeClass('modal-open')
 					}, 120000) 
