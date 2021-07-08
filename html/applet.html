@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>辉达时代小程序开发</title>  
+		<meta name="keywords" content=""/>  
+		<meta name="description" content=""/>  
+		<link rel="icon" href="../image/logos.png" sizes="50x50"> 
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/axios.min.js"></script>
+		<link rel="stylesheet" href="../css/animate.css">
+		<link rel="stylesheet" href="../css/public.css">
+		<link rel="stylesheet" href="../css/applet.css">
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		<link rel="stylesheet" href="../css/Swiper.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+		<script src="../js/bootstrap.min.js"></script>
+	<body>
+		<div id="app">
+			<div class="wb-box">
+				<!-- 头部 -->
+				<header>
+					<img src="../image/辉达外包LOGO.png">
+					<ul>
+						<li>首页</li>
+						<li @mouseover="mouseOver">服务项目</li>
+						<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
+						<li><a href="./map.html" target="_blank">联系我们</a></li>
+					</ul>
+				</header>
+				<!-- 轮播 -->
+				<div class="banner">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" v-for="ban in bannerImgs">
+								<img :src="ban" alt="">
+							</div>
+						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+						<div class="top_serve" @mouseleave="mouseLeave">
+							<ol>
+								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+									{{item}}
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="website">
+					<!--小程序背景图文字 -->
+					<div class="general">
+						<p>小程序开发</p>
+					</div>
+					<!-- 图片 -->
+					<div class="website_img">
+						<div>抢占流量红利:全国9.35亿微信注册 用户,其中有6.5亿用户开通微信支付 抢占小程序,抢占市场流量。</div>
+						<div>用户体验提升:微信入口,即用即走, 消费者习惯用小程序轻松简单获得 所需,成交量与再次成交率提升。</div>
+						<div>场景渠道应用:轻便的新型营销场景 和营销通道,轻松解决线上线下的流 量转换。</div>
+						<img src="../image/lititu.png" >
+					</div>
+				</div>
+				<!-- 接入流程 -->
+				<div class="why">
+					<div class="general">
+						<p>接入流程</p>
+					</div>
+					<div class="why_list">
+						<div class="why_tu" v-for="(item,index) in flows" :key="index">
+							<div>
+								<img :src="item.img" alt="">
+							</div>
+							<p>{{item.con1}}</p>
+							<p>{{item.con2}}</p>
+						</div>
+					</div>
+				</div>
+				<!-- 应用广泛 -->
+				<div class="serve">
+					<div class="general">
+						<p>应用广泛</p>
+					</div>
+					<ul>
+						<li v-for="(item,index) in abroads" :key="index">
+							<img :src="item.img" alt="">
+							<p>{{item.con}}</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 小程序开发介绍 -->
+				<div class="dynamic">
+					<img src="../image/maoboli.png" style="width: 100%; height: 100%;" alt="">
+					<div class="vx-con">
+						<div class="vx-con-c1">小程序开发介绍</div>
+						<div class="vx-con-c2">
+							<div>尊敬的客户您好: </div>
+							<div> 欢迎您访问我们的网站,请允许我用简短的语言给您做下小程序开发的介绍, 请您一定耐心看完,因为这对您之后的选择很重要.</div>
+							<div> 首先,小程序开发有两类: </div>
+							<div>第一类:模板的使用,优势在于省钱和费用低,缺陷是不能够个性化,不在一定程 度上满足您的特定需求. </div>
+							<div>第二类:定制开发,独立开发每一个页面、每一项功能,定制开发的特点是独一 无二的，功能是按照您的要求定制开发的，服务也更加到位，但就是价格比较高， 定制版的基本费用在上万元到十几万不等.</div>
+							<div>如果这里所讲还没有解除您的疑虑,那么请您联系我们,会有专人为您解答更多 更详细的问题.</div>
+						</div>
+						<div class="vx-con-c3">
+							 电话:15011556811<br/> 15236241008
+						</div>
+					</div>
+				</div>
+				<!-- 右边定位 -->
+				<div class="right">
+					<ul>
+						<li>
+							<!-- <p>15011556811</p> -->
+							<!-- <p></p>  -->
+							<img src="../image/dianhuagoutong-icon.png" alt="">
+							<p class="show show_img">联系我们</p>
+						</li>
+						<li>
+							<img src="../image/weixinzixun-icon.png" alt="">
+							<!-- <p>微信</p> -->
+							<p class="show show_img">微信咨询</p>
+							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
+						</li>
+						<li @click="consult($event)">
+							<img src="../image/zixundengji-icon.png" alt="">
+							<!-- <p>咨询</p> -->
+							<!-- <p class="show">咨询登记</p> -->
+						</li>
+						<li @click="top()">
+							<img src="../image/huidaodingbu-icon.png" alt="">
+						</li>
+					</ul>
+				</div>
+				<!-- 底部 -->
+				<div class="footer">
+					<div class="footer_box">
+						<ul>
+							<li>产品服务</li>
+							<li>APP开发</li>
+							<li>小程序开发</li>
+							<li>商城开发</li>
+							<li>平台开发</li>
+						</ul>
+						<ul>
+							<li>推荐系统</li>
+							<li>社交电商</li>
+							<li>租赁系统</li>
+							<li>淘客系统</li>
+							<li>数字货币</li>
+						</ul>
+						<ul>
+							<li>关于我们</li>
+							<li>
+								<a href="./intro.html" target="_blank">辉耀简介</a>
+							</li>
+							<li>客户案例</li>
+							<li>新闻资讯</li>
+						</ul>
+						<ul>
+							<li>联系我们</li>
+							<li>地址:北京市朝阳区望京北马泉营</li>
+							<li>电话:15011556811</li>
+							<li>邮箱:qqi2001@sina.com</li>
+						</ul>
+						<div>
+							<p>加入我们<br />"一元"建站	</p>
+							<img src="../image/外包二维码.jpg" alt="">
+						</div>
+						<div class="footer_bot">
+							<p>北京辉达时代网络技术有限公司
+								版权所有Copyright 2017-2022 All Rights Reserved
+								京ICP备13009754号-4</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- 弹窗 -->
+				<div class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
+					<div class="tanchuang">
+						<div  data-dismiss="modal" aria-hidden="true">×</div>
+						<h4>项目开发您定价</h4>
+						<h4>团队免费驻场开发</h4>
+						<h4>电话:15011556811</h4>
+					</div>
+				</div>
+				<!-- 咨询登记 -->
+				<div class="consult">
+					<div id="box1">
+						<div>
+							<div>请您留言</div>
+							<div @click="close_consult()">×</div>
+						</div>
+						<div>
+							<label>留言内容（必填）</label>
+							<textarea v-model="text" style="resize:none;padding-right: 20px;" rows="5" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
+						</div>
+						<div>
+							<div>
+								<label><img src="../image/xingming-icon@2x.png"></label>
+								<input v-model="name" type="text" class="name" placeholder="姓名">
+							</div>
+							<div>
+								<label>
+									<img src="../image/dianhua3@2x.png" >
+								</label>
+								<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+							</div>
+						</div>
+						<button type="button" @click="btn">发送</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/swiper.min.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+					url:'http://www.huidait.cn/php',
+					bannerImgs: [],
+					banner_title: [],
+					list: [],
+					times: [],
+					text:'',
+					name:'',
+					tel:'',
+					flows:[
+						{
+							img:'../image/zhece-icon.png',
+							con1:'微信公众平台',
+							con2:'注册小程序账号'
+						},
+						{
+							img:'../image/shouquan-icon.png',
+							con1:'授权小程序',
+							con2:''
+						},
+						{
+							img:'../image/muban-icon.png',
+							con1:'选择模板',
+							con2:'生成小程序代码'
+						},
+						{
+							img:'../image/tijiao-icon.png',
+							con1:'一键提交微信',
+							con2:'平台审核'
+						},
+						{
+							img:'../image/tongguo-icon.png',
+							con1:'审核通过',
+							con2:'发布小程序'
+						},
+					],
+					abroads:[
+						{
+							img:'../image/zhengfu-icon.png',
+							con:'政府',
+						},
+						{
+							img:'../image/jiudian-icon.png',
+							con:'酒店',
+						},
+						{
+							img:'../image/lvyou-icon.png',
+							con:'旅游',
+						},
+						{
+							img:'../image/jiaoyu-icon.png',
+							con:'教育',
+						},
+						{
+							img:'../image/yanchu-icon.png',
+							con:'演出',
+						},
+						{
+							img:'../image/canyin-icon.png',
+							con:'餐饮',
+						}
+					]
+				},
+				methods: {
+					// 移入
+					mouseOver() {
+						$('.banner .top_serve')[0].style = "display:block"
+					},
+					// 移出
+					mouseLeave() {
+						$('.banner .top_serve')[0].style = "display:none";
+					},
+					load() {
+						// 轮播
+						let ban = this.url + "/banner.php"
+						axios.get(ban).then(res => {
+							console.log(res.data)
+							this.bannerImgs = res.data.bannerImgs
+							this.banner_title = res.data.banner_title
+							// console.log(this.banner_title)
+						})
+					},
+					// 跳转app页面
+					fun(index) {
+						// console.log(index)
+						if (this.banner_title[index] == 'APP开发') {
+							window.open('./app.html')
+						}
+					},
+					// 咨询，跳到底部
+					consult(e) {
+						// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+						// .clientHeight);
+						$('.consult')[0].style = "display:block"
+						$('#myModal').modal('hide')
+						clearInterval(a)
+					},
+					close_consult(){
+						$('.consult')[0].style = "display:none"
+						this.openwin()
+					},
+					// 回到顶部
+					top() {
+						document.body.scrollTop = document.documentElement.scrollTop = 0;
+					},
+					openwin(){
+						a=setInterval(function(){
+							$('#myModal').modal('show')
+							$('body').removeClass('modal-open')
+						}, 120000) 
+						$.isHasScroll = function () {
+							return (document.documentElement.clientHeight < document.documentElement.offsetHeight - 4);
+						}
+				　　},
+					swiper(){
+						setTimeout(function() {
+							new Swiper('.swiper-container', {
+								loop: true,
+								pagination: '.swiper-pagination',
+								autoplay: 3000,
+								paginationClickable: true,
+								autoplayDisableOnInteraction: false,
+								observer: true,
+								observerParents: true
+							})
+						}, 500)
+					},
+					// 留言板
+					btn(){
+						if(this.text==''){
+							alert('请输入留言内容')
+							$('.text').focus()
+							return
+						}
+						if(this.name==''){
+							alert('请输入用户名')
+							$('.name').focus()
+							return
+						}
+						if(this.tel==''){
+							alert('请输入手机号')
+							$('.tel').focus()
+							return
+						}
+						axios.get(this.url+'liuyan.php',{
+							params:{
+								text:this.text,
+								name:this.name,
+								tel:this.tel,
+							}
+						}).then(res=>{
+							console.log(res.data)
+							if(res.data=='ok'){
+								alert('留言已送达、2个小时内与您联系')
+								$('.consult')[0].style = "display:none"
+							}
+						})
+					}
+				},
+				mounted() {
+					this.swiper()
+					this.load()
+					this.openwin()
+					$('#myModal').modal('show')
+					$('body').removeClass('modal-open')
+				}
+			})
+		</script>
+		
+	</body>
+
+</html>
