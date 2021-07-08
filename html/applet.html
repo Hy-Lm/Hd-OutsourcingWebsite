@@ -24,32 +24,24 @@
 		<div id="app">
 			<div class="wb-box">
 				<!-- 头部 -->
+				<!-- 头部 -->
 				<header>
 					<img src="../image/辉达外包LOGO.png">
 					<ul>
-						<li>首页</li>
+						<li><a href="../index.html"   target="_blank">首页</a></li>
 						<li @mouseover="mouseOver">服务项目</li>
-						<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
+						<li><a href="./successfulcase.html"  target="_blank">成功案例</a></li>
 						<li><a href="./map.html" target="_blank">联系我们</a></li>
 					</ul>
 				</header>
-				<!-- 轮播 -->
-				<div class="banner">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" v-for="ban in bannerImgs">
-								<img :src="ban" alt="">
-							</div>
-						</div>
-						<!-- 如果需要分页器 -->
-						<div class="swiper-pagination"></div>
-						<div class="top_serve" @mouseleave="mouseLeave">
-							<ol>
-								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
-									{{item}}
-								</li>
-							</ol>
-						</div>
+				<div class="tu banner" style="background-color: #259CE8;">
+					<img src="../image/254499bd219ecbd8c3dd72dc93ef1ba.png" alt="">
+					<div class="top_serve" @mouseleave="mouseLeave">
+						<ol>
+							<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+								{{item}}
+							</li>
+						</ol>
 					</div>
 				</div>
 				<div class="website">
