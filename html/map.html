@@ -159,7 +159,7 @@
 				</div>
 				<div>
 					<label>留言内容（必填）</label>
-					<textarea v-model="text"  style="resize:none;padding-right: 20px;" rows="5" class="text" cols=""
+					<textarea v-model="text" style="resize:none;padding-right: 20px;" rows="5" class="text" cols=""
 						placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
 				</div>
 				<div>
@@ -214,9 +214,9 @@
 					// console.log(index)
 					if (this.banner_title[index] == 'APP开发') {
 						window, open('app.html')
-					}else if (this.banner_title[index] == '小程序定制开发') {
-							window.open('./applet.html')
-						}
+					} else if (this.banner_title[index] == '小程序定制开发') {
+						window.open('./applet.html')
+					}
 				},
 				// 咨询，跳到底部
 				consult(e) {
@@ -229,6 +229,37 @@
 				close_consult() {
 					$('.consult')[0].style = "display:none"
 					this.openwin()
+				},
+				// 留言板
+				btn() {
+					if (this.text == '') {
+						alert('请输入留言内容')
+						$('.text').focus()
+						return
+					}
+					if (this.name == '') {
+						alert('请输入用户名')
+						$('.name').focus()
+						return
+					}
+					if (this.tel == '') {
+						alert('请输入手机号')
+						$('.tel').focus()
+						return
+					}
+					axios.get(this.url + 'liuyan.php', {
+						params: {
+							text: this.text,
+							name: this.name,
+							tel: this.tel,
+						}
+					}).then(res => {
+						console.log(res.data)
+						if (res.data == 'ok') {
+							alert('留言已送达、2个小时内与您联系')
+							$('.consult')[0].style = "display:none"
+						}
+					})
 				},
 				// 弹窗
 				openwin() {

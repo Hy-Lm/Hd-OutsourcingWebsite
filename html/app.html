@@ -1,298 +1,333 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>APP开发</title>
-		<meta name="keywords" content=""/>  
-		<meta name="description" content=""/>  
-		<link rel="icon" href="../image/logos.png" sizes="50x50"> 
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-		<script src="../js/axios.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
-		<link rel="stylesheet" href="../css/public.css">
-		<link rel="stylesheet" href="../css/index.css">
-		<link rel="stylesheet" href="../css/animate.css">
-		<link rel="stylesheet" href="../css/app.css">
-		<script src="../js/vue.js"></script>
-		<link rel="stylesheet" href="../css/bootstrap.css">
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-	<body>
-		<div id="app">
-			<div class="wb-box">
-				<!-- 头部 -->
-				<header>
-					<img src="../image/辉达外包LOGO.png">
-					<ul>
-						<li><a href="../index.html"   target="_blank">首页</a></li>
-						<li @mouseover="mouseOver">服务项目</li>
-						<li><a href="./successfulcase.html"  target="_blank">成功案例</a></li>
-						<li><a href="./map.html" target="_blank">联系我们</a></li>
-					</ul>
-				</header>
-				<div class="tu banner" style="background-color: #259CE8;">
-					<img src="../image/APP开发Banner.png" alt="">
-					<div class="top_serve" @mouseleave="mouseLeave">
-						<ol>
-							<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
-								{{item}}
-							</li>
-						</ol>
-					</div>
+
+<head>
+	<meta charset="utf-8">
+	<title>APP开发</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="icon" href="../image/logos.png" sizes="50x50">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script src="../js/axios.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/app.css">
+	<script src="../js/vue.js"></script>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+<body>
+	<div id="app">
+		<div class="wb-box">
+			<!-- 头部 -->
+			<header>
+				<img src="../image/辉达外包LOGO.png">
+				<ul>
+					<li><a href="../index.html" target="_blank">首页</a></li>
+					<li @mouseover="mouseOver">服务项目</li>
+					<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
+					<li><a href="./map.html" target="_blank">联系我们</a></li>
+				</ul>
+			</header>
+			<div class="tu banner" style="background-color: #259CE8;">
+				<img src="../image/APP开发Banner.png" alt="">
+				<div class="top_serve" @mouseleave="mouseLeave">
+					<ol>
+						<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+							{{item}}
+						</li>
+					</ol>
 				</div>
-				<div class="tu ">
-					<div>项目流程</div>
-					
-					<img src="../image/项目流程.png" alt="">
+			</div>
+			<div class="tu ">
+				<div>项目流程</div>
+
+				<img src="../image/项目流程.png" alt="">
+			</div>
+			<!-- 网站建设我们更专业 -->
+			<div class="website">
+				<div class="general">
+					<p>主要优势</p>
 				</div>
-				<!-- 网站建设我们更专业 -->
-				<div class="website">
+				<ul>
+					<li>
+						<img src="../image/专业性强icon.png" alt="">
+						<div class="title">专业性强</div>
+						<div class="xian"></div>
+						<p>资深策划进行逻辑分析与最优实现方式，专业技术团队进行开发，适用性强、标准化验收，确保正常上线</p>
+					</li>
+					<li>
+						<img src="../image/价格透明icon.png" alt="">
+						<div class="title">价格透明</div>
+						<div class="xian"></div>
+						<p>免费提供合作方案，公共报价，让客户清晰知道每一笔投入，产生的价值所在</p>
+					</li>
+					<li>
+						<img src="../image/开发周期icon.png" alt="">
+						<div class="title">开发周期短</div>
+						<div class="xian"></div>
+						<p>数十位专业的技术开发团队，强大的研发能力，快速实现需求，产品运作稳定</p>
+					</li>
+					<li>
+						<img src="../image/安全性icon.png" alt="">
+						<div class="title">安全性高</div>
+						<div class="xian"></div>
+						<p>项目开发前，签订正规合同，提供官方保障；项目完成后，提供源码服务确保产品安全</p>
+					</li>
+				</ul>
+			</div>
+			<div class="tu tu1">
+				<!-- 定位的文案 -->
+				<div>
+					<div>APP开发流程</div>
+					<div>资深策划进行项目对接，分析与实现最优方案策划，专业技术团队进行快速开发，稳定测试，标准验收。</div>
+					<div>独有的原生系统开发技术，一次开发，多平台，多入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！</div>
+				</div>
+				<img src="../image/开发流程.png" alt="">
+			</div>
+			<!-- 经典案例 -->
+			<div class="diligently">
+				<div class="diligently_box">
 					<div class="general">
-						<p>主要优势</p>
+						<p>经典案例</p>
+						<!-- <p>辉达时代拥有数十人APP开发团队，专注IOS、Android开发服务，12年软件开发经验</p>
+							<p>多家500强服务案例，开发案例超过300个，一站式解决客户生产、销售、服务等需求，让用户来感知产品的体验价值。</p> -->
 					</div>
 					<ul>
-						<li>
-							<img src="../image/专业性强icon.png" alt="">
-							<div class="title">专业性强</div>
-							<div class="xian"></div>
-							<p>资深策划进行逻辑分析与最优实现方式，专业技术团队进行开发，适用性强、标准化验收，确保正常上线</p>
-						</li>
-						<li>
-							<img src="../image/价格透明icon.png" alt="">
-							<div class="title">价格透明</div>
-							<div class="xian"></div>
-							<p>免费提供合作方案，公共报价，让客户清晰知道每一笔投入，产生的价值所在</p>
-						</li>
-						<li>
-							<img src="../image/开发周期icon.png" alt="">
-							<div class="title">开发周期短</div>
-							<div class="xian"></div>
-							<p>数十位专业的技术开发团队，强大的研发能力，快速实现需求，产品运作稳定</p>
-						</li>
-						<li>
-							<img src="../image/安全性icon.png" alt="">
-							<div class="title">安全性高</div>
-							<div class="xian"></div>
-							<p>项目开发前，签订正规合同，提供官方保障；项目完成后，提供源码服务确保产品安全</p>
+						<li v-for="project in this.project">
+							<img :src="project.imgsrc" alt="">
+							<div>
+								{{project.title}}
+							</div>
+							<p>{{project.title_con}}</p>
 						</li>
 					</ul>
-				</div>
-				<div class="tu tu1">
-					<!-- 定位的文案 -->
-					<div>
-						<div>APP开发流程</div>
-						<div>资深策划进行项目对接，分析与实现最优方案策划，专业技术团队进行快速开发，稳定测试，标准验收。</div>
-						<div>独有的原生系统开发技术，一次开发，多平台，多入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！</div>
-					</div>
-					<img src="../image/开发流程.png" alt="">
-				</div>
-				<!-- 经典案例 -->
-				<div class="diligently">
-					<div class="diligently_box">
-						<div class="general">
-							<p>经典案例</p>
-							<!-- <p>辉达时代拥有数十人APP开发团队，专注IOS、Android开发服务，12年软件开发经验</p>
-							<p>多家500强服务案例，开发案例超过300个，一站式解决客户生产、销售、服务等需求，让用户来感知产品的体验价值。</p> -->
-						</div>
-						<ul>
-							<li v-for="project in this.project">
-								<img :src="project.imgsrc" alt="">
-								<div>
-									{{project.title}}
-								</div>
-								<p>{{project.title_con}}</p>
-							</li>
-						</ul>
-						<!-- <div class="chakan">
+					<!-- <div class="chakan">
 							<div>+</div>
 							<p>查看更多</p>
 						</div> -->
-					</div>
 				</div>
-				<!-- 右边定位 -->
-				<div class="right">
+			</div>
+			<!-- 右边定位 -->
+			<div class="right">
+				<ul>
+					<li>
+						<!-- <p>15011556811</p> -->
+						<!-- <p></p>  -->
+						<img src="../image/dianhuagoutong-icon.png" alt="">
+						<p class="show show_img">联系我们</p>
+					</li>
+					<li>
+						<img src="../image/weixinzixun-icon.png" alt="">
+						<!-- <p>微信</p> -->
+						<p class="show show_img">微信咨询</p>
+						<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
+					</li>
+					<li @click="consult($event)">
+						<img src="../image/zixundengji-icon.png" alt="">
+						<!-- <p>咨询</p> -->
+						<!-- <p class="show">咨询登记</p> -->
+					</li>
+					<li @click="top()">
+						<img src="../image/huidaodingbu-icon.png" alt="">
+					</li>
+				</ul>
+			</div>
+			<!-- 底部 -->
+			<div class="footer">
+				<div class="footer_box">
 					<ul>
-						<li>
-							<!-- <p>15011556811</p> -->
-							<!-- <p></p>  -->
-							<img src="../image/dianhuagoutong-icon.png" alt="">
-							<p class="show show_img">联系我们</p>
-						</li>
-						<li>
-							<img src="../image/weixinzixun-icon.png" alt="">
-							<!-- <p>微信</p> -->
-							<p class="show show_img">微信咨询</p>
-							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
-						</li>
-						<li @click="consult($event)">
-							<img src="../image/zixundengji-icon.png" alt="">
-							<!-- <p>咨询</p> -->
-							<!-- <p class="show">咨询登记</p> -->
-						</li>
-						<li @click="top()">
-							<img src="../image/huidaodingbu-icon.png" alt="">
-						</li>
+						<li>产品服务</li>
+						<li>APP开发</li>
+						<li>小程序开发</li>
+						<li>商城开发</li>
+						<li>平台开发</li>
 					</ul>
-				</div>
-				<!-- 底部 -->
-				<div class="footer">
-					<div class="footer_box">
-						<ul>
-							<li>产品服务</li>
-							<li>APP开发</li>
-							<li>小程序开发</li>
-							<li>商城开发</li>
-							<li>平台开发</li>
-						</ul>
-						<ul>
-							<li>推荐系统</li>
-							<li>社交电商</li>
-							<li>租赁系统</li>
-							<li>淘客系统</li>
-							<li>数字货币</li>
-						</ul>
-						<ul>
-							<li>关于我们</li>
-							<li>
-								<a href="./intro.html" target="_blank">辉耀简介</a>
-							</li>
-							<li>客户案例</li>
-							<li>新闻资讯</li>
-						</ul>
-						<ul>
-							<li>联系我们</li>
-							<li>地址:北京市朝阳区望京北马泉营</li>
-							<li>电话:15011556811</li>
-							<li>邮箱:qqi2001@sina.com</li>
-						</ul>
-						<div>
-							<p>加入我们<br />"一元"建站	</p>
-							<img src="../image/外包二维码.jpg" alt="">
-						</div>
-						<div class="footer_bot">
-							<p>北京辉达时代网络技术有限公司
-								版权所有Copyright 2017-2022 All Rights Reserved
-								京ICP备13009754号-3</p>
-						</div>
+					<ul>
+						<li>推荐系统</li>
+						<li>社交电商</li>
+						<li>租赁系统</li>
+						<li>淘客系统</li>
+						<li>数字货币</li>
+					</ul>
+					<ul>
+						<li>关于我们</li>
+						<li>
+							<a href="./intro.html" target="_blank">辉耀简介</a>
+						</li>
+						<li>客户案例</li>
+						<li>新闻资讯</li>
+					</ul>
+					<ul>
+						<li>联系我们</li>
+						<li>地址:北京市朝阳区望京北马泉营</li>
+						<li>电话:15011556811</li>
+						<li>邮箱:qqi2001@sina.com</li>
+					</ul>
+					<div>
+						<p>加入我们<br />"一元"建站 </p>
+						<img src="../image/外包二维码.jpg" alt="">
 					</div>
+					<div class="footer_bot">
+						<p>北京辉达时代网络技术有限公司
+							版权所有Copyright 2017-2022 All Rights Reserved
+							京ICP备13009754号-3</p>
+					</div>
+				</div>
 
+			</div>
+			<!-- 弹窗 -->
+			<div class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
+				<div class="tanchuang">
+					<div data-dismiss="modal" aria-hidden="true">×</div>
+					<h4>项目开发您定价</h4>
+					<h4>团队免费驻场开发</h4>
+					<h4>电话:15011556811</h4>
 				</div>
-				<!-- 弹窗 -->
-				<div  class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
-					<div class="tanchuang">
-						<div  data-dismiss="modal" aria-hidden="true">×</div>
-						<h4>项目开发您定价</h4>
-						<h4>团队免费驻场开发</h4>
-						<h4>电话:15011556811</h4>
+			</div>
+			<!-- 咨询登记 -->
+			<div class="consult">
+				<div id="box1">
+					<div>
+						<div>请您留言</div>
+						<div @click="close_consult()">×</div>
 					</div>
-				</div>
-				<!-- 咨询登记 -->
-				<div class="consult">
-					<div id="box1">
-						<div>
-							<div>请您留言</div>
-							<div @click="close_consult()">×</div>
-						</div>
-						<div>
-							<label>留言内容（必填）</label>
-							<textarea v-model="text" rows="5"  style="resize:none;padding-right: 20px;" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
-						</div>
-						<div>
-							<div>
-								<label><img src="../image/xingming-icon@2x.png"></label>
-								<input v-model="name" type="text" class="name" placeholder="姓名">
-							</div>
-							<div>
-								<label>
-									<img src="../image/dianhua3@2x.png" >
-								</label>
-								<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
-							</div>
-						</div>
-						<button type="button" @click="btn">发送</button>
+					<div>
+						<label>留言内容（必填）</label>
+						<textarea v-model="text" rows="5" style="resize:none;padding-right: 20px;" class="text" cols=""
+							placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
 					</div>
+					<div>
+						<div>
+							<label><img src="../image/xingming-icon@2x.png"></label>
+							<input v-model="name" type="text" class="name" placeholder="姓名">
+						</div>
+						<div>
+							<label>
+								<img src="../image/dianhua3@2x.png">
+							</label>
+							<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+						</div>
+					</div>
+					<button type="button" @click="btn">发送</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<script type="text/javascript">
-			var vm = new Vue({
-				el: '#app',
-				data: {
-					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
-					url:'http://www.huidait.cn/php',
-					bannerImgs: [],
-					banner_title: [],
-					project:[],
-					text:'',
-					name:'',
-					tel:''
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+				url: 'http://www.huidait.cn/php',
+				bannerImgs: [],
+				banner_title: [],
+				project: [],
+				text: '',
+				name: '',
+				tel: ''
+			},
+			methods: {
+				load() {
+					// 轮播
+					let ban = this.url + "/banner.php"
+					axios.get(ban).then(res => {
+						console.log(res.data)
+						this.bannerImgs = res.data.bannerImgs
+						this.banner_title = res.data.banner_title
+						// console.log(this.banner_title)
+					})
+					// 项目
+					let project = this.url + "/ifyproject.php"
+					axios.get(project).then(res1 => {
+						console.log(res1.data)
+						this.project = res1.data[0].all
+						// this.project=this.project.splice(0,6)
+						// console.log(this.project)
+					})
 				},
-				methods: {
-					load(){
-						// 轮播
-						let ban = this.url + "/banner.php"
-						axios.get(ban).then(res => {
-							console.log(res.data)
-							this.bannerImgs = res.data.bannerImgs
-							this.banner_title = res.data.banner_title
-							// console.log(this.banner_title)
-						})
-						// 项目
-						let project = this.url + "/ifyproject.php"
-						axios.get(project).then(res1 => {
-							console.log(res1.data)
-							this.project = res1.data[0].all
-							// this.project=this.project.splice(0,6)
-							// console.log(this.project)
-						})
-					},
-					// 咨询，跳到底部
-					consult(e) {
-						// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
-						// .clientHeight);
-						$('.consult')[0].style = "display:block"
-						$('#myModal').modal('hide')
-						clearInterval(a)
-					},
-					close_consult(){
-						$('.consult')[0].style = "display:none"
-						this.openwin()
-					},
-					// 移入
-					mouseOver() {
-						console.log(111)
-						$('.banner .top_serve')[0].style = "display:block"
-					},
-					// 移出
-					mouseLeave() {
-						$('.banner .top_serve')[0].style = "display:none";
-					},
-					// 弹窗
-					openwin(){
-						a=setInterval(function(){
-							$('#myModal').modal('show')
-							$('body').removeClass('modal-open')
-						}, 120000) 
-				　　},
+				// 咨询，跳到底部
+				consult(e) {
+					// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+					// .clientHeight);
+					$('.consult')[0].style = "display:block"
+					$('#myModal').modal('hide')
+					clearInterval(a)
+				},
+				close_consult() {
+					$('.consult')[0].style = "display:none"
+					this.openwin()
+				},
+				// 移入
+				mouseOver() {
+					console.log(111)
+					$('.banner .top_serve')[0].style = "display:block"
+				},
+				// 移出
+				mouseLeave() {
+					$('.banner .top_serve')[0].style = "display:none";
+				},
+				// 弹窗
+				openwin() {
+					a = setInterval(function () {
+						$('#myModal').modal('show')
+						$('body').removeClass('modal-open')
+					}, 120000)
+				},
+				// 留言板
+				btn() {
+					if (this.text == '') {
+						alert('请输入留言内容')
+						$('.text').focus()
+						return
+					}
+					if (this.name == '') {
+						alert('请输入用户名')
+						$('.name').focus()
+						return
+					}
+					if (this.tel == '') {
+						alert('请输入手机号')
+						$('.tel').focus()
+						return
+					}
+					axios.get(this.url + 'liuyan.php', {
+						params: {
+							text: this.text,
+							name: this.name,
+							tel: this.tel,
+						}
+					}).then(res => {
+						console.log(res.data)
+						if (res.data == 'ok') {
+							alert('留言已送达、2个小时内与您联系')
+							$('.consult')[0].style = "display:none"
+						}
+					})
+				},
 				// 跳转app页面
 				fun(index) {
 					// console.log(index)
 					if (this.banner_title[index] == 'APP开发') {
-						window,open('app.html')
-					}else if (this.banner_title[index] == '小程序开发') {
-							window.open('./applet.html')
-						}
+						window, open('app.html')
+					} else if (this.banner_title[index] == '小程序开发') {
+						window.open('./applet.html')
+					}
 				},
-				},
-				mounted() {
-					this.load()
-					this.openwin()
-					$('#myModal').modal('show')
-					$('body').removeClass('modal-open')
-				},
+			},
+			mounted() {
+				this.load()
+				this.openwin()
+				$('#myModal').modal('show')
+				$('body').removeClass('modal-open')
+			},
 
-			})
-		</script>
-	</body>
+		})
+	</script>
+</body>
+
 </html>
