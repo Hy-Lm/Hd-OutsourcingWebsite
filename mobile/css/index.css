@@ -100,7 +100,7 @@ html {
 	background-color: rgba(250, 150, 90, 0.8);
 	border-radius: 50%;
 	color: #333333;
-	background-color: ;
+	/* background-color: ; */
 	display: flex;
 	align-items: center;
 	flex-direction: column;
