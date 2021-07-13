@@ -28,63 +28,92 @@ var vm = new Vue({
 		style2: {
 			'color': '#333333'
 		},
-		flows:[
-			{
-				img:'../image/zhece-icon.png',
-				con1:'微信公众平台',
-				con2:'注册小程序账号'
+		//行业
+		industry_items: [],
+		industry_index: 0,
+		big_title: '',
+		big_title_con: '',
+		small_img: [],
+		small_title: [],
+		small_title_con: [],
+		// 网站建设
+		construction_items: [{
+				img: './images/dingzhi-icon.svg',
+				title: '电商解决方案',
+				con: '结合多年开发经验及市场深度调研，需求整合 制定开发方案开发项目包括 微网后台。'
 			},
 			{
-				img:'../image/shouquan-icon.png',
-				con1:'授权小程序',
-				con2:''
+				img: './images/jiejue-icon.svg',
+				title: '小程序解决方案',
+				con: '基于微信架构原生,拥有在线城几十种促销工具支持,满足客户对各产品各方面的业务需求'
 			},
 			{
-				img:'../image/muban-icon.png',
-				con1:'选择模板',
-				con2:'生成小程序代码'
+				img: './images/APP开发-icon.png',
+				title: 'APP解决方案',
+				con: '品牌产品定位，到卓越的应用策划、创意，满足客户对产品各方面业务需求。'
 			},
 			{
-				img:'../image/tijiao-icon.png',
-				con1:'一键提交微信',
-				con2:'平台审核'
-			},
-			{
-				img:'../image/tongguo-icon.png',
-				con1:'审核通过',
-				con2:'发布小程序'
-			},
-		],
-		abroads:[
-			{
-				img:'../image/zhengfu-icon.png',
-				con:'政府',
-			},
-			{
-				img:'../image/jiudian-icon.png',
-				con:'酒店',
-			},
-			{
-				img:'../image/lvyou-icon.png',
-				con:'旅游',
-			},
-			{
-				img:'../image/jiaoyu-icon.png',
-				con:'教育',
-			},
-			{
-				img:'../image/yanchu-icon.png',
-				con:'演出',
-			},
-			{
-				img:'../image/canyin-icon.png',
-				con:'餐饮',
+				img: './images/qukuailian-icon.svg',
+				title: '区块链解决方案',
+				con: '基于区块链Web3.js技术搭建，使得传统行业可以很低成本的享受区块链带来的便利。'
 			}
 		],
+		// 服务
+		serve_item: [{
+				img: './images/jianzhan-icon.svg',
+				con: '建站'
+			},
+			{
+				img: './images/kongjian-icon.svg',
+				con: '空间'
+			},
+			{
+				img: './images/yuming-icon.svg',
+				con: '域名'
+			},
+			{
+				img: './images/e30cedcd21fbceff981b33fd6559378.png',
+				con: '备案'
+			},
+			{
+				img: './images/shouhou-icon.svg',
+				con: '售后'
+			}
+		],
+		safeguard_items: [{
+				img: './images/wending-icon.svg',
+				con: '稳定'
+			},
+			{
+				img: './images/82844d3a2936d355e3b7f7999f76353.png',
+				con: '安全'
+			},
+			{
+				img: './images/jisu-icon.svg',
+				con: '急速'
+			},
+			{
+				img: './images/zhoudao-icon.svg',
+				con: '周到'
+			},
+			{
+				img: './images/tiexin-icon.svg',
+				con: '贴心'
+			}
+		],
+		// 项目
+		ifyproject: [
+
+		],
+		// 新闻
+		neww: [],
 		active: false
 	},
 	mounted() {
 		this.banner()
+		this.industry()
+		this.ifyprojects()
+		this.news()
 		if(window.pageYOffset<=500){
 			this.backs=false
 		}
@@ -137,12 +166,37 @@ var vm = new Vue({
 				// console.log(this.top_nav_c)
 			})
 		},
-	
+		
+		// 行业
+		industry() {
+			axios.get(this.url + 'industry.php').then(res => {
+				this.industry_items = res.data.splice(0, 5)
+				this.big_title = this.industry_items[this.industry_index].big_title
+				this.big_title_con = this.industry_items[this.industry_index].big_title_con
+				this.small_img = this.industry_items[this.industry_index].small_img
+				this.small_title = this.industry_items[this.industry_index].small_title
+				this.small_title_con = this.industry_items[this.industry_index].small_title_con
+				// console.log(this.industry_items )
+			})
+		},
+		// 项目
+		ifyprojects() {
+			axios.get(this.url + 'ifyproject.php').then(res => {
+				// console.log(res.data[0].all.splice(0,6))
+				this.ifyproject = res.data[0].all.splice(0, 6)
+			})
+		},
 		// 弹出弹窗
 		Btn() {
 			this.active = !this.active
 		},
-
+		// 新闻动态
+		news() {
+			axios.get(this.url + 'news.php').then(res => {
+				// console.log(res)
+				this.neww = res.data
+			})
+		},
 		top_nav_cc(index) {
 			this.active=false
 			this.ind = index
@@ -150,9 +204,23 @@ var vm = new Vue({
 			if(this.top_nav_c[index]=='关于我们'){
 				window.location='intro.html'
 			}else if(this.top_nav_c[index]=='APP开发'){
-				window.location=' App.html '
+				window.location='App.html '
+			}else if(this.top_nav_c[index]=='电商平台开发'){
+				window.location='commerce.html '
+			}else if(this.top_nav_c[index]=='小程序定制开发'){
+				window.location='applet.html '
 			}
 		},
+		// 行业状态切换
+		industrys(index) {
 
+			this.inds = index
+			this.industry_index = index
+			this.big_title = this.industry_items[this.industry_index].big_title
+			this.big_title_con = this.industry_items[this.industry_index].big_title_con
+			this.small_img = this.industry_items[this.industry_index].small_img
+			this.small_title = this.industry_items[this.industry_index].small_title
+			this.small_title_con = this.industry_items[this.industry_index].small_title_con
+		}
 	}
 })

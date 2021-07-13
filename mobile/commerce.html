@@ -8,8 +8,7 @@
 		<link rel="icon" href="./images/logos.png" sizes="50x50">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="./css/public.css">
-		<link rel="stylesheet" href="./css/index.css">
-		<link rel="stylesheet" href="./css/applet.css">
+        <link rel="stylesheet" href="./css/commerce.css">
 		<link rel="stylesheet" href="./Swiper-3.3.1/dist/css/swiper.min.css">
 		<link rel="stylesheet" href="../css/Swiper.css">
 		<script src="../js/huidait.js"></script>
@@ -20,10 +19,9 @@
 	</head>
 	<body>
 		<div id="box">
-
 			<!-- 顶部-->
 			<div class="box-top">
-
+			 
 				<!-- <img src="./images/logo-icon.png" > -->
 				<img src="./images/logo-icon@2x.png">
 				<!-- <img src="./images/logo-icon@3x.png" > -->
@@ -44,71 +42,60 @@
 						<img src="./images/dianhua-icon.svg">
 						<div>- 15011556811</div>
 					</div>
-
+			
 				</div>
 				<!-- 遮罩层 -->
 				<div class="mask" @click="mask" v-if="active"></div>
 			</div>
-
 			<!-- 背景图 -->
 			<div class="bg">
-				<img src="./images/小程序banner.png" >
+				<img src="./images/电商平台banner.png" >
 			</div>
-			<!-- 网站建设 -->
-			<div class="box-construction">
-				<div class="general">小程序开发</div>
-                <div class="website_img">
-                    <div>抢占流量红利:全国9.35亿微信注册 用户,其中有6.5亿用户开通微信支付 抢占小程序,抢占市场流量。</div>
-                    <div>用户体验提升:微信入口,即用即走, 消费者习惯用小程序轻松简单获得 所需,成交量与再次成交率提升。</div>
-                    <div>场景渠道应用:轻便的新型营销场景 和营销通道,轻松解决线上线下的流 量转换。</div>
-					<img src="./images/lititu@3x.png" alt="">
+            <!-- 热门电商系统软件助力企业开展电商业务 -->
+			<div class="business">
+                <div class="general">
+                    <p>热门电商系统软件助力企业开展电商业务</p>
+                    <p>提供B2C商城/b2B2C商城/o2o商城/B2B商城</p>
+                    <p>建设服务多渠道拓展，做大您的生意</p>
                 </div>
-			</div>
-			<!-- 接入流程 -->
-			<div class="why">
-				<div class="general">
-					<p>接入流程</p>
-				</div>
-				<div class="why_list">
-					<div class="why_tu" v-for="(item,index) in flows" :key="index">
-						<div>
+                <div class="index_course_lun-c">
+					<div class="index_course_lun">
+						<div class="index_course_lun-i" v-for="(item,index) in course_item" :key="index">
 							<img :src="item.img" alt="">
+                            <div>{{item.con1}}</div>
+                            <div>
+                                <p>{{item.con2}}</p>
+                                <p>{{item.con3}}</p>
+                            </div>
 						</div>
-						<p>{{item.con1}}</p>
-						<p>{{item.con2}}</p>
 					</div>
 				</div>
-			</div>
-			<!-- 应用广泛 -->
-			<div class="serve">
-				<div class="general">
-					<p>应用广泛</p>
-				</div>
-				<ul>
-					<li v-for="(item,index) in abroads" :key="index">
-						<img :src="item.img" alt="">
-						<p>{{item.con}}</p>
-					</li>
-				</ul>
-			</div>
-			<!-- 小程序开发介绍 -->
-			<div class="dynamic">
-				<img src="./images/maoboli@3x.png" style="width: 100%; height: 100%;" alt="">
-				<div class="vx-con">
-					<div class="vx-con-c1">小程序开发介绍</div>
-					<div class="vx-con-c2">
-						<div>尊敬的客户您好: </div>
-						<div> 欢迎您访问我们的网站,请允许我用简短的语言给您做下小程序开发的介绍, 请您一定耐心看完,因为这对您之后的选择很重要.</div>
-						<div> 首先,小程序开发有两类: </div>
-						<div>第一类:模板的使用,优势在于省钱和费用低,缺陷是不能够个性化,不在一定程 度上满足您的特定需求. </div>
-						<div>第二类:定制开发,独立开发每一个页面、每一项功能,定制开发的特点是独一 无二的，功能是按照您的要求定制开发的，服务也更加到位，但就是价格比较高， 定制版的基本费用在上万元到十几万不等.</div>
-						<div>如果这里所讲还没有解除您的疑虑,那么请您联系我们,会有专人为您解答更多 更详细的问题.</div>
-					</div>
-					<div class="vx-con-c3">
-						 电话:15011556811<br/> 15236241008
-					</div>
-				</div>
-			</div>
+            </div>
+            <!-- 辉达时代淘客系统的核心优势 -->
+            <div class="kernel">
+                <div class="general">
+                    <p>辉达时代淘客系统的核心优势</p>
+                    <p>站在用户的立场，打造真正符合用户操作习惯与业务需求的淘客系统</p>
+                </div>
+                <ul class="kernel_ul">
+                    <li v-for="item in kernel">
+                        <img :src="item.img" alt="">
+                        <div>{{item.con1}}</div>
+                        <p>{{item.con2}}</p>
+                    </li>
+                </ul>
+            </div>
+             <!-- 为什么选择辉达时代 -->
+             <div class="select">
+                <div class="title">为什么选择辉达时代</div>
+                <ul class="select_ul">
+                    <li v-for="item in select">
+                        <img :src="item.con1" alt="">
+                        <p>{{item.con2}}</p>
+                        <p>{{item.con3}}</p>
+                    </li>
+                </ul>
+            </div>
 			<!-- 底部 -->
 			<div class="copyright">
 				<div>北京辉达时代网络技术有限公司</div>
@@ -141,7 +128,6 @@
 					</div>
 					<div @click="msksss">取消</div>
 				</div>
-
 			</div>
 			<!-- 回到顶部 -->
 			<div class="back" v-show="backs" @click="back">
@@ -155,24 +141,5 @@
 			</div>
 		</div>
 	</body>
-	<script src="js/applet.js" type="text/javascript" charset="utf-8"></script>
-	<script src="./Swiper-3.3.1/dist/js/swiper.min.js"></script>
-
-	<script type="text/javascript">
-		setTimeout(function() {
-			var swiper = new Swiper('.swiper-container', {
-				pagination: '.swiper-pagination',
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev',
-				loop: true,
-				paginationClickable: true,
-				spaceBetween: 0,
-				centeredSlides: true,
-				autoplay: 2000,
-				autoplayDisableOnInteraction: false,
-				observer: true,
-				observerParents: true
-			});
-		}, 500)
-	</script>
+	<script src="js/commerce.js" type="text/javascript" charset="utf-8"></script>
 </html>

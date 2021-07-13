@@ -71,7 +71,9 @@ new Vue({
 				window, open('app.html')
 			} else if (this.banner_title[index] == '小程序定制开发') {
 				window.open('./applet.html')
-			}
+			}else if (this.banner_title[index] == '电商平台开发') {
+				window.open('./commerce.html')
+		}
 		},
 		// 留言板
 		btn() {

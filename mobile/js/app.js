@@ -62,11 +62,14 @@ var vm = new Vue({
 			console.log(this.top_nav_c[index])
 			if(this.top_nav_c[index]=='关于我们'){
 				window.location='intro.html'
-			}else if(this.top_nav_c[index]=='APP开发'){
-				window.location=' App.html '
 			}else if(this.top_nav_c[index]=='首页'){
 				window.location=' index.html '
+			}else if(this.top_nav_c[index]=='小程序定制开发'){
+				window.location='applet.html '
+			}if(this.top_nav_c[index]=='电商平台开发'){
+				window.location='commerce.html '
 			}
+			
 		},
 		// 弹出弹窗
 		Btn() {
