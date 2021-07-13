@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>辉达时代电商平台开发</title>  
+		<meta name="keywords" content=""/>  
+		<meta name="description" content=""/>  
+		<link rel="icon" href="../image/logos.png" sizes="50x50"> 
+		<script src="../js/huidait.js"></script>
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		<link rel="stylesheet" href="../css/Swiper.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/animate.css">
+		<link rel="stylesheet" href="../css/public.css">
+		<link rel="stylesheet" href="../css/applet.css">
+        <link rel="stylesheet" href="../css/commerce.css">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/axios.min.js"></script>
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+	<body>
+		<div id="app">
+			<div class="wb-box">
+				<!-- 头部 -->
+				<header>
+					<img src="../image/辉达外包LOGO.png">
+					<ul>
+						<li><a href="../index.html"   target="_blank">首页</a></li>
+						<li @mouseover="mouseOver">服务项目</li>
+						<li><a href="./successfulcase.html"  target="_blank">成功案例</a></li>
+						<li><a href="./map.html" target="_blank">联系我们</a></li>
+					</ul>
+				</header>
+				<div class="tu banner" style="background-color: #259CE8;">
+					<img src="../image/辉达时代外包官网电商平台banner.png" alt="">
+					<div class="top_serve" @mouseleave="mouseLeave">
+						<ol>
+							<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+								{{item}}
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div class="commerce">
+                    <div class="general">
+						<p>热门电商系统软件助力企业开展电商业务</p>
+						<p>提供B2C商城/b2B2C商城/o2o商城/B2B商城建设服务多渠道拓展，做大您的生意</p>
+					</div>
+                    <ul class="commerce_ul">
+                        <li v-for="item in commerce">
+                            <div>
+                                <img :src="item.img" alt="">
+                                <div>{{item.con1}}</div>
+                                <p>{{item.con2}}</p>
+                                <p>{{item.con3}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 热门电商系统软件助力企业开展电商业务 -->
+                <div class="kernel">
+                    <div class="general">
+						<p>辉达时代淘客系统的核心优势</p>
+						<p>站在用户的立场，打造真正符合用户操作习惯与业务需求的淘客系统</p>
+					</div>
+                    <ul class="kernel_ul">
+                        <li v-for="item in kernel">
+                            <div>
+                                <img :src="item.img" alt="">
+                                <div>{{item.con1}}</div>
+                                <p>{{item.con2}}</p>
+                                <p>{{item.con3}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 为什么选择辉达时代 -->
+                <div class="select">
+                    <div class="title">为什么选择辉达时代</div>
+                    <ul class="select_ul">
+                        <li v-for="item in select">
+                            <div>
+                                <span>{{item.con1}}</span>
+                                <span>{{item.con2}}</span>
+                                <span>{{item.con3}}</span>
+                            </div>
+                            <p>{{item.con4}}</p>
+                            <p>{{item.con5}}</p>
+                        </li>
+                    </ul>
+                </div>
+				<!-- 右边定位 -->
+				<div class="right">
+					<ul>
+						<li>
+							<!-- <p>15011556811</p> -->
+							<!-- <p></p>  -->
+							<img src="../image/dianhuagoutong-icon.png" alt="">
+							<p class="show show_img">联系我们</p>
+						</li>
+						<li>
+							<img src="../image/weixinzixun-icon.png" alt="">
+							<!-- <p>微信</p> -->
+							<p class="show show_img">微信咨询</p>
+							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
+						</li>
+						<li @click="consult($event)">
+							<img src="../image/zixundengji-icon.png" alt="">
+							<!-- <p>咨询</p> -->
+							<!-- <p class="show">咨询登记</p> -->
+						</li>
+						<li @click="top()">
+							<img src="../image/huidaodingbu-icon.png" alt="">
+						</li>
+					</ul>
+				</div>
+				<!-- 底部 -->
+				<div class="footer">
+					<div class="footer_box">
+						<ul>
+							<li>产品服务</li>
+							<li>APP开发</li>
+							<li>小程序开发</li>
+							<li>商城开发</li>
+							<li>平台开发</li>
+						</ul>
+						<ul>
+							<li>推荐系统</li>
+							<li>社交电商</li>
+							<li>租赁系统</li>
+							<li>淘客系统</li>
+							<li>数字货币</li>
+						</ul>
+						<ul>
+							<li>关于我们</li>
+							<li>
+								<a href="./intro.html" target="_blank">辉耀简介</a>
+							</li>
+							<li>客户案例</li>
+							<li>新闻资讯</li>
+						</ul>
+						<ul>
+							<li>联系我们</li>
+							<li>地址:北京市朝阳区望京北马泉营</li>
+							<li>电话:15011556811</li>
+							<li>邮箱:qqi2001@sina.com</li>
+						</ul>
+						<div>
+							<p>加入我们<br />"一元"建站	</p>
+							<img src="../image/外包二维码.jpg" alt="">
+						</div>
+						<div class="footer_bot">
+							<p>北京辉达时代网络技术有限公司
+								版权所有Copyright 2017-2022 All Rights Reserved
+								京ICP备13009754号-4</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- 弹窗 -->
+				<div class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
+					<div class="tanchuang">
+						<div  data-dismiss="modal" aria-hidden="true">×</div>
+						<h4>项目开发您定价</h4>
+						<h4>团队免费驻场开发</h4>
+						<h4>电话:15011556811</h4>
+					</div>
+				</div>
+				<!-- 咨询登记 -->
+				<div class="consult">
+					<div id="box1">
+						<div>
+							<div>请您留言</div>
+							<div @click="close_consult()">×</div>
+						</div>
+						<div>
+							<label>留言内容（必填）</label>
+							<textarea v-model="text" style="resize:none;padding-right: 20px;" rows="5" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
+						</div>
+						<div>
+							<div>
+								<label><img src="../image/xingming-icon@2x.png"></label>
+								<input v-model="name" type="text" class="name" placeholder="姓名">
+							</div>
+							<div>
+								<label>
+									<img src="../image/dianhua3@2x.png" >
+								</label>
+								<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+							</div>
+						</div>
+						<button type="button" @click="btn">发送</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/swiper.min.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+					url:'http://www.huidait.cn/php',
+					bannerImgs: [],
+					banner_title: [],
+					list: [],
+					times: [],
+					text:'',
+					name:'',
+					tel:'',
+					commerce:[
+						{
+							img:'../image/Payment.png',
+							con1:'B2C商城系统',
+							con2:'商城端口全',
+							con3:'多平台对接，上下游全打通'
+						},
+						{
+							img:'../image/Shoping.png',
+							con1:'O2O商城系统',
+							con2:'3大主流O2O模式',
+							con3:' “门店+商城”一体化管理'
+						},
+						{
+							img:'../image/OpenanOnlineStore.png',
+							con1:'B2B商城系统',
+							con2:'零售+批发+分销模式实现',
+							con3:'商家“分散经营，集中管理”'
+						},
+						{
+							img:'../image/BigSale.png',
+							con1:'B2B2C商城系统',
+							con2:'业务模块多',
+							con3:'构建“小京东”电商平台'
+						}
+					],
+                    kernel:[
+                        {
+                            img:'../image/7d99c246-20e1-4ad5-bfe3-0a754d843087_origin.png',
+							con1:'系统不断更新',
+							con2:'互联网时代的变化日新月异，每周更新小版本，升级永无止境'
+                        },
+                        {
+                            img:'../image/多式联运系统.png',
+							con1:'支持定制开发',
+							con2:'符合大众的淘客系统才是好系统，网坛科技淘客全面满足您的开发定制需求'
+                        },
+                        {
+                            img:'../image/计费系统.png',
+							con1:'支持各种淘客',
+							con2:'淘客APP，开发定制，返利APP，淘客APP系统，原生淘客APP'
+                        },
+                        {
+                            img:'../image/智能调度平台系统.png',
+							con1:'系统技术完善',
+							con2:'多元化平台特色促销功能，配合多终端的覆盖，让淘客可以更好的营销'
+                        }
+                    ],
+                    select:[
+                        {
+                            con1:'NO.',
+                            con2:'1',
+                            con3:'',
+                            con4:'一流技术团队',
+                            con5:'80%骨干技术来自BAT',
+                        },
+                        {
+                            con1:'',
+                            con2:'12',
+                            con3:'+',
+                            con4:'12家500强企业',
+                            con5:'为大量知名企业提供系统服务',
+                        },
+                        {
+                            con1:'',
+                            con2:'S',
+                            con3:'级',
+                            con4:'S级成长性系统',
+                            con5:'S级成长性满足企业发展需求',
+                        },
+                        {
+                            con1:'',
+                            con2:'100',
+                            con3:'%',
+                            con4:'全渠道解决方案',
+                            con5:'获得100%好评反馈率',
+                        }
+                    ]
+                },
+				methods: {
+					// 移入
+					mouseOver() {
+						$('.banner .top_serve')[0].style = "display:block"
+					},
+					// 移出
+					mouseLeave() {
+						$('.banner .top_serve')[0].style = "display:none";
+					},
+					load() {
+						// 轮播
+						let ban = this.url + "/banner.php"
+						axios.get(ban).then(res => {
+							console.log(res.data)
+							this.bannerImgs = res.data.bannerImgs
+							this.banner_title = res.data.banner_title
+							// console.log(this.banner_title)
+						})
+					},
+					// 跳转app页面
+					fun(index) {
+						// console.log(index)
+						if (this.banner_title[index] == 'APP开发') {
+							window.open('./app.html')
+						}else if (this.banner_title[index] == '小程序定制开发') {
+							window.open('./applet.html')
+						}
+					},
+					// 咨询，跳到底部
+					consult(e) {
+						// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+						// .clientHeight);
+						$('.consult')[0].style = "display:block"
+						$('#myModal').modal('hide')
+						clearInterval(a)
+					},
+					close_consult(){
+						$('.consult')[0].style = "display:none"
+						this.openwin()
+					},
+					// 回到顶部
+					top() {
+						document.body.scrollTop = document.documentElement.scrollTop = 0;
+					},
+					openwin(){
+						a=setInterval(function(){
+							$('#myModal').modal('show')
+							$('body').removeClass('modal-open')
+						}, 120000) 
+						$.isHasScroll = function () {
+							return (document.documentElement.clientHeight < document.documentElement.offsetHeight - 4);
+						}
+				　　},
+					swiper(){
+						setTimeout(function() {
+							new Swiper('.swiper-container', {
+								loop: true,
+								pagination: '.swiper-pagination',
+								autoplay: 3000,
+								paginationClickable: true,
+								autoplayDisableOnInteraction: false,
+								observer: true,
+								observerParents: true
+							})
+						}, 500)
+					},
+					// 留言板
+					btn(){
+						if(this.text==''){
+							alert('请输入留言内容')
+							$('.text').focus()
+							return
+						}
+						if(this.name==''){
+							alert('请输入用户名')
+							$('.name').focus()
+							return
+						}
+						if(this.tel==''){
+							alert('请输入手机号')
+							$('.tel').focus()
+							return
+						}
+						axios.get(this.url+'liuyan.php',{
+							params:{
+								text:this.text,
+								name:this.name,
+								tel:this.tel,
+							}
+						}).then(res=>{
+							console.log(res.data)
+							if(res.data=='ok'){
+								alert('留言已送达、2个小时内与您联系')
+								$('.consult')[0].style = "display:none"
+							}
+						})
+					}
+				},
+				mounted() {
+					this.swiper()
+					this.load()
+					this.openwin()
+					$('#myModal').modal('show')
+					$('body').removeClass('modal-open')
+				}
+			})
+		</script>
+		
+	</body>
+
+</html>
