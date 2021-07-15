@@ -41,3 +41,5 @@ liuyan.php  接收反馈的内容
 liu.php  显示所有内容
 
 delliu.php 删除反馈内容
+
+updateContent.php 修改小程序介绍
