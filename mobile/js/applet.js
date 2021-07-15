@@ -28,6 +28,7 @@ var vm = new Vue({
 		style2: {
 			'color': '#333333'
 		},
+		contents:[],
 		flows:[
 			{
 				img:'../image/zhece-icon.png',
@@ -88,6 +89,7 @@ var vm = new Vue({
 		if(window.pageYOffset<=500){
 			this.backs=false
 		}
+		this.content()
 		// 滚动条的获取
 		window.addEventListener('scroll', this.handleScrollx, true)
 	},
@@ -137,7 +139,12 @@ var vm = new Vue({
 				// console.log(this.top_nav_c)
 			})
 		},
-	
+		content(){
+			axios.get(this.url+'content.php').then(res=>{
+				console.log(res.data)
+				this.contents = res.data
+			})
+		},
 		// 弹出弹窗
 		Btn() {
 			this.active = !this.active

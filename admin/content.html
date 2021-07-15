@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>小程序介绍内容</title>
+		<link href="css/adminStyle.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="./css/banner.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="wrap">
+				<div class="page-title">
+					<span class="modular fl"><i class="add_user"></i><em>小程序介绍内容</em></span>
+				</div>
+				<form>
+					<table class="list-style" v-for="(item,index) in list" :key="index">
+						<tr>
+							<td>
+								<input type="text" name="con1" v-model="item.con1" id="" autocomplete="off" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea rows="3" style="width: 100%;" name="con2" v-model="item.con2"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea rows="3"style="width: 100%;"  name="con3" v-model="item.con3"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea rows="3" style="width: 100%;"  name="con4" v-model="item.con4"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea rows="3" style="width: 100%;"  class="content" name="con5"
+									v-model="item.con5"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea rows="3" style="width: 100%;"  name="con6" v-model="item.con6"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button type="button" style="width: 100%; height: 40px; font-size: 16px;" @click="put_in()">提交</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 防止用户从地址栏直接进入
+		if (window.sessionStorage.getItem('user') == '' || window.sessionStorage.getItem('user') == null) {
+			window.location.href = "index.html"
+		}
+		new Vue({
+			el: '#box',
+			data: {
+				list: [],
+				url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php/',
+				// url: 'http://www.huidait.cn/php/',
+			},
+			methods: {
+				put_in() {
+					var con1=$('input[name=con1]').val() 
+					var con2=$('textarea[name=con2]').val() 
+					var con3=$('textarea[name=con3]').val() 
+					var con4=$('textarea[name=con4]').val() 
+					var con5=$('textarea[name=con5]').val() 
+					var con6=$('textarea[name=con6]').val() 
+					console.log(con1,con2,con3,con4,con5,con6)
+					axios.get(this.url+'updateContent.php',{
+						params:{
+							con1,con2,con3,con4,con5,con6
+						}
+					}).then(res => {
+						console.log(res.data)
+						if(res.data=='ok'){
+							alert('修改成功')
+							this.load()
+						}else{
+							alert('修改失败')
+						}
+					})
+				},
+				// 初始化图片
+				load() {
+					let url = this.url + "content.php"
+					axios.get(url).then(res => {
+						console.log(res)
+						this.list = res.data
+					})
+				}
+			},
+			mounted() {
+				this.load()
+			}
+		})
+	</script>
+
+</html>
