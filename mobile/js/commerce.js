@@ -172,6 +172,8 @@ var vm = new Vue({
 				window.location=' index.html '
 			}else if(this.top_nav_c[index]=='小程序定制开发'){
 				window.location='applet.html '
+			}else if(this.top_nav_c[index]=='网站建设开发'){
+				window.location='website.html '
 			}
 		},
 

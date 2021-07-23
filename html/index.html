@@ -1,126 +1,127 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>辉达时代</title>  
-		<meta name="keywords" content=""/>  
-		<meta name="description" content=""/>  
-		<link rel="icon" href="../image/logos.png" sizes="50x50"> 
-		<script src="../js/huidait.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
-		<script src="../js/vue.js"></script>
-		<script src="../js/axios.min.js"></script>
-		<link rel="stylesheet" href="../css/animate.css">
-		<link rel="stylesheet" href="../css/public.css">
-		<link rel="stylesheet" href="../css/index.css">
-		<link rel="stylesheet" href="../css/swiper.min.css">
-		<link rel="stylesheet" href="../css/Swiper.css">
-		<link rel="stylesheet" href="../css/bootstrap.css">
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-		<script src="../js/bootstrap.min.js"></script>
-	<body>
-		<div id="app">
-			<div class="wb-box">
-				<!-- 头部 -->
-				<header>
-					<img src="../image/辉达外包LOGO.png">
-					<ul>
-						<li>首页</li>
-						<li @mouseover="mouseOver">服务项目</li>
-						<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
-						<li><a href="./map.html" target="_blank">联系我们</a></li>
-					</ul>
-				</header>
-				<!-- 轮播 -->
-				<div class="banner">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" v-for="ban in bannerImgs">
-								<img :src="ban" alt="">
-							</div>
-						</div>
-						<!-- 如果需要分页器 -->
-						<div class="swiper-pagination"></div>
-						<div class="top_serve" @mouseleave="mouseLeave">
-							<ol>
-								<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
-									{{item}}
-								</li>
-							</ol>
+<head>
+	<meta charset="utf-8">
+	<title>辉达时代</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="icon" href="../image/logos.png" sizes="50x50">
+	<script src="../js/huidait.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../js/axios.min.js"></script>
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<link rel="stylesheet" href="../css/Swiper.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="../js/bootstrap.min.js"></script>
+
+<body>
+	<div id="app">
+		<div class="wb-box">
+			<!-- 头部 -->
+			<header>
+				<img src="../image/辉达外包LOGO.png">
+				<ul>
+					<li>首页</li>
+					<li @mouseover="mouseOver">服务项目</li>
+					<li><a href="./successfulcase.html" target="_blank">成功案例</a></li>
+					<li><a href="./map.html" target="_blank">联系我们</a></li>
+				</ul>
+			</header>
+			<!-- 轮播 -->
+			<div class="banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="ban in bannerImgs">
+							<img :src="ban" alt="">
 						</div>
 					</div>
-				</div>
-				<!-- 网站建设我们更专业 -->
-				<div class="website">
-					<div class="general">
-						<p>网站建设我们更专业</p>
-						<div></div>
-						<p>我们的服务理念：尽一切力量做到最好！</p>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+					<div class="top_serve" @mouseleave="mouseLeave">
+						<ol>
+							<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
+								{{item}}
+							</li>
+						</ol>
 					</div>
-					<ul>
-						<li>
-							<img src="../image/定制-icon.png" alt="">
-							<div class="title">定制级高端网站建设</div>
-							<div class="xian"></div>
-							<p>结合多年开发经验及市场深度调研，需求整合 制定开发方案开发项目包括 微网后台。</p>
-						</li>
-						<li>
-							<img src="../image/APP开发-icon.png" alt="">
-							<div class="title">APP开发解决方案</div>
-							<div class="xian"></div>
-							<p>品牌产品定位，到卓越的应用策划、创意，最终制定技术解决方案及终端制作全方位的移动应用解决方案，满足客户对产品各方面业务需求。</p>
-						</li>
-						<li>
-							<img src="../image/小程序解决-icon.png" alt="">
-							<div class="title">小程序解决方案</div>
-							<div class="xian"></div>
-							<p>基于微信架构原生发轻松拥有在线城几十种促销工具支持深耕会员精准营销，满足客户对各产品各方面的业务需求。</p>
-						</li>
-						<li>
-							<img src="../image/区块链接-icon.png" alt="">
-							<div class="title">区块链解决方案</div>
-							<div class="xian"></div>
-							<p>基于区块链Web3.js技术搭建，提供快捷区块链应用服务的平台，致力于抹平区块链应用和现实场景之间的技术鸿沟，使得传统行业可以很低成本的享受区块链带来的便利。</p>
-						</li>
-					</ul>
 				</div>
-				<!-- 深耕细分行业 -->
-				<div class="solution">
-					<div class="solution_box">
-						<div class="title">深耕细分行业，提供更加垂直的行业解决方案</div>
-						<p class="solution_p">电商，餐饮，酒店，任务系统，区块链都有完整解决方案</p>
-					</div>
-					<div>
-						<div class="solution_list">
-							<ul class="list_ul">
-								<li v-for="(solution,ins) in industry" :key="ins" @mouseover="putin(ins,$event)">
-									{{solution.title}}
-								</li>
-								<!-- <li class="active">电商</li>
+			</div>
+			<!-- 网站建设我们更专业 -->
+			<div class="website">
+				<div class="general">
+					<p>网站建设我们更专业</p>
+					<div></div>
+					<p>我们的服务理念：尽一切力量做到最好！</p>
+				</div>
+				<ul>
+					<li>
+						<img src="../image/定制-icon.png" alt="">
+						<div class="title">定制级高端网站建设</div>
+						<div class="xian"></div>
+						<p>结合多年开发经验及市场深度调研，需求整合 制定开发方案开发项目包括 微网后台。</p>
+					</li>
+					<li>
+						<img src="../image/APP开发-icon.png" alt="">
+						<div class="title">APP开发解决方案</div>
+						<div class="xian"></div>
+						<p>品牌产品定位，到卓越的应用策划、创意，最终制定技术解决方案及终端制作全方位的移动应用解决方案，满足客户对产品各方面业务需求。</p>
+					</li>
+					<li>
+						<img src="../image/小程序解决-icon.png" alt="">
+						<div class="title">小程序解决方案</div>
+						<div class="xian"></div>
+						<p>基于微信架构原生发轻松拥有在线城几十种促销工具支持深耕会员精准营销，满足客户对各产品各方面的业务需求。</p>
+					</li>
+					<li>
+						<img src="../image/区块链接-icon.png" alt="">
+						<div class="title">区块链解决方案</div>
+						<div class="xian"></div>
+						<p>基于区块链Web3.js技术搭建，提供快捷区块链应用服务的平台，致力于抹平区块链应用和现实场景之间的技术鸿沟，使得传统行业可以很低成本的享受区块链带来的便利。</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 深耕细分行业 -->
+			<div class="solution">
+				<div class="solution_box">
+					<div class="title">深耕细分行业，提供更加垂直的行业解决方案</div>
+					<p class="solution_p">电商，餐饮，酒店，任务系统，区块链都有完整解决方案</p>
+				</div>
+				<div>
+					<div class="solution_list">
+						<ul class="list_ul">
+							<li v-for="(solution,ins) in industry" :key="ins" @mouseover="putin(ins,$event)">
+								{{solution.title}}
+							</li>
+							<!-- <li class="active">电商</li>
 									<li>直播短视频</li>
 									<li>知识与共享</li>
 									<li>任务系统</li>
 									<li>区块链</li> -->
-							</ul>
-							<!-- v-for="(solution,ins) in industry" :key="ins" -->
-							<div class="list_div">
-								<div>{{list.big_title}}</div>
-								<p>{{list.big_title_con}}</p>
-								<ul>
-									<li v-for="(imgs,key) in list.small_img">
-										<img :src="imgs" alt="">
-										<div>{{list.small_title[key]}}</div>
-										<ol v-for="con in list.small_title_con[key]">
-											<li>{{con}}</li>
-											<!-- <li>多用户商城 盈利模式丰富</li>
+						</ul>
+						<!-- v-for="(solution,ins) in industry" :key="ins" -->
+						<div class="list_div">
+							<div>{{list.big_title}}</div>
+							<p>{{list.big_title_con}}</p>
+							<ul>
+								<li v-for="(imgs,key) in list.small_img">
+									<img :src="imgs" alt="">
+									<div>{{list.small_title[key]}}</div>
+									<ol v-for="con in list.small_title_con[key]">
+										<li>{{con}}</li>
+										<!-- <li>多用户商城 盈利模式丰富</li>
 											<li>O2O系统 线上线下新零售</li>
 											<li>多营销机制 抢占电商市场</li> -->
-										</ol>
-									</li>
-									<!-- <li>
+									</ol>
+								</li>
+								<!-- <li>
 										<img src="../image/dinghuo-icon.png" alt="">
 										<div>订货系统</div>
 										<ol>
@@ -138,147 +139,147 @@
 											<li>多营销机制 抢占电商市场</li>
 										</ol>
 									</li> -->
-								</ul>
-							</div>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<!-- 为什么要选择我们 ？ -->
-				<div class="why">
+			</div>
+			<!-- 为什么要选择我们 ？ -->
+			<div class="why">
+				<div class="general">
+					<p>为什么要选择我们</p>
+					<div></div>
+					<p>我们的服务理念：尽一切力量做到最好！</p>
+				</div>
+				<div class="why_list">
+					<div class="why_tu">
+						<div>
+							<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
+							<span>解决 需求</span>
+						</div>
+						<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
+					</div>
+					<!-- <img src="../image/jiahao-icon.png" alt=""> -->
+					<div class="why_tu">
+						<div>
+							<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
+							<span>专业 设计</span>
+						</div>
+						<p>专业的艺术指导，丰富的行 业经验，永远自己站在用户 角度设计您的产品，打造最 佳用户体验</p>
+					</div>
+					<div class="why_tu">
+						<div>
+							<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
+							<span class="liang">研发</span>
+						</div>
+						<p>资深的研发团队，完备，严 格的开发流程，技术精湛， 思维严谨</p>
+					</div>
+					<div class="why_tu">
+						<div>
+							<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
+							<span class="liang">保障</span>
+						</div>
+						<p>严谨的测试团队，保障您的 产品在交付的时候是优秀的</p>
+					</div>
+					<div class="why_tu">
+						<div>
+							<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
+							<span class="liang">服务</span>
+						</div>
+						<p>完善的售后服务跟踪，为您 的产品在运营过程中保驾护航</p>
+					</div>
+				</div>
+			</div>
+			<!-- 一站式服务 -->
+			<div class="serve">
+				<div class="general">
+					<p>一站式服务</p>
+					<div></div>
+					<p>您还在为建设网站过程中繁琐的事情而烦恼么？我们为您提供一站式网站建设解决方案让您顾虑全无！</p>
+				</div>
+				<ul>
+					<li>
+						<img src="../image/jianzhan-icon.png" alt="">
+						<p>建站</p>
+					</li>
+					<li>
+						<img src="../image/kongjian-icon.png" alt="">
+						<p>空间</p>
+					</li>
+					<li>
+						<img src="../image/yuming-icon.png" alt="">
+						<p>域名</p>
+					</li>
+					<li>
+						<img src="../image/beian-icon.png" alt="">
+						<p>备案</p>
+					</li>
+					<li>
+						<img src="../image/shouhou-icon.png" alt="">
+						<p>售后</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 服务保障 -->
+			<div class="safeguard">
+				<div class="general">
+					<p>服务保障</p>
+					<div></div>
+					<p>我们的服务理念：尽一切力量做到最好</p>
+				</div>
+				<ul>
+					<li>
+						<img src="../image/wending-icon.png" alt="">
+						<p>稳定</p>
+						<p>网站可用性高达99%</p>
+					</li>
+					<li>
+						<img src="../image/anquan-icon.png" alt="">
+						<p>安全</p>
+						<p>病毒杀除率高达99%</p>
+					</li>
+					<li>
+						<img src="../image/jisu-icon.png" alt="">
+						<p>急速</p>
+						<p>5倍陪护终端服务时间</p>
+					</li>
+					<li>
+						<img src="../image/zhoudao-icon.png" alt="">
+						<p>周到</p>
+						<p>覆盖70多个城市的服务网站</p>
+					</li>
+					<li>
+						<img src="../image/tiexin-icon.png" alt="">
+						<p>贴心</p>
+						<p>24小时客服热线</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 用心对待每一个项目！ -->
+			<div class="diligently">
+				<div class="diligently_box">
 					<div class="general">
-						<p>为什么要选择我们</p>
+						<p>用心对待每一个项目</p>
 						<div></div>
 						<p>我们的服务理念：尽一切力量做到最好！</p>
 					</div>
-					<div class="why_list">
-						<div class="why_tu">
-							<div>
-								<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
-								<span>解决 需求</span>
-							</div>
-							<p>丰富的行业专家，我们不止 理解您的需求, 更站在移动 互联网专业的角度为您丰富 需求</p>
-						</div>
-						<!-- <img src="../image/jiahao-icon.png" alt=""> -->
-						<div class="why_tu">
-							<div>
-								<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
-								<span>专业 设计</span>
-							</div>
-							<p>专业的艺术指导，丰富的行 业经验，永远自己站在用户 角度设计您的产品，打造最 佳用户体验</p>
-						</div>
-						<div class="why_tu">
-							<div>
-								<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
-								<span class="liang">研发</span>
-							</div>
-							<p>资深的研发团队，完备，严 格的开发流程，技术精湛， 思维严谨</p>
-						</div>
-						<div class="why_tu">
-							<div>
-								<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
-								<span class="liang">保障</span>
-							</div>
-							<p>严谨的测试团队，保障您的 产品在交付的时候是优秀的</p>
-						</div>
-						<div class="why_tu">
-							<div>
-								<!-- <img src="../image/liubianxing-icon.png" alt=""> -->
-								<span class="liang">服务</span>
-							</div>
-							<p>完善的售后服务跟踪，为您 的产品在运营过程中保驾护航</p>
-						</div>
-					</div>
-				</div>
-				<!-- 一站式服务 -->
-				<div class="serve">
-					<div class="general">
-						<p>一站式服务</p>
-						<div></div>
-						<p>您还在为建设网站过程中繁琐的事情而烦恼么？我们为您提供一站式网站建设解决方案让您顾虑全无！</p>
-					</div>
 					<ul>
-						<li>
-							<img src="../image/jianzhan-icon.png" alt="">
-							<p>建站</p>
+						<li v-for="(project,ins) in this.project">
+							<img :src="project.imgsrc" alt="">
+							<div>
+								{{project.title}}
+							</div>
+							<p>
+								{{project.title_con}}
+							</p>
 						</li>
-						<li>
-							<img src="../image/kongjian-icon.png" alt="">
-							<p>空间</p>
-						</li>
-						<li>
-							<img src="../image/yuming-icon.png" alt="">
-							<p>域名</p>
-						</li>
-						<li>
-							<img src="../image/beian-icon.png" alt="">
-							<p>备案</p>
-						</li>
-						<li>
-							<img src="../image/shouhou-icon.png" alt="">
-							<p>售后</p>
-						</li>
-					</ul>
-				</div>
-				<!-- 服务保障 -->
-				<div class="safeguard">
-					<div class="general">
-						<p>服务保障</p>
-						<div></div>
-						<p>我们的服务理念：尽一切力量做到最好</p>
-					</div>
-					<ul>
-						<li>
-							<img src="../image/wending-icon.png" alt="">
-							<p>稳定</p>
-							<p>网站可用性高达99%</p>
-						</li>
-						<li>
-							<img src="../image/anquan-icon.png" alt="">
-							<p>安全</p>
-							<p>病毒杀除率高达99%</p>
-						</li>
-						<li>
-							<img src="../image/jisu-icon.png" alt="">
-							<p>急速</p>
-							<p>5倍陪护终端服务时间</p>
-						</li>
-						<li>
-							<img src="../image/zhoudao-icon.png" alt="">
-							<p>周到</p>
-							<p>覆盖70多个城市的服务网站</p>
-						</li>
-						<li>
-							<img src="../image/tiexin-icon.png" alt="">
-							<p>贴心</p>
-							<p>24小时客服热线</p>
-						</li>
-					</ul>
-				</div>
-				<!-- 用心对待每一个项目！ -->
-				<div class="diligently">
-					<div class="diligently_box">
-						<div class="general">
-							<p>用心对待每一个项目</p>
-							<div></div>
-							<p>我们的服务理念：尽一切力量做到最好！</p>
-						</div>
-						<ul>
-							<li v-for="(project,ins) in this.project">
-								<img :src="project.imgsrc" alt="">
-								<div>
-									{{project.title}}
-								</div>
-								<p>
-									{{project.title_con}}
-								</p>
-							</li>
-							<!-- <li v-for="project in this.project">
+						<!-- <li v-for="project in this.project">
 								<img :src="project.img" alt="">
 								<div>
 									{{project.name}}
 								</div>
 							</li> -->
-							<!-- 							<li>
+						<!-- 							<li>
 							<img src="../image/益园养车展示.png" alt="">
 								<div>
 									益园养车APP
@@ -308,14 +309,14 @@
 									益园养车APP
 								</div>
 							</li> -->
-						</ul>
-					</div>
+					</ul>
 				</div>
-				<!-- 辉达时代动态 -->
-				<div class="dynamic">
-					<div class="title">合作商家</div>
-					<img src="../image/hudt.png" style="width: 100%; height: 100%;" alt="">
-					<!-- <ul>
+			</div>
+			<!-- 辉达时代动态 -->
+			<div class="dynamic">
+				<div class="title">合作商家</div>
+				<img src="../image/hudt.png" style="width: 100%; height: 100%;" alt="">
+				<!-- <ul>
 						<li>
 							<img src="../image/辉达动态1.png" alt="">
 						</li>
@@ -332,312 +333,297 @@
 							<span>{{news[k].title}}!</span>
 						</li>
 					</ol> -->
-				</div>
-				<!-- 右边定位 -->
-				<div class="right">
+			</div>
+			<!-- 右边定位 -->
+			<div class="right">
+				<ul>
+					<li>
+						<!-- <p>15011556811</p> -->
+						<!-- <p></p>  -->
+						<img src="../image/dianhuagoutong-icon.png" alt="">
+						<p class="show show_img">联系我们</p>
+					</li>
+					<li>
+						<img src="../image/weixinzixun-icon.png" alt="">
+						<!-- <p>微信</p> -->
+						<p class="show show_img">微信咨询</p>
+						<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
+					</li>
+					<li @click="consult($event)">
+						<img src="../image/zixundengji-icon.png" alt="">
+						<!-- <p>咨询</p> -->
+						<!-- <p class="show">咨询登记</p> -->
+					</li>
+					<li @click="top()">
+						<img src="../image/huidaodingbu-icon.png" alt="">
+					</li>
+				</ul>
+			</div>
+			<!-- 底部 -->
+			<div class="footer">
+				<div class="footer_box">
 					<ul>
-						<li>
-							<!-- <p>15011556811</p> -->
-							<!-- <p></p>  -->
-							<img src="../image/dianhuagoutong-icon.png" alt="">
-							<p class="show show_img">联系我们</p>
-						</li>
-						<li>
-							<img src="../image/weixinzixun-icon.png" alt="">
-							<!-- <p>微信</p> -->
-							<p class="show show_img">微信咨询</p>
-							<!-- <img class="show" src="../image/外包二维码.jpg" alt=""> -->
-						</li>
-						<li @click="consult($event)">
-							<img src="../image/zixundengji-icon.png" alt="">
-							<!-- <p>咨询</p> -->
-							<!-- <p class="show">咨询登记</p> -->
-						</li>
-						<li @click="top()">
-							<img src="../image/huidaodingbu-icon.png" alt="">
-						</li>
+						<li>产品服务</li>
+						<li>APP开发</li>
+						<li>小程序开发</li>
+						<li>商城开发</li>
+						<li>平台开发</li>
 					</ul>
-				</div>
-				<!-- 底部 -->
-				<div class="footer">
-					<div class="footer_box">
-						<ul>
-							<li>产品服务</li>
-							<li>APP开发</li>
-							<li>小程序开发</li>
-							<li>商城开发</li>
-							<li>平台开发</li>
-						</ul>
-						<ul>
-							<li>推荐系统</li>
-							<li>社交电商</li>
-							<li>租赁系统</li>
-							<li>淘客系统</li>
-							<li>数字货币</li>
-						</ul>
-						<ul>
-							<li>关于我们</li>
-							<li>
-								<a href="./intro.html" target="_blank">辉耀简介</a>
-							</li>
-							<li>客户案例</li>
-							<li>新闻资讯</li>
-						</ul>
-						<ul>
-							<li>联系我们</li>
-							<li>地址:北京市朝阳区望京北马泉营</li>
-							<li>电话:15011556811</li>
-							<li>邮箱:qqi2001@sina.com</li>
-						</ul>
-						<div>
-							<p>加入我们<br />"一元"建站	</p>
-							<img src="../image/外包二维码.jpg" alt="">
-						</div>
-						<div class="footer_bot">
-							<p>北京辉达时代网络技术有限公司
-								版权所有Copyright 2017-2022 All Rights Reserved
-								京ICP备13009754号-4</p>
-						</div>
+					<ul>
+						<li>推荐系统</li>
+						<li>社交电商</li>
+						<li>租赁系统</li>
+						<li>淘客系统</li>
+						<li>数字货币</li>
+					</ul>
+					<ul>
+						<li>关于我们</li>
+						<li>
+							<a href="./intro.html" target="_blank">辉耀简介</a>
+						</li>
+						<li>客户案例</li>
+						<li>新闻资讯</li>
+					</ul>
+					<ul>
+						<li>联系我们</li>
+						<li>地址:北京市朝阳区望京北马泉营</li>
+						<li>电话:15011556811</li>
+						<li>邮箱:qqi2001@sina.com</li>
+					</ul>
+					<div>
+						<p>加入我们<br />"一元"建站 </p>
+						<img src="../image/外包二维码.jpg" alt="">
 					</div>
+					<div class="footer_bot">
+						<p>北京辉达时代网络技术有限公司
+							版权所有Copyright 2017-2022 All Rights Reserved
+							京ICP备13009754号-4</p>
+					</div>
+				</div>
 
+			</div>
+			<!-- 弹窗 -->
+			<div class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
+				<div class="tanchuang">
+					<div data-dismiss="modal" aria-hidden="true">×</div>
+					<h4>项目开发您定价</h4>
+					<h4>团队免费驻场开发</h4>
+					<h4>电话:15011556811</h4>
 				</div>
-				<!-- 弹窗 -->
-				<div class="modal fade" id="myModal" style=" width: 250px;height: 200px; margin-top: 200px;">
-					<div class="tanchuang">
-						<div  data-dismiss="modal" aria-hidden="true">×</div>
-						<h4>项目开发您定价</h4>
-						<h4>团队免费驻场开发</h4>
-						<h4>电话:15011556811</h4>
+			</div>
+			<!-- 咨询登记 -->
+			<div class="consult">
+				<div id="box1">
+					<div>
+						<div>请您留言</div>
+						<div @click="close_consult()">×</div>
 					</div>
-				</div>
-				<!-- 咨询登记 -->
-				<div class="consult">
-					<div id="box1">
-						<div>
-							<div>请您留言</div>
-							<div @click="close_consult()">×</div>
-						</div>
-						<div>
-							<label>留言内容（必填）</label>
-							<textarea v-model="text"  style="resize:none;padding-right: 20px;" rows="5" class="text" cols="" placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
-						</div>
-						<div>
-							<div>
-								<label><img src="../image/xingming-icon@2x.png"></label>
-								<input v-model="name" type="text" class="name" placeholder="姓名">
-							</div>
-							<div>
-								<label>
-									<img src="../image/dianhua3@2x.png" >
-								</label>
-								<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
-							</div>
-						</div>
-						<button type="button" @click="btn">发送</button>
+					<div>
+						<label>留言内容（必填）</label>
+						<textarea v-model="text" style="resize:none;padding-right: 20px;" rows="5" class="text" cols=""
+							placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
 					</div>
+					<div>
+						<div>
+							<label><img src="../image/xingming-icon@2x.png"></label>
+							<input v-model="name" type="text" class="name" placeholder="姓名">
+						</div>
+						<div>
+							<label>
+								<img src="../image/dianhua3@2x.png">
+							</label>
+							<input v-model="tel" type="text" class="tel" placeholder="电话(必填)">
+						</div>
+					</div>
+					<button type="button" @click="btn">发送</button>
 				</div>
 			</div>
 		</div>
-		<script src="../js/swiper.min.js"></script>
-		<script type="text/javascript">
-			var vm = new Vue({
-				el: '#app',
-				data: {
-					// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
-					url:'http://www.huidait.cn/php',
-					bannerImgs: [],
-					banner_title: [],
-					industry: [],
-					list: [],
-					project: [],
-					news: [],
-					times: [],
-					text:'',
-					name:'',
-					tel:''
-				},
-				methods: {
-					// 行业背景
-					putin(index, e) {
-						var lis = document.querySelectorAll('.list_ul li')
-						for (var i = 0; i < lis.length; i++) {
-							if (lis[i] == e.path[0]) {
-								lis[i].style.backgroundColor = "#FA965A"
-							} else {
-								lis[i].style.backgroundColor = "transparent"
-							}
+	</div>
+	<script src="../js/swiper.min.js"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				// url: 'http://192.168.7.108/item2/Hd-OutsourcingWebsite/php',
+				url: 'http://www.huidait.cn/php',
+				bannerImgs: [],
+				banner_title: [],
+				industry: [],
+				list: [],
+				project: [],
+				news: [],
+				times: [],
+				text: '',
+				name: '',
+				tel: ''
+			},
+			methods: {
+				// 行业背景
+				putin(index, e) {
+					var lis = document.querySelectorAll('.list_ul li')
+					for (var i = 0; i < lis.length; i++) {
+						if (lis[i] == e.path[0]) {
+							lis[i].style.backgroundColor = "#FA965A"
+						} else {
+							lis[i].style.backgroundColor = "transparent"
 						}
-						if (this.industry[index].id == '1') {
+					}
+					if (this.industry[index].id == '1') {
 						e.path[4].style.backgroundColor = "#0686d8";
-						} else if (this.industry[index].id == '2') {
+					} else if (this.industry[index].id == '2') {
 						e.path[4].style.backgroundColor = "#16167D";
-						} else if (this.industry[index].id == '3') {
+					} else if (this.industry[index].id == '3') {
 						e.path[4].style.backgroundColor = "#4B51F6";
-						} else if (this.industry[index].id == '4') {
+					} else if (this.industry[index].id == '4') {
 						e.path[4].style.backgroundColor = "#9F50F2";
-						} else if (this.industry[index].id == '5') {
+					} else if (this.industry[index].id == '5') {
 						e.path[4].style.backgroundColor = "#5F18A6";
-						}else if (this.industry[index].id == '6') {
+					} else if (this.industry[index].id == '6') {
 						e.path[4].style.backgroundColor = "#C400FF";
-						}else if (this.industry[index].id == '7') {
+					} else if (this.industry[index].id == '7') {
 						e.path[4].style.backgroundColor = "#4A4AD3";
-						}
-						this.list = this.industry[index]
-					},
-					// 移入
-					mouseOver() {
-						$('.banner .top_serve')[0].style = "display:block"
-					},
-					// 移出
-					mouseLeave() {
-						$('.banner .top_serve')[0].style = "display:none";
-					},
-					load() {
-						// 轮播
-						let ban = this.url + "/banner.php"
-						axios.get(ban).then(res => {
-							console.log(res.data)
-							this.bannerImgs = res.data.bannerImgs
-							this.banner_title = res.data.banner_title
-							// console.log(this.banner_title)
-						})
-						// 行业
-						let industry = this.url + "/industry.php"
-						axios.get(industry).then(res1 => {
-							// console.log(res1.data)
-							this.industry = res1.data
-							this.list = this.industry[0]
-							// console.log(this.list)
-						})
-						// 项目
-						let project = this.url + "/ifyproject.php"
-						axios.get(project).then(res1 => {
-							console.log(res1.data[0].all)
-							this.project = res1.data[0].all
-							// console.log(this.project)
-							// this.project=this.project.splice(0,6)
-							// console.log(this.project)
-						})
-						// 新闻
-						// let news = this.url + "/news.php"
-						// axios.get(news).then(res1 => {
-						// 	console.log(res1.data)
-						// 	this.news = res1.data
-						// 	for (var i = 0; i < this.news.length; i++) {
-						// 		// console.log(this.news[i].time)
-						// 		var t = new Date(parseInt(this.news[i].time) * 1000).toLocaleString()
-						// 		var zi = t.indexOf('午') - 1
-						// 		// console.log(zi)
-						// 		var num = t.substr(0, zi)
-						// 		this.times.push(num)
-						// 		// console.log(this.times)
-						// 	}
-						// })
-					},
-					// 跳转app页面
-					fun(index) {
-						// console.log(index)
-						if (this.banner_title[index] == 'APP开发') {
-							window.open('./app.html')
-						}else if (this.banner_title[index] == '小程序定制开发') {
-							window.open('./applet.html')
-						}else if (this.banner_title[index] == '电商平台开发') {
-							window.open('./commerce.html')
-						}
-					},
-					// 咨询，跳到底部
-					consult(e) {
-						// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
-						// .clientHeight);
-						$('.consult')[0].style = "display:block"
-						$('#myModal').modal('hide')
-						clearInterval(a)
-					},
-					close_consult(){
-						$('.consult')[0].style = "display:none"
-						this.openwin()
-					},
-					// 回到顶部
-					top() {
-						document.body.scrollTop = document.documentElement.scrollTop = 0;
-					},
-					openwin(){
-						a=setInterval(function(){
-							$('#myModal').modal('show')
-							$('body').removeClass('modal-open')
-						}, 120000) 
-						$.isHasScroll = function () {
-							return (document.documentElement.clientHeight < document.documentElement.offsetHeight - 4);
-						}
-				　　},
-					swiper(){
-						setTimeout(function() {
-							new Swiper('.swiper-container', {
-								loop: true,
-								pagination: '.swiper-pagination',
-								autoplay: 3000,
-								paginationClickable: true,
-								autoplayDisableOnInteraction: false,
-								observer: true,
-								observerParents: true
-							})
-						}, 500)
-					},
-					// 留言板
-					btn(){
-						if(this.text==''){
-							alert('请输入留言内容')
-							$('.text').focus()
-							return
-						}
-						if(this.name==''){
-							alert('请输入用户名')
-							$('.name').focus()
-							return
-						}
-						if(this.tel==''){
-							alert('请输入手机号')
-							$('.tel').focus()
-							return
-						}
-						axios.get(this.url+'/liuyan.php',{
-							params:{
-								text:this.text,
-								name:this.name,
-								tel:this.tel,
-							}
-						}).then(res=>{
-							console.log(res.data)
-							if(res.data=='ok'){
-								alert('留言已送达、2个小时内与您联系')
-								$('.consult')[0].style = "display:none"
-							}
-						})
+					}
+					this.list = this.industry[index]
+				},
+				// 移入
+				mouseOver() {
+					$('.banner .top_serve')[0].style = "display:block"
+				},
+				// 移出
+				mouseLeave() {
+					$('.banner .top_serve')[0].style = "display:none";
+				},
+				load() {
+					// 轮播
+					let ban = this.url + "/banner.php"
+					axios.get(ban).then(res => {
+						console.log(res.data)
+						this.bannerImgs = res.data.bannerImgs
+						this.banner_title = res.data.banner_title
+						// console.log(this.banner_title)
+					})
+					// 行业
+					let industry = this.url + "/industry.php"
+					axios.get(industry).then(res1 => {
+						// console.log(res1.data)
+						this.industry = res1.data
+						this.list = this.industry[0]
+						// console.log(this.list)
+					})
+					// 项目
+					let project = this.url + "/ifyproject.php"
+					axios.get(project).then(res1 => {
+						console.log(res1.data[0].all)
+						this.project = res1.data[0].all
+					})
+				},
+				// 跳转app页面
+				fun(index) {
+					// console.log(index)
+					if (this.banner_title[index] == 'APP开发') {
+						window.open('./app.html')
+					} else if (this.banner_title[index] == '小程序定制开发') {
+						window.open('./applet.html')
+					} else if (this.banner_title[index] == '电商平台开发') {
+						window.open('./commerce.html')
+					} else if (this.top_nav_c[index] == '网站建设开发') {
+						window.location = 'website.html '
 					}
 				},
-				mounted() {
-					var system = {};
-					var p = navigator.platform;
-					console.log(p);
-					this.swiper()
-					system.win = p.indexOf("Win") == 0;
-					system.mac = p.indexOf("Mac") == 0;
-					if (system.win || system.mac) {//如果是电脑
-						console.log('电脑')
-					} else { //如果是手机,
-						this.uploadShow=false
-						// location.replace("../index.html")
-						console.log('手机')
-						return false
-					}
-					this.load()
+				// 咨询，跳到底部
+				consult(e) {
+					// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
+					// .clientHeight);
+					$('.consult')[0].style = "display:block"
+					$('#myModal').modal('hide')
+					clearInterval(a)
+				},
+				close_consult() {
+					$('.consult')[0].style = "display:none"
 					this.openwin()
-					$('#myModal').modal('show')
-					$('body').removeClass('modal-open')
+				},
+				// 回到顶部
+				top() {
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
+				},
+				openwin() {
+					a = setInterval(function () {
+						$('#myModal').modal('show')
+						$('body').removeClass('modal-open')
+					}, 120000)
+					$.isHasScroll = function () {
+						return (document.documentElement.clientHeight < document.documentElement.offsetHeight - 4);
+					}
+				},
+				swiper() {
+					setTimeout(function () {
+						new Swiper('.swiper-container', {
+							loop: true,
+							pagination: '.swiper-pagination',
+							autoplay: 3000,
+							paginationClickable: true,
+							autoplayDisableOnInteraction: false,
+							observer: true,
+							observerParents: true
+						})
+					}, 500)
+				},
+				// 留言板
+				btn() {
+					if (this.text == '') {
+						alert('请输入留言内容')
+						$('.text').focus()
+						return
+					}
+					if (this.name == '') {
+						alert('请输入用户名')
+						$('.name').focus()
+						return
+					}
+					if (this.tel == '') {
+						alert('请输入手机号')
+						$('.tel').focus()
+						return
+					}
+					axios.get(this.url + '/liuyan.php', {
+						params: {
+							text: this.text,
+							name: this.name,
+							tel: this.tel,
+						}
+					}).then(res => {
+						console.log(res.data)
+						if (res.data == 'ok') {
+							alert('留言已送达、2个小时内与您联系')
+							$('.consult')[0].style = "display:none"
+						}
+					})
 				}
-			})
-		</script>
-		
-	</body>
+			},
+			mounted() {
+				var system = {};
+				var p = navigator.platform;
+				console.log(p);
+				this.swiper()
+				system.win = p.indexOf("Win") == 0;
+				system.mac = p.indexOf("Mac") == 0;
+				if (system.win || system.mac) {//如果是电脑
+					console.log('电脑')
+				} else { //如果是手机,
+					this.uploadShow = false
+					// location.replace("../index.html")
+					console.log('手机')
+					return false
+				}
+				this.load()
+				this.openwin()
+				$('#myModal').modal('show')
+				$('body').removeClass('modal-open')
+			}
+		})
+	</script>
+
+</body>
 
 </html>

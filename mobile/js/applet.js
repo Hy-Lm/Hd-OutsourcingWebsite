@@ -162,6 +162,8 @@ var vm = new Vue({
 				window.location=' index.html '
 			}else if(this.top_nav_c[index]=='电商平台开发'){
 				window.location='commerce.html '
+			}else if(this.top_nav_c[index]=='网站建设开发'){
+				window.location='website.html '
 			}
 		},
 

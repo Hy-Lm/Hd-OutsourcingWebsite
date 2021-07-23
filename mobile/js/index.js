@@ -209,6 +209,8 @@ var vm = new Vue({
 				window.location='commerce.html '
 			}else if(this.top_nav_c[index]=='小程序定制开发'){
 				window.location='applet.html '
+			}else if(this.top_nav_c[index]=='网站建设开发'){
+				window.location='website.html '
 			}
 		},
 		// 行业状态切换

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>辉达时代</title>
+		<meta name="keywords" content="辉达永盛教育，求精求强不求大，只做引领和创新。" />
+		<meta name="description" content="专注IT技术岗前实训、java培训、web前端培训、UI设计培训、优秀IT培训机构、校企共建协同育人。" />
+		<link rel="icon" href="./images/logos.png" sizes="50x50">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./css/public.css">
+        <link rel="stylesheet" href="./css/website.css">
+		<link rel="stylesheet" href="./Swiper-3.3.1/dist/css/swiper.min.css">
+		<link rel="stylesheet" href="../css/Swiper.css">
+		<script src="../js/huidait.js"></script>
+		<script src="./js/setRem.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js" type="text/javascript" charset="utf-8">
+		</script>
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<!-- 顶部-->
+			<div class="box-top">
+				<img src="./images/logo-icon@2x.png">
+				<img src="./images/弹窗按钮@2x.png" @click="Btn">
+				<!-- 导航栏 -->
+				<div class="box-top-nav" v-if="active">
+					<div>
+						<div class="top-nav-t">
+							<img src="./images/logo-icon@2x.png">
+							<img src="./images/×@2x.png" @click="Btn()">
+						</div>
+						<div class="top-nav-c">
+							<div @click="top_nav_cc(index)" :style="[index===ind?styleobj1:styleobj2]"
+								v-for="(item,index) in top_nav_c" :key="index">{{item}}</div>
+						</div>
+					</div>
+					<div class="top-nav-b">
+						<img src="./images/dianhua-icon.svg">
+						<div>- 15011556811</div>
+					</div>
+			
+				</div>
+				<!-- 遮罩层 -->
+				<div class="mask" @click="mask" v-if="active"></div>
+			</div>
+			<!-- 背景图 -->
+			<div class="bg">
+				<img src="./images/外包官网Banner2.1@3x.png" alt="">
+			</div>
+            <!-- 热门电商系统软件助力企业开展电商业务 -->
+			<div class="business">
+                <div class="general">
+                    <p>服务介绍</p>
+					<p>精选各行业网站建设模板案例，1V1网页设计制作，网站建设定制开发，网络营销推广，售后无忧！</p>
+                </div>
+                <div class="index_course_lun-c">
+					<div class="index_course_lun">
+						<div class="index_course_lun-i" v-for="(item,index) in course_item" :key="index"  @click="overshow(index)">
+							<div class="business_div">
+                                <img :src="item.img" alt="">
+                                <div>{{item.con1}}</div>
+                                <p>{{item.con2}}</p>
+                            </div>
+                            <div class="show">
+                                <p>{{item.show1}}</p>
+                                <p>{{item.show2}}</p>
+                                <p>{{item.show3}}</p>
+                                <p>{{item.show4}}</p>
+                                <p>{{item.show5}}</p>
+                                <p>{{item.show6}}</p>
+                            </div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- 辉达时代淘客系统的核心优势 -->
+            <div class="kernel">
+                <div class="general">
+                    <p>网站建设流程</p>
+					<p>专业定制建设开发网站</p>
+                </div>
+                <ul class="kernel_ul">
+                    <li v-for="item in kernel">
+                        <img :src="item.img" alt="">
+                        <div>{{item.con1}}</div>
+                        <p>{{item.con2}}</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- 经典案例 -->
+			<div class="box-case">
+				<div class="case-title">经点案例</div>
+				<!-- 项目内容 -->
+				<div class="project-items">
+					<div class="project-item" v-for="(item,index) in ifyproject" :key="index">
+						<div>
+							<img :src="item.imgsrc">
+						</div>
+						<div>{{item.title}}</div>
+						<div>{{item.title_con}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<div class="copyright">
+				<div>北京辉达时代网络技术有限公司</div>
+				<div>版权所有 Copyright 2013-2023 All Rights Reserved</div>
+				<div>京ICP备13009754号-4</div>
+			</div>
+			<!-- 定位 -->
+			<div class="footer">
+				<div class="footer-l" @click="zixun">
+					<img src="./images/kefu-icon.svg">
+					<div class="footer-con">在线客服</div>
+				</div>
+				<!-- 打电话 -->
+				<div class="footer-r" @click="telBtn">
+					<img src="./images/dianhua-2-icon.svg">
+					<div class="footer-con">咨询电话</div>
+				</div>
+			</div>
+			<!-- 电话阴影 -->
+			<div class="tel" v-if="mskss">
+				<div class="msks" @click="msksss"></div>
+				<div class="tels">
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15011556811">呼叫 150 1155 6811</a>
+					</div>
+					<div>
+						<img src="images/dianhua2.png">
+						<a  href="tel:15236241008">呼叫 152 3624 1008</a>
+					</div>
+					<div @click="msksss">取消</div>
+				</div>
+			</div>
+			<!-- 回到顶部 -->
+			<div class="back" v-show="backs" @click="back">
+				<img src="images/jiantou2.svg">
+				<div>回到顶部</div>
+			</div>
+			<!-- 咨询 -->
+			<div class="zixun" @click="zixun">
+				<img src="./images/zixun2-icon.svg">
+				<div>咨询</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/website.js" type="text/javascript" charset="utf-8"></script>
+</html>

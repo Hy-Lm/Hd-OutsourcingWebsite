@@ -214,13 +214,14 @@
 				},
 				// 跳转app页面
 				fun(index) {
-					// console.log(index)
 					if (this.banner_title[index] == 'APP开发') {
-						window, open('app.html')
+						window.open('./app.html')
 					} else if (this.banner_title[index] == '小程序定制开发') {
 						window.open('./applet.html')
-					}else if (this.banner_title[index] == '电商平台开发') {
-							window.open('./commerce.html')
+					} else if (this.banner_title[index] == '电商平台开发') {
+						window.open('./commerce.html')
+					} else if (this.top_nav_c[index] == '网站建设开发') {
+						window.location = 'website.html '
 					}
 				},
 				// 留言板

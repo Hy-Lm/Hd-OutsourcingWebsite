@@ -3,20 +3,21 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>APP开发</title>
+	<title>辉达时代网站建设开发</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link rel="icon" href="../image/logos.png" sizes="50x50">
 	<script src="../js/huidait.js"></script>
-	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-	<script src="../js/axios.min.js"></script>
-	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
-	<link rel="stylesheet" href="../css/public.css">
-	<link rel="stylesheet" href="../css/index.css">
-	<link rel="stylesheet" href="../css/animate.css">
-	<link rel="stylesheet" href="../css/app.css">
-	<script src="../js/vue.js"></script>
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<link rel="stylesheet" href="../css/Swiper.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../css/website.css">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/3.6.0/echarts.min.js"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../js/axios.min.js"></script>
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 
@@ -34,7 +35,7 @@
 				</ul>
 			</header>
 			<div class="tu banner" style="background-color: #259CE8;">
-				<img src="../image/APP开发Banner.png" alt="">
+				<img src="../image/外包官网Banner2.1.png" alt="">
 				<div class="top_serve" @mouseleave="mouseLeave">
 					<ol>
 						<li v-for="(item,index) in banner_title" @click="fun(index)" :key="index">
@@ -43,59 +44,52 @@
 					</ol>
 				</div>
 			</div>
-			<div class="tu ">
-				<div>项目流程</div>
-
-				<img src="../image/项目流程.png" alt="">
-			</div>
-			<!-- 网站建设我们更专业 -->
 			<div class="website">
 				<div class="general">
-					<p>主要优势</p>
+					<p>服务介绍</p>
+					<p>精选各行业网站建设模板案例，1V1网页设计制作，网站建设定制开发，网络营销推广，售后无忧！</p>
 				</div>
-				<ul>
-					<li>
-						<img src="../image/专业性强icon.png" alt="">
-						<div class="title">专业性强</div>
-						<div class="xian"></div>
-						<p>资深策划进行逻辑分析与最优实现方式，专业技术团队进行开发，适用性强、标准化验收，确保正常上线</p>
-					</li>
-					<li>
-						<img src="../image/价格透明icon.png" alt="">
-						<div class="title">价格透明</div>
-						<div class="xian"></div>
-						<p>免费提供合作方案，公共报价，让客户清晰知道每一笔投入，产生的价值所在</p>
-					</li>
-					<li>
-						<img src="../image/开发周期icon.png" alt="">
-						<div class="title">开发周期短</div>
-						<div class="xian"></div>
-						<p>数十位专业的技术开发团队，强大的研发能力，快速实现需求，产品运作稳定</p>
-					</li>
-					<li>
-						<img src="../image/安全性icon.png" alt="">
-						<div class="title">安全性高</div>
-						<div class="xian"></div>
-						<p>项目开发前，签订正规合同，提供官方保障；项目完成后，提供源码服务确保产品安全</p>
+				<ul class="website_ul">
+					<li v-for="(item,index) in website" @mouseover="overshow(index)" @mouseLeave="leaveshow(index)">
+						<div class="website_ul_div" >
+							<img :src="item.img" alt="">
+							<div>{{item.con1}}</div>
+							<p>{{item.con2}}</p>
+						</div>
+						<div class="show" style="display: block;">
+							<p>{{item.show1}}</p>
+							<p>{{item.show2}}</p>
+							<p>{{item.show3}}</p>
+							<p>{{item.show4}}</p>
+							<p>{{item.show5}}</p>
+							<p>{{item.show6}}</p>
+						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="tu tu1">
-				<!-- 定位的文案 -->
-				<div>
-					<div>APP开发流程</div>
-					<div>资深策划进行项目对接，分析与实现最优方案策划，专业技术团队进行快速开发，稳定测试，标准验收。</div>
-					<div>独有的原生系统开发技术，一次开发，多平台，多入口，轻松解决IOS，Android等手机系统适配问题，更兼容，更便捷，更稳定！</div>
+			<!-- 热门电商系统软件助力企业开展电商业务 -->
+			<div class="kernel">
+				<div class="general">
+					<p>网站建设流程</p>
+					<p>专业定制建设开发网站</p>
 				</div>
-				<img src="../image/开发流程.png" alt="">
+				<ul class="kernel_ul">
+					<li v-for="item in kernel">
+						<div>
+							<img :src="item.img" alt="">
+							<div>{{item.con1}}</div>
+							<p>{{item.con2}}</p>
+							<p>{{item.con3}}</p>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<!-- 经典案例 -->
 			<div class="diligently">
 				<div class="diligently_box">
 					<div class="general">
 						<p>经典案例</p>
-						<!-- <p>辉达时代拥有数十人APP开发团队，专注IOS、Android开发服务，12年软件开发经验</p>
-							<p>多家500强服务案例，开发案例超过300个，一站式解决客户生产、销售、服务等需求，让用户来感知产品的体验价值。</p> -->
+						<p>辉达时代拥有数十人APP开发团队，专注IOS、Android开发服务，10年+软件开发经验</p>
 					</div>
 					<ul>
 						<li v-for="project in this.project">
@@ -175,7 +169,7 @@
 					<div class="footer_bot">
 						<p>北京辉达时代网络技术有限公司
 							版权所有Copyright 2017-2022 All Rights Reserved
-							京ICP备13009754号-3</p>
+							京ICP备13009754号-4</p>
 					</div>
 				</div>
 
@@ -198,7 +192,7 @@
 					</div>
 					<div>
 						<label>留言内容（必填）</label>
-						<textarea v-model="text" rows="5" style="resize:none;padding-right: 20px;" class="text" cols=""
+						<textarea v-model="text" style="resize:none;padding-right: 20px;" rows="5" class="text" cols=""
 							placeholder="请在此输入留言内容, 我们会尽快与你联系"></textarea>
 					</div>
 					<div>
@@ -218,7 +212,7 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="../js/swiper.min.js"></script>
 	<script type="text/javascript">
 		var vm = new Vue({
 			el: '#app',
@@ -227,12 +221,99 @@
 				url: 'http://www.huidait.cn/php',
 				bannerImgs: [],
 				banner_title: [],
-				project: [],
+				list: [],
+				times: [],
 				text: '',
 				name: '',
-				tel: ''
+				tel: '',
+				project: [],
+				website: [
+					{
+						img: '../image/OBJECTS@3x.png',
+						con1: '网站建设',
+						con2: '专业定制网站建设',
+						show1:'专业网站建设',
+						
+						show2:'企业品牌网站建设',
+						show3:'集团上市公司官网',
+						show4:'产品展示、商城网站',
+						show5:'行业门户网站建设',
+						show:'重新设计定制建设网站'
+					},
+					{
+						img: '../image/手机音乐检测@3x.png',
+						con1: '手机网站',
+						con2: '建设手机网站或响应式网站',
+						show1:'手机网站',
+						show2:'响应式(电脑+手机)',
+						show3:'手机端网站建设',
+						show4:'创意H5设计制作',
+						show5:'线上推广H5页面',
+						show6:''
+					},
+					{
+						img: '../image/Web-开发@3x.png',
+						con1: '微信小程序',
+						con2: '小程序、APP定制开发',
+						show1:'微信小程序',
+						show2:'移动APP商城',
+						show3:'移动互联网产品开发',
+						show4:'微信小程序',
+						show5:'企业网站生成APP',
+						show6:''
+					},
+					{
+						img: '../image/域名空间@3x.png',
+						con1: '域名空间',
+						con2: '国内、国外空间服务器',
+						show1:'域名空间',
+						show2:'国内、国际顶级域名',
+						show3:'阿里云虚拟空间',
+						show4:'网站服务器',
+						show5:'免费提供域名空间备案服务',
+						show6:''
+					}
+				],
+				kernel: [
+					{
+						img: '../image/咨询沟通@3x.png',
+						con1: '咨询沟通',
+						con2: '确定网站建设功能、价格及建设周期'
+					},
+					{
+						img: '../image/设计制作@3x.png',
+						con1: '设计、制作网站',
+						con2: '设计网站效果图、开发建设网站程序'
+					},
+					{
+						img: '../image/测试@3x.png',
+						con1: '网站测试',
+						con2: '建设好网站,客户测试确认完成'
+					},
+					{
+						img: '../image/开发网站指示板@3x.png',
+						con1: '域名空间备案、上线',
+						con2: '申请域名空间、提交备案修改网站细节,备案通过、细节修改完成上线'
+					}
+				]
 			},
 			methods: {
+				// 移入
+				mouseOver() {
+					$('.banner .top_serve')[0].style = "display:block"
+				},
+				// 移出
+				mouseLeave() {
+					$('.banner .top_serve')[0].style = "display:none";
+				},
+				// 服务介绍移入
+				overshow(index) {
+					$('.show')[index].style = "display:block;transform: translateY(-100%);transition: 1s;"
+				},
+				// 服务介绍移出
+				leaveshow(index) {
+					$('.show')[index].style = "display:none;"
+				},
 				load() {
 					// 轮播
 					let ban = this.url + "/banner.php"
@@ -251,6 +332,17 @@
 						// console.log(this.project)
 					})
 				},
+				// 跳转app页面
+				fun(index) {
+					// console.log(index)
+					if (this.banner_title[index] == 'APP开发') {
+						window.open('./app.html')
+					} else if (this.banner_title[index] == '小程序定制开发') {
+						window.open('./applet.html')
+					} else if (this.banner_title[index] == '电商平台开发') {
+						window.open('./commerce.html')
+					}
+				},
 				// 咨询，跳到底部
 				consult(e) {
 					// window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement
@@ -263,21 +355,31 @@
 					$('.consult')[0].style = "display:none"
 					this.openwin()
 				},
-				// 移入
-				mouseOver() {
-					console.log(111)
-					$('.banner .top_serve')[0].style = "display:block"
+				// 回到顶部
+				top() {
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
 				},
-				// 移出
-				mouseLeave() {
-					$('.banner .top_serve')[0].style = "display:none";
-				},
-				// 弹窗
 				openwin() {
 					a = setInterval(function () {
 						$('#myModal').modal('show')
 						$('body').removeClass('modal-open')
 					}, 120000)
+					$.isHasScroll = function () {
+						return (document.documentElement.clientHeight < document.documentElement.offsetHeight - 4);
+					}
+				},
+				swiper() {
+					setTimeout(function () {
+						new Swiper('.swiper-container', {
+							loop: true,
+							pagination: '.swiper-pagination',
+							autoplay: 3000,
+							paginationClickable: true,
+							autoplayDisableOnInteraction: false,
+							observer: true,
+							observerParents: true
+						})
+					}, 500)
 				},
 				// 留言板
 				btn() {
@@ -309,28 +411,18 @@
 							$('.consult')[0].style = "display:none"
 						}
 					})
-				},
-				// 跳转app页面
-				fun(index) {
-					// console.log(index)
-					if (this.banner_title[index] == '小程序定制开发') {
-						window.open('./applet.html')
-					}else if (this.banner_title[index] == '电商平台开发') {
-						window.open('./commerce.html')
-					}else if (this.top_nav_c[index] == '网站建设开发') {
-						window.location = 'website.html '
-					}
-				},
+				}
 			},
 			mounted() {
+				this.swiper()
 				this.load()
 				this.openwin()
 				$('#myModal').modal('show')
 				$('body').removeClass('modal-open')
-			},
-
+			}
 		})
 	</script>
+
 </body>
 
 </html>
